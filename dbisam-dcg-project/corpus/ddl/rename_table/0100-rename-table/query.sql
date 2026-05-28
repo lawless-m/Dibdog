@@ -1,0 +1,1 @@
+RENAME TABLE no_such_a TO no_such_b

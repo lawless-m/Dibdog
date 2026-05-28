@@ -1,0 +1,1 @@
+select_statement(all_rows,[star],[table(identifier('CUSTOMER'),no_alias)],[where(and(eq(identifier(code),string_literal('1')),is_null(identifier(uf_csa)))),top(5)]).

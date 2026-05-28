@@ -1,0 +1,1 @@
+select_statement(all_rows,[function_call('MAX',[cast(qualified(identifier('ORDERH'),identifier('REF')),type('INTEGER',[]))])],[table(identifier('ORDERH'),no_alias)],[]).

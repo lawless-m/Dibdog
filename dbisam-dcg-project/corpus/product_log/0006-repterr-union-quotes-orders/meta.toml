@@ -1,0 +1,58 @@
+id = "0006-repterr-union-quotes-orders"
+status = "meaningful"
+provenance = "product-log"
+source = "../../../../corpus/raw/repterr.sql"
+tags = [
+    "select",
+    "union",
+    "group-by",
+    "aggregate",
+    "sum",
+    "function-call",
+    "extract",
+    "current-date",
+    "is-null",
+    "string-literal-projection",
+    "multi-line",
+    "engine-verdict-flaky",
+]
+notes = """
+Real product-log entry — a daily-style "open quotes + open orders this
+month" summary report. Single SQL string spanning two SELECTs joined
+by UNION. Each SELECT projects a literal label ('quotes' / 'orders'),
+a grouping column (custcode), and a SUM aggregate (sum(valnetbase)),
+filtered to current month/year of uf_shipout via nested EXTRACT calls
+that take current_date() as their argument. Open-status filter is
+instatus = 1 plus a "no result/invoice reference yet" IS NULL guard.
+
+Coverage value: high. This single entry forces the grammar to handle
+UNION, GROUP BY, aggregate function calls, nested function calls
+(extract over current_date), IS NULL, multi-predicate WHERE with AND,
+string-literal projection, and multi-line whitespace including
+mixed Unix newlines and trailing spaces. None of the contrived seed
+entries (0001-0005) cover any of these.
+
+Provenance: a real query from the Ramsden production query corpus,
+contributed verbatim by the user. Path preserved in `source` for
+back-reference; do not edit the SQL here — fix at source and re-copy.
+
+Engine verdict for this entry is RELIABLY ACCEPTED under the current
+harness, which reconnects after every query. The original "flaky"
+observation (rejected after `select CODE from CUSTOMER`, accepted
+after 0008) was actually from a pre-fix harness state that kept the
+mrsflow Client alive across Ok responses. Slice #8 reproduced the
+underlying bug rigorously: under drop-on-rejection-only mode, 1 of
+30 interleaved trials rejects this UNION; under unconditional
+per-query reconnect (the production harness setting), 30/30 accept.
+
+The `engine-verdict-flaky` tag stays as a historical signal but the
+verdict itself can be trusted.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-27T09:59:44Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Promotion checks passed during slice #33 — column aliases (AS and bare)."

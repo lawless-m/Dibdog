@@ -1,0 +1,19 @@
+id = "0100-alter-table-add-column"
+status = "expected-divergent"
+provenance = "manual"
+tags = ["alter-table", "add-column", "ddl", "statement-canary", "schema-divergence"]
+notes = """
+ALTER TABLE ADD COLUMN canary. Engine returns 0x2b05 (operational reject — table doesn't exist) but syntax parses. Schema-divergent; expected-divergent classification.
+"""
+fixtures = []
+
+[divergence]
+reason = "Grammar parses cleanly. Engine rejects operationally (unknown) because the target table 'no_such_canary' doesn't exist in the catalog. Same divergence pattern as the 0201/0205 family and the temp-table-pipeline entries — schema state is engine-side, not a grammar concern. The canary exists to exercise the round-trip parse path for the new statement type."
+reference = "docs/DIVERGENCES.md#1-table-existence-from-name-where-name-isnt-in-the-catalog"
+
+[[history]]
+at = "2026-05-28T09:58:31Z"
+from = "pending"
+to = "expected-divergent"
+by = "claude-code"
+reason = "Slice #74 — statement-type canary; target table doesn't exist (schema divergence)."

@@ -1,0 +1,1 @@
+delete_statement(identifier(product),where(eq(identifier(code),string_literal('NOPE')))).

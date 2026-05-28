@@ -1,0 +1,883 @@
+{
+
+  "parquet_dir": "\\\\rivsprod02\\RI Services\\Outputs\\Parquets",
+
+  "parquets": [
+
+    {
+
+      "name": "analysis",
+
+      "path": "em/analysis.parquet",
+
+      "persistent": true,
+
+      "description": "Actual Sales data. at the invoiced Orders Line Level Data. When aggregating sales this is the preferred table, not joining orderh to orderi - not all orders are actually finalized and invoiced, things can go wrong between an order and the invoice such as stock being unavailable or damaged in transit. Revenue is only correct in the analysis table"
+
+    },
+
+    {
+
+      "name": "orderh",
+
+      "path": "em/orderh.parquet",
+
+      "persistent": true,
+
+      "description": "This is not the sales data, just the ordera placed. Contains Order header records, orders are placed but may or may not be fulfilled, only orders with an ohinvref were delivered"
+
+    },
+
+    {
+
+      "name": "orderi",
+
+      "path": "em/orderi.parquet",
+
+      "persistent": true,
+
+      "description": "Order item details, this is what was ordered, not what was sold"
+
+    },
+
+    {
+
+      "name": "product",
+
+      "path": "em/product.parquet",
+
+      "persistent": true,
+
+      "description": "Current Product offering, although some products in this table are discontinued but remain present for lookups"
+
+    },
+
+    {
+
+      "name": "prodgrp",
+
+      "path": "em/prodgrp.parquet",
+
+      "persistent": true,
+
+      "description": "Product groups. Product groups form a hierachy. Code E5 is Biscuits and E510 is chocolate biscuits. To compare broad categories use the first two characters of product.group"
+
+    },
+
+    {
+
+      "name": "customer",
+
+      "path": "em/customer.parquet",
+
+      "persistent": true,
+
+      "description": "Customer details"
+
+    },
+
+    {
+
+      "name": "rigeographic",
+
+      "path": "em/rigeographic.parquet",
+
+      "persistent": true,
+
+      "description": "Ramsden International (RI) Geographic - how the company divides territory, region and country text based on codes"
+
+    }
+
+  ],
+
+  "metadata": {
+
+    "columnDescriptions": {
+
+      "analysis": {
+
+        "primaryKey": [
+
+          "sasource",
+
+          "saposting",
+
+          "saseq"
+
+        ],
+
+        "columns": {
+
+          "saval": {
+
+            "description": "Revenue amount in local currency",
+
+            "businessName": "Revenue",
+
+            "dbisamName": "SAVAL"
+
+          },
+
+          "sainv": {
+
+            "description": "Invoice reference number from RI system",
+
+            "businessName": "RI Invoice Ref",
+
+            "dbisamName": "SAINV"
+
+          },
+
+          "saorgqty": {
+
+            "description": "Number of cases billed",
+
+            "businessName": "Qty",
+
+            "dbisamName": "SAORGQTY"
+
+          }
+
+        }
+
+      },
+
+      "customer": {
+
+        "primaryKey": [
+
+          "code"
+
+        ],
+
+        "columns": {
+
+          "code": {
+
+            "description": "Customer code",
+
+            "businessName": "Customer",
+
+            "dbisamName": "CODE"
+
+          },
+
+          "cpyname": {
+
+            "description": "Company name",
+
+            "businessName": "Company name",
+
+            "dbisamName": "CPYNAME"
+
+          },
+
+          "sellco": {
+
+            "description": "Selling company - 2 for RI, 3 for REBV",
+
+            "businessName": "Sellco",
+
+            "dbisamName": "SELLCO"
+
+          },
+
+          "terr": {
+
+            "description": "Territory code, this is always a 6 character code. See rigeographic for that relationship",
+
+            "businessName": "Territory",
+
+            "dbisamName": "TERR"
+
+          },
+
+          "curr": {
+
+            "description": "Currency Symbol",
+
+            "businessName": "Currency",
+
+            "dbisamName": "CURR"
+
+          },
+
+          "customer": {
+
+            "description": "is a customer flag",
+
+            "businessName": "is Customer",
+
+            "dbisamName": "CUSTOMER"
+
+          },
+
+          "prospect": {
+
+            "description": "is a prospect flag",
+
+            "businessName": "is Prospect",
+
+            "dbisamName": "PROSPECT"
+
+          },
+
+          "profile": {
+
+            "description": "the expected primary range",
+
+            "businessName": "profile",
+
+            "dbisamName": "PROFILE"
+
+          }
+
+        }
+
+      },
+
+      "orderh": {
+
+        "primaryKey": [
+
+          "ref"
+
+        ],
+
+        "columns": {
+
+          "ref": {
+
+            "description": "Order reference number from RI system",
+
+            "businessName": "RI Order Number",
+
+            "dbisamName": "REF"
+
+          },
+
+          "crnote": {
+
+            "description": "Credit Note flag - boolean",
+
+            "businessName": "Credit Note",
+
+            "dbisamName": "CRNOTE"
+
+          },
+
+          "ohinvref": {
+
+            "description": "Related invoice reference",
+
+            "businessName": "Invoice Reference",
+
+            "dbisamName": "OHINVREF"
+
+          },
+
+          "terr": {
+
+            "description": "Territory code, this is always a 6 charcater code, see rigeographic for more details",
+
+            "businessName": "Territory",
+
+            "dbisamName": "TERR"
+
+          },
+
+          "orddate": {
+
+            "description": "Order date",
+
+            "businessName": "Order date",
+
+            "dbisamName": "ORDDATE"
+
+          },
+
+          "custcode": {
+
+            "description": "Customer Code",
+
+            "businessName": "Customer Code",
+
+            "dbisamName": "CUSTCODE"
+
+          },
+
+          "company": {
+
+            "description": "Buying company",
+
+            "businessName": "Company",
+
+            "dbisamName": "COMPANY"
+
+          },
+
+          "sellco": {
+
+            "description": "Selling company - 2 for RI, 3 for REBV",
+
+            "businessName": "Sellco",
+
+            "dbisamName": "SELLCO"
+
+          },
+
+          "conscode": {
+
+            "description": "Consignment code",
+
+            "businessName": "Consignment",
+
+            "dbisamName": "CONSCODE"
+
+          },
+
+          "curr": {
+
+            "description": "Currency Symbol",
+
+            "businessName": "Currency",
+
+            "dbisamName": "CURR"
+
+          },
+
+          "currname": {
+
+            "description": "Currency name",
+
+            "businessName": "Currency",
+
+            "dbisamName": "CURRNAME"
+
+          },
+
+          "currrate": {
+
+            "description": "Currency conversion rate",
+
+            "businessName": "Currency rate",
+
+            "dbisamName": "CURRRATE"
+
+          },
+
+          "vatcode": {
+
+            "description": "VAT Code",
+
+            "businessName": "VAT Code",
+
+            "dbisamName": "VATCODE"
+
+          },
+
+          "valgross": {
+
+            "description": "Gross price",
+
+            "businessName": "Gross price",
+
+            "dbisamName": "VALGROSS"
+
+          },
+
+          "valnet": {
+
+            "description": "Nett price",
+
+            "businessName": "Nett price",
+
+            "dbisamName": "VALNET"
+
+          },
+
+          "valtax": {
+
+            "description": "Tax Amount",
+
+            "businessName": "Tax Amount",
+
+            "dbisamName": "VALTAX"
+
+          },
+
+          "analysiscode": {
+
+            "description": "Analysis Code",
+
+            "businessName": "Analysis Code",
+
+            "dbisamName": "ANALYSISCODE"
+
+          },
+
+          "ohinvdate": {
+
+            "description": "RI Invoice Date",
+
+            "businessName": "Invoice Date",
+
+            "dbisamName": "OHINVDATE"
+
+          },
+
+          "uf_shipmentref": {
+
+            "description": "Shipping reference - not unique - multiple orders can share the same shipping reference",
+
+            "businessName": "Shipref",
+
+            "dbisamName": "UF_SHIPMENTREF"
+
+          },
+
+          "uf_shipmentname": {
+
+            "description": "Shipping name - not unique, buyer supplied reference",
+
+            "businessName": "Shipment name",
+
+            "dbisamName": "UF_SHIPMENTNAME"
+
+          }
+
+        }
+
+      },
+
+      "orderi": {
+
+        "primaryKey": [
+
+          "ref",
+
+          "section",
+
+          "line"
+
+        ],
+
+        "columns": {
+
+          "ref": {
+
+            "description": "Order Reference",
+
+            "businessName": "Order Reference",
+
+            "dbisamName": "REF"
+
+          }
+
+        }
+
+      },
+
+      "product": {
+
+        "primaryKey": [
+
+          "code"
+
+        ],
+
+        "columns": {
+
+          "code": {
+
+            "description": "Product Code - primary key. The first character of each product code signifies the supplier. and lfet(p.code,1) * is Services",
+
+            "businessName": "Product Code",
+
+            "dbisamName": "CODE"
+
+          },
+
+          "commod": {
+
+            "description": "Commodity Code",
+
+            "businessName": "Commodity Code",
+
+            "dbisamName": "COMMOD"
+
+          },
+
+          "group": {
+
+            "description": "Product Group Code",
+
+            "businessName": "Product Group Code",
+
+            "dbisamName": "GROUP"
+
+          },
+
+          "desc1": {
+
+            "description": "Raw Product description",
+
+            "businessName": "Product description",
+
+            "dbisamName": "DESC1"
+
+          },
+
+          "desc3": {
+
+            "description": "Brand name of the product, Kellogs, Mars etc.",
+
+            "businessName": "Brand",
+
+            "dbisamName": "DESC3"
+
+          },
+
+          "uf_ukldesc": {
+
+            "description": "Preferred Product description with proper capitalisation",
+
+            "businessName": "Product description",
+
+            "dbisamName": "UF_UKLDESC"
+
+          },
+
+          "pruser01": {
+
+            "description": "Discontinued flag - 'Y' for discontinued",
+
+            "businessName": "Discontinued",
+
+            "dbisamName": "PRUSER01"
+
+          },
+
+          "uf_ibarcode": {
+
+            "description": "Retail Barcode of EAN of the individual products, what people mean when they say Barcode",
+
+            "businessName": "Inner Barcode",
+
+            "dbisamName": "UF_IBARCODE"
+
+          },
+
+          "uf_o_barcode": {
+
+            "description": "Case Barcode of EAN of the wholesale product",
+
+            "businessName": "Outer Barcode",
+
+            "dbisamName": "UF_O_BARCODE"
+
+          },
+
+          "uf_supp_name": {
+
+            "description": "Supplier Name",
+
+            "businessName": "Supplier",
+
+            "dbisamName": "UF_SUPP_NAME"
+
+          },
+
+          "uf_manufacturer": {
+
+            "description": "Manufacturer name",
+
+            "businessName": "Manufacturer",
+
+            "dbisamName": "UF_MANUFACTURER"
+
+          },
+
+          "uf_ean_origin": {
+
+            "description": "Country of origin",
+
+            "businessName": "Country of origin",
+
+            "dbisamName": "UF_EAN_ORIGIN"
+
+          }
+
+        }
+
+      },
+
+      "prodgrp": {
+
+        "primaryKey": [
+
+          "code"
+
+        ],
+
+        "columns": {
+
+          "code": {
+
+            "description": "Product Group Code, these form a hierarchy, e.g. ('E5', 'Biscuits') and ('E510', 'Choc Biscuit Bars') are both in 'E5', so when trying to match a product group and a product we must be mindful of that. So if someone ask for 'product category biscuits' then we should match on left(product.group,2) = prodgrp.code and prodgrp.desc='Biscuits'",
+
+            "businessName": "Product Group Code",
+
+            "dbisamName": "Code"
+
+          },
+
+          "desc": {
+
+            "description": "Description of the product group",
+
+            "businessName": "Product Group",
+
+            "dbisamName": "Desc"
+
+          }
+
+        }
+
+      },
+
+      "rigeographic": {
+
+        "primaryKey": [
+
+          "regioncode"
+
+        ],
+
+        "columns": {
+
+          "regioncode": {
+
+            "description": "a six character code 'TTCCRR' which encodes territory TT, country CC and region CC, each a subset of the other - territories have countries, countries have regions. Some regioncodes end in AA meaning the country code was the only meaningful distinction so known as all while France as France Alps, France East Middle, France North East, France North and more",
+
+            "businessName": "terrcode",
+
+            "dbisamName": "RegionCode"
+
+          },
+
+          "regiondesc": {
+
+            "description": "Some regioncodes end in AA meaning the country code was the only meaningful distinction so the region is known as All form example 'Italy All' while France has France Alps, France East Middle, France North East, France North and more",
+
+            "businessName": "region",
+
+            "dbisamName": "RegionDesc"
+
+          },
+
+          "countrycode": {
+
+            "description": "a two character code 'CC' which is the ISO country code, part of a territory and contains regions.",
+
+            "businessName": "country code",
+
+            "dbisamName": "CountryCode"
+
+          },
+
+          "riterritorycode": {
+
+            "description": "a two character code 'TT' which is a Ramsden International (our company) code for territories e.g. AI which is Atlantic Islands",
+
+            "businessName": "territory code",
+
+            "dbisamName": "RITerritoryCode"
+
+          },
+
+          "continentname": {
+
+            "description": "the continent name for this regioncode e.g. 'South America' - doesn't necessarily strictly follow convention",
+
+            "businessName": "continent",
+
+            "dbisamName": "Continentname"
+
+          },
+
+          "rinewanalysisterr": {
+
+            "description": "a free text description of the territory e.g. Atlantic Islands describes the code AI",
+
+            "businessName": "territory",
+
+            "dbisamName": "RINewAnalysisTerr"
+
+          },
+
+          "countryname": {
+
+            "description": "the country name in which this regioncode sits e.g. Falkland Islands",
+
+            "businessName": "country",
+
+            "dbisamName": "CountryName"
+
+          },
+
+          "riterritorydesc": {
+
+            "description": "a free text description of the territory e.g. Atlantic Islands describes the code AI but these were renamed but the old codes kept for reference - I'm not sure of how to choose, best to just use rinewanalysisterr instead",
+
+            "businessName": "old territory",
+
+            "dbisamName": "RITerritoryDesc"
+
+          }
+
+        }
+
+      }
+
+    },
+
+    "relationships": [
+
+      {
+
+        "id": "orderh.orderi",
+
+        "fromTable": "orderh",
+
+        "fromColumn": "ref",
+
+        "toTable": "orderi",
+
+        "toColumn": "ref",
+
+        "relationshipType": "one-to-many"
+
+      },
+
+      {
+
+        "id": "orderh.analysis",
+
+        "fromTable": "orderh",
+
+        "fromColumn": "ohinvref",
+
+        "toTable": "analysis",
+
+        "toColumn": "sainv",
+
+        "relationshipType": "one-to-many"
+
+      },
+
+      {
+
+        "id": "orderh.customer",
+
+        "fromTable": "orderh",
+
+        "fromColumn": "custcode",
+
+        "toTable": "customer",
+
+        "toColumn": "code",
+
+        "relationshipType": "many-to-one"
+
+      },
+
+      {
+
+        "id": "analysis.customer",
+
+        "fromTable": "analysis",
+
+        "fromColumn": "sacust",
+
+        "toTable": "customer",
+
+        "toColumn": "code",
+
+        "relationshipType": "many-to-one"
+
+      },
+
+      {
+
+        "id": "orderh.customer",
+
+        "fromTable": "orderh",
+
+        "fromColumn": "custcode",
+
+        "toTable": "customer",
+
+        "toColumn": "code",
+
+        "relationshipType": "many-to-one"
+
+      },
+
+      {
+
+        "id": "product.prodgrp",
+
+        "fromTable": "product",
+
+        "fromColumn": "group",
+
+        "toTable": "prodgrp",
+
+        "toColumn": "code",
+
+        "relationshipType": "many-to-one"
+
+      },
+
+      {
+
+        "id": "customer.rigeographic",
+
+        "fromTable": "customer",
+
+        "fromColumn": "terr",
+
+        "toTable": "rigepgraphic",
+
+        "toColumn": "regioncode",
+
+        "relationshipType": "many-to-one"
+
+      },
+
+      {
+
+        "id": "orderh.rigeographic",
+
+        "fromTable": "orderh",
+
+        "fromColumn": "terr",
+
+        "toTable": "rigepgraphic",
+
+        "toColumn": "regioncode",
+
+        "relationshipType": "many-to-one"
+
+      }
+
+    ],
+
+    "casingNote": "Column keys are the lowercase Parquet names. dbisamName is the real stored case in live Exportmaster (DBISAM), harvested via ODBC. Both backends are case-INSENSITIVE in SQL, so either casing resolves on either; keep all column references inside the SQL string (Power Query M field access is case-SENSITIVE, so never field-access a source column)."
+
+  }
+
+}
+
+

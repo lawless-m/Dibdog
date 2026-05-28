@@ -1,0 +1,1 @@
+select_statement(all_rows,[function_call('COUNT',[star])],[table(identifier(product),no_alias)],[where(cmp(gt,identifier(price),integer_literal(0)))]).

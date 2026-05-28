@@ -1,0 +1,22 @@
+id = "0023-ri-order-line-indexer__ExportmasterService__line23"
+status = "expected-divergent"
+provenance = "product-log"
+source = "/tmp/harvest-ri/ri-order-line-indexer__ExportmasterService__line23.sql"
+tags = ["raw-import", "ddl-out-of-scope", "create-table"]
+notes = """
+Added via tools/corpus-add.sh from the raw file at /tmp/harvest-ri/ri-order-line-indexer__ExportmasterService__line23.sql.
+SQL copied verbatim. Promote via tools/corpus-promote.sh once the
+grammar covers the construct(s) this query uses.
+"""
+fixtures = []
+
+[divergence]
+reason = "CREATE TABLE is intentionally out of grammar scope per FOUNDATIONS.md ('bounded scope' — DBISAM's CREATE TABLE has 40+ clauses including encryption, locale, blob block sizes, indexes). The engine accepts the SQL because the indexer pipelines emit real DDL, but the grammar deliberately doesn't model it. See memory dbisam-statement-vocabulary.md for the full statement-vocabulary picture (the grammar currently covers 4 of 18 top-level statement keywords; CREATE is one of the unhandled ones)."
+reference = "docs/DIVERGENCES.md"
+
+[[history]]
+at = "2026-05-27T15:40:23Z"
+from = "pending"
+to = "expected-divergent"
+by = "claude-code"
+reason = "Slice #59 cleanup — CREATE TABLE intentionally unimplemented (DDL out of scope per FOUNDATIONS.md); engine accepts, grammar deliberately doesn't model."

@@ -1,0 +1,1 @@
+{"verdict":"rejected","reqcode":"0x2ead","catalog":"NISAINT_CS","message":"Expected end of statement but instead found , in SELECT SQL statement","code_a":1,"code_b":35}

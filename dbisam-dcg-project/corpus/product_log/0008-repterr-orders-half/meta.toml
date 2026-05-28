@@ -1,0 +1,35 @@
+id = "0008-repterr-orders-half"
+status = "meaningful"
+provenance = "reduced-from-0006-repterr-union-quotes-orders"
+tags = [
+    "select",
+    "group-by",
+    "aggregate",
+    "sum",
+    "function-call",
+    "extract",
+    "current-date",
+    "is-null",
+    "string-literal-projection",
+]
+notes = """
+The 'orders' half of the UNION query 0006, isolated. Same shape as
+0007 (its quotes-half sibling) against the orderh table with a
+slightly different IS NULL guard (ohinvref vs qtresultorderref).
+Having both halves in the corpus means the grammar's IS NULL
+handling is tested against two distinct identifier names — if a
+grammar bug were column-name-sensitive (it shouldn't be), the
+divergence would surface.
+"""
+fixtures = []
+
+[reduction]
+from_id = "0006-repterr-union-quotes-orders"
+notes = "Kept the second SELECT of the UNION verbatim; removed UNION and the first SELECT."
+
+[[history]]
+at = "2026-05-27T09:59:44Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Promotion checks passed during slice #33 — column aliases (AS and bare)."

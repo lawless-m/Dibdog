@@ -1,0 +1,18 @@
+id = "0007-group-by-dedup"
+status = "meaningful"
+provenance = "manual"
+source = "corpus/raw/group-by-dedup.sql"
+tags = ["raw-import"]
+notes = """
+Added via tools/corpus-add.sh from the raw file at corpus/raw/group-by-dedup.sql.
+SQL copied verbatim. Promote via tools/corpus-promote.sh once the
+grammar covers the construct(s) this query uses.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-27T08:33:08Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Promotion checks passed during slice #23 — GROUP BY now in grammar."

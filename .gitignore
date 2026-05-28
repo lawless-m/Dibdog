@@ -1,0 +1,13 @@
+# Rust build artifacts
+target/
+
+# Claude Code's local scheduler state (per-machine runtime artifact)
+.claude/
+
+# The original project archive — now superseded by the dbisam-dcg-project/ tree
+dbisam-dcg-project.zip
+
+# Editor / OS noise
+*.swp
+*.swo
+.DS_Store

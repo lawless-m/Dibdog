@@ -1,0 +1,15 @@
+id = "0100-drop-table-bare"
+status = "meaningful"
+provenance = "manual"
+tags = ["drop-table", "ddl", "statement-canary"]
+notes = """
+DROP TABLE on a non-existent table. DBISAM silently accepts (slice #63 finding); grammar parses cleanly. Canary for the DROP TABLE statement path.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-28T09:58:17Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Slice #74 — statement-type canary."

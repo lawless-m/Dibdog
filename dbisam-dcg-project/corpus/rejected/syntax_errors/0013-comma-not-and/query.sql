@@ -1,0 +1,1 @@
+select * from CUSTOMER where a = 1, b = 2

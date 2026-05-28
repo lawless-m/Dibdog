@@ -1,0 +1,1 @@
+SELECT Analysis.SACREDIT, Analysis.SAREF, Analysis.SAINV, Analysis.SADATE, Analysis.SATERR, Analysis.SACUST, Analysis.SAPRODUCT, Analysis.SACOMMOD, Analysis.SAVAL FROM NISAINT_CS\Analysis Analysis WHERE (Analysis.SASELLCO=3) and sadate > current_date() - 90

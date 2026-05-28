@@ -1,0 +1,1 @@
+drop_table(identifier(no_such_canary),if_exists).

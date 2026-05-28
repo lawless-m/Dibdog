@@ -1,0 +1,18 @@
+id = "0019-ri-exportmaster-synchro__ExportmasterService__line222"
+status = "meaningful"
+provenance = "product-log"
+source = "/tmp/harvest-ri/ri-exportmaster-synchro__ExportmasterService__line222.sql"
+tags = ["raw-import"]
+notes = """
+Added via tools/corpus-add.sh from the raw file at /tmp/harvest-ri/ri-exportmaster-synchro__ExportmasterService__line222.sql.
+SQL copied verbatim. Promote via tools/corpus-promote.sh once the
+grammar covers the construct(s) this query uses.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-27T15:09:36Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Slice — JDBC ? parameter placeholder."

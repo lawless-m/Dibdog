@@ -1,0 +1,34 @@
+id = "0007-repterr-quotes-half"
+status = "meaningful"
+provenance = "reduced-from-0006-repterr-union-quotes-orders"
+tags = [
+    "select",
+    "group-by",
+    "aggregate",
+    "sum",
+    "function-call",
+    "extract",
+    "current-date",
+    "is-null",
+    "string-literal-projection",
+]
+notes = """
+The 'quotes' half of the UNION query 0006, isolated. Exercises one
+SELECT against quoteh with aggregate + GROUP BY + nested EXTRACT
+function calls + IS NULL predicate + literal-string projection, but
+WITHOUT the UNION layer. Splitting at the natural UNION boundary
+means a grammar failure on this entry vs the full 0006 cleanly
+attributes blame to either UNION-handling or the per-SELECT shape.
+"""
+fixtures = []
+
+[reduction]
+from_id = "0006-repterr-union-quotes-orders"
+notes = "Kept the first SELECT of the UNION verbatim; removed UNION and the second SELECT."
+
+[[history]]
+at = "2026-05-27T09:59:44Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Promotion checks passed during slice #33 — column aliases (AS and bare)."

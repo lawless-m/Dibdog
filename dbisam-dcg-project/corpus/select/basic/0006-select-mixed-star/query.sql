@@ -1,0 +1,1 @@
+select sadate, * from analysis

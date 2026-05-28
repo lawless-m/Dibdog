@@ -1,0 +1,21 @@
+id = "0113-pqharvest-200698239752"
+status = "meaningful"
+provenance = "power-bi-observed"
+source = "../MrsFlow/examples/xlsx_pq/mnt/RIVSTS01_SHARE/Finance/Finance_Secure/Commercial_Finance/Jacks_Docs/SQL_Queries/Power_Query_Dave_Promotions.xlsx/Query1.m"
+tags = ["harvest", "static-extracted", "pq-literal"]
+notes = """
+Statically extracted from a quoted SELECT string in a .pq / .m file
+via tools/harvest-pq.sh. Some entries will be syntactically incomplete
+because the source file builds the final SQL via Power Query M string
+concatenation (`& "..."`) at runtime — static extraction picks up
+the first quoted fragment only. The engine verdict captured for this
+entry is the authoritative signal on whether it stands on its own.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-27T12:29:51Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Slice #42 — agreed-rejection promotion (no expected.term; both grammar and engine reject)."

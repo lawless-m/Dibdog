@@ -1,0 +1,1 @@
+insert into omg (select, from, table, where, group, having, order, join) values (1,2,3,4,5,6,7,8)

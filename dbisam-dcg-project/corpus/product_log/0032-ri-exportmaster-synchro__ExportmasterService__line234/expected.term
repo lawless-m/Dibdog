@@ -1,0 +1,1 @@
+select_statement(all_rows,[function_call('COUNT',[identifier('LOCKSTR')])],[table(identifier('LOCKS'),no_alias)],[where(and(or(eq(identifier('PREFIX'),integer_literal(4)),eq(identifier('PREFIX'),integer_literal(2))),eq(identifier('LOCKSTR'),parameter(positional))))]).

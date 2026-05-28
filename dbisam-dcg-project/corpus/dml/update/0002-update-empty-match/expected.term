@@ -1,0 +1,1 @@
+update_statement(identifier(product),[set(identifier(price),integer_literal(0))],where(eq(identifier(code),string_literal('NOPE')))).

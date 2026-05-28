@@ -1,0 +1,15 @@
+id = "0100-drop-index-bare"
+status = "meaningful"
+provenance = "manual"
+tags = ["drop-index", "ddl", "statement-canary"]
+notes = """
+DROP INDEX with bare name. Engine silently accepts even on missing indexes (slice #69).
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-28T09:58:17Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Slice #74 — statement-type canary."

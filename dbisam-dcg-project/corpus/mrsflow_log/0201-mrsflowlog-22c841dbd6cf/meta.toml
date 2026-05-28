@@ -1,0 +1,30 @@
+id = "0201-mrsflowlog-22c841dbd6cf"
+status = "expected-divergent"
+provenance = "mrsflow-runtime-log"
+source = "/tmp/mrsflow.log"
+first_seen_at = "2026-05-26T21:06:39.980377173+00:00"
+tags = ["harvest", "mrsflow-runtime", "dynamic-capture", "schema-divergence"]
+notes = """
+Captured at runtime from a mrsflow Exportmaster.Query path with
+MRSFLOW_SQL_LOG enabled. Unlike the static .pq/.m extraction
+(power_bi_observed/), this is the SQL string AFTER any M-language
+concatenation and parameter interpolation — i.e., what the engine
+actually sees on the wire.
+
+REJECTED by the engine because `no_such_table` is not in the
+catalog. The DCG is schema-agnostic by design — a FROM-clause
+table reference is just a name; engine-side catalog validation is
+not a grammar concern. This is the canonical 0x2b02 case.
+"""
+fixtures = []
+
+[divergence]
+reason = "Engine rejects with reqcode 0x2b02 (table not found) — `no_such_table` is not in the DBISAM catalog. The grammar accepts the SQL because it does not (and is not designed to) model table-existence; the DCG validates syntactic shape only, and treats every FROM-clause reference as an opaque name."
+reference = "docs/reqcodes.md#0x2b02-table-not-found"
+
+[[history]]
+at = "2026-05-27T11:00:32Z"
+from = "pending"
+to = "expected-divergent"
+by = "claude-code"
+reason = "Slice #39 triage — schema-validation rejection (table/column not in catalog); grammar is schema-agnostic by design."

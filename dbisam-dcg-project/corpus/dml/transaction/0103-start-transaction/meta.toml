@@ -1,0 +1,15 @@
+id = "0103-start-transaction"
+status = "meaningful"
+provenance = "manual"
+tags = ["start-transaction", "transaction", "statement-canary"]
+notes = """
+START TRANSACTION — TRANSACTION keyword required (slice #64).
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-28T09:58:17Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Slice #74 — statement-type canary."

@@ -1,0 +1,1 @@
+CREATE INDEX idx_canary ON no_such_canary (v)

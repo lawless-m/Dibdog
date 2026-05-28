@@ -1,0 +1,1 @@
+select_statement(all_rows,[identifier(ref)],[table(identifier(orderi),no_alias)],[where(eq(identifier(product),string_literal('*OFAFR')))]).

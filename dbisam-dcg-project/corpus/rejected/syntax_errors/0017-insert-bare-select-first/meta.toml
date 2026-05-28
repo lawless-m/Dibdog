@@ -1,0 +1,50 @@
+id = "0017-insert-bare-select-first"
+status = "expected-divergent"
+provenance = "manual"
+tags = ["insert", "grammar-over-permissive", "keyword-named-column", "parser-ambiguity"]
+notes = """
+Documents a precise over-permissiveness in our grammar surfaced by
+Matt's "omg" demonstration on rivsem04. He created a table whose
+columns are all SQL reserved keywords:
+
+    create table omg (
+      select int, from int, table int, where int, group int,
+      having int, order int, join int
+    );
+
+Inserting into it with the column-list in source order requires
+quoting only ONE of those eight: the first one, "select". Move
+select anywhere else in the list, or quote it, and the bare form is
+fine.
+
+The engine rejects this exact shape with 0x2ead ("Expected
+expression but instead found ,") because `INSERT INTO <table> (`
+followed by `select` triggers an internal parser path that briefly
+considers a paren-wrapped sub-source, and the comma after `select`
+derails it. The grammar accepts it because the column list is just
+`ident_list//1` and doesn't notice position or token content.
+
+Not worth fixing — the disambiguation would be ugly (a one-keyword,
+one-position contextual rule) and the engine catches it the moment
+a real query runs. See DIVERGENCES.md §9.
+
+Probed verdicts (live, slice #52 follow-up):
+
+  insert into omg (select, ..)    -> rejected  (this entry)
+  insert into omg ("select", ..)  -> accepted  (Matt's working form)
+  insert into omg (from, .., select, ..) -> accepted  (not first)
+  select select from omg          -> accepted  (other context)
+  create table omg(select int,..) -> accepted  (DDL context)
+"""
+fixtures = []
+
+[divergence]
+reason = "Bare `select` as the first identifier inside an INSERT column list creates a positional ambiguity in DBISAM's parser — it briefly considers a paren-wrapped sub-source before committing to a column list, and the keyword `select` pushes it down the wrong branch. Move the keyword to any other position, or quote it, and the engine is happy. Our grammar's column-list rule uses generic `identifier//1` with no positional check, so this exact shape parses cleanly. Documented over-permissiveness; engine catches at execution time. Demonstrates DBISAM's broader pattern of being unusually permissive about keywords-as-identifiers (see also divergence #2)."
+reference = "docs/DIVERGENCES.md#9-bare-select-as-first-identifier-in-an-insert-column-list"
+
+[[history]]
+at = "2026-05-27T14:05:33Z"
+from = "pending"
+to = "expected-divergent"
+by = "claude-code"
+reason = "Surfaced during Matt's omg-table demonstration; documented as DIVERGENCES.md §9."

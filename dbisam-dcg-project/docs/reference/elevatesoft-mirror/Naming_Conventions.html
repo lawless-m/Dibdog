@@ -1,0 +1,590 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head><script type="text/javascript" async src="https://www.googletagmanager.com/gtag/js?id=UA-15048886-1"">
+
+</script>
+<script type="text/javascript">
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-15048886-1');
+</script>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link rel="alternate" type="application/rss+xml" title="Elevate Software Blog RSS 2.0 Feed" href="https://www.elevatesoft.com/blog?action=rss2feed"><meta name="Keywords" content="web builder,
+web development,
+rad web development,
+pascal web development,
+delphi web development,
+database web development,
+web application,
+rad web application,
+rapid web application development,
+delphi web application,
+pascal web application,
+database web application,
+web ide,
+web form designer,
+web wysiwyg form designer,
+web framework,
+html5,
+ajax,
+canvas,
+local storage,
+themes,
+javascript,
+javascript compiler,
+javascript compression
+database, sql database,
+sql database engine,
+delphi database,
+delphi database components,
+delphi database engine,
+delphi sql database,
+delphi sql database engine,
+compact delphi database,
+compact delphi database engine,
+compact delphi sql database,
+compact delphi sql database engine,
+embedded delphi database,
+embedded delphi database engine,
+embedded delphi sql database,
+embedded delphi sql database engine,
+compact lazarus database,
+compact lazarus database engine,
+compact lazarus sql database,
+compact lazarus sql database engine,
+embedded lazarus database,
+embedded lazarus database engine,
+embedded lazarus sql database,
+embedded lazarus sql database engine,
+compact free pascal database,
+compact free pascal database engine,
+compact free pascal sql database,
+compact free pascal sql database engine,
+embedded free pascal database,
+embedded free pascal database engine,
+embedded free pascal sql database,
+embedded free pascal sql database engine,
+odbc database,
+odbc database components,
+odbc database engine,
+odbc sql database,
+odbc sql database engine,
+compact odbc database,
+compact odbc database engine,
+compact odbc sql database,
+compact odbc sql database engine,
+embedded odbc database,
+embedded odbc database engine,
+embedded odbc sql database,
+embedded odbc sql database engine,
+vb database,
+vb database components,
+vb database engine,
+vb sql database,
+vb sql database engine,
+compact vb database,
+compact vb database engine,
+compact vb sql database,
+compact vb sql database engine,
+embedded vb database,
+embedded vb database engine,
+embedded vb sql database,
+embedded vb sql database engine,
+c# database,
+c# database components,
+c# database engine,
+c# sql database,
+c# sql database engine,
+compact c# database,
+compact c# database engine,
+compact c# sql database,
+compact c# sql database engine,
+embedded c# database,
+embedded c# database engine,
+embedded c# sql database,
+embedded c# sql database engine,
+.net database,
+.net database components,
+.net database engine,
+.net sql database,
+.net sql database engine,
+compact .net database,
+compact .net database engine,
+compact .net sql database,
+compact .net sql database engine,
+embedded .net database,
+embedded .net database engine,
+embedded .net sql database,
+embedded .net sql database engine
+php database,
+php database components,
+php database engine,
+php sql database,
+php sql database engine,
+compact php database,
+compact php database engine,
+compact php sql database,
+compact php sql database engine,
+embedded php database,
+embedded php database engine,
+embedded php sql database,
+embedded php sql database engine,">
+<meta name="google-site-verification" content="lm7_CbK2t-5fdfErGPRZRqauyTNNCPnzuNoCI9m9rKM">
+<meta name="Generator" content="Elevate Software, Inc. Automated Web Site System">
+<link rel="stylesheet" href="https://www.elevatesoft.com/elevate.css" type="text/css"><title>Naming Conventions</title></head>
+<body><div class="page"><div class="pagebody"><div class="pagecontent"><div class="header"><table width="100%" cellspacing=0 cellpadding=0><tr align="left" valign="middle"><td rowspan="1" colspan="1" align="left" valign="middle" width="2%"><br>
+</td><td rowspan="1" colspan="1" align="left" valign="middle" width="30%"><br>
+<a href="https://www.elevatesoft.com/home" name="Elevate Software"><img src="https://www.elevatesoft.com/whitelogosml.png" border=0 alt="Elevate Software" align="middle" height="100" width="250"></a></td><td rowspan="1" colspan="1" align="right" valign="middle" width="66%"><br>
+<br>
+<img src="https://www.elevatesoft.com/user.png" border=0 alt="Login" align="top" height="16" width="16">&#160;<a class="smalllink" href="https://www.elevatesoft.com/user?action=login&area=productmanuals_dbisam" name="Login">Login</a><br>
+<br>
+<a class="menulink" href="https://www.elevatesoft.com/products" name="Products">Products</a><img src="https://www.elevatesoft.com/bullet_gray.png" border=0 alt="Bullet" align="top" height="16" width="16"><a class="menulink" href="https://www.elevatesoft.com/sales" name="Sales">Sales</a><img src="https://www.elevatesoft.com/bullet_gray.png" border=0 alt="Bullet" align="top" height="16" width="16"><a class="menulink" href="https://www.elevatesoft.com/support" name="Support">Support</a><img src="https://www.elevatesoft.com/bullet_gray.png" border=0 alt="Bullet" align="top" height="16" width="16"><a class="menulink" href="https://www.elevatesoft.com/download" name="Downloads">Downloads</a><img src="https://www.elevatesoft.com/bullet_gray.png" border=0 alt="Bullet" align="top" height="16" width="16"><a class="menulink" href="https://www.elevatesoft.com/about" name="About">About</a></td><td rowspan="1" colspan="1" align="right" valign="middle" width="2%"><br>
+</td></tr>
+</table>
+<table width="100%" cellspacing=0 cellpadding=0><tr align="left" valign="middle"><td rowspan="1" colspan="1" align="left" valign="middle" width="2%"><br>
+</td><td rowspan="1" colspan="1" align="left" valign="middle" width="96%"><hr></td><td rowspan="1" colspan="1" align="left" valign="middle" width="2%"><br>
+</td></tr>
+</table>
+<table width="100%" cellspacing=0 cellpadding=0><tr align="left" valign="middle"><td rowspan="1" colspan="1" align="left" valign="middle" width="2%"><br>
+</td><td rowspan="1" colspan="1" align="left" valign="middle" width="96%"><a class="smalllink" href="https://www.elevatesoft.com/home" name="Home">Home</a>&#160;<span class="small">»</span>&#160;<a class="smalllink" href="https://www.elevatesoft.com/support" name="Technical Support">Technical Support</a>&#160;<span class="small">»</span>&#160;<a class="smalllink" href="https://www.elevatesoft.com/support?category=dbisam" name="DBISAM Technical Support">DBISAM Technical Support</a>&#160;<span class="small">»</span>&#160;<a class="smalllink" href="https://www.elevatesoft.com/manual?category=dbisam" name="Product Manuals">Product Manuals</a>&#160;<span class="small">»</span>&#160;<a class="smalllink" href="https://www.elevatesoft.com/manual?action=contents&id=dbisam4&product=delphi&version=5" name="DBISAM Version 4 Manual for Delphi 5">DBISAM Version 4 Manual for Delphi 5</a>&#160;<span class="small">»</span>&#160;<a class="smalllink" href="https://www.elevatesoft.com/manual?action=topics&id=dbisam4&product=delphi&version=5&section=sql_reference" name="SQL Reference">SQL Reference</a>&#160;<span class="small">»</span>&#160;<span class="small">Naming Conventions</span></td><td rowspan="1" colspan="1" align="left" valign="middle" width="2%"><br>
+</td></tr>
+</table>
+<br>
+</div>
+<div class="colmask rightmenu"><div class="columnleft"><div class="box"><div class="box_left"><div class="box_right"><div class="boxbtm_back"><div class="boxbtm_left"><div class="boxbtm_right"><div class="boxhdr_back"><div class="boxhdr_left"><div class="boxhdr_right"><div class="box_contents"><img src="https://www.elevatesoft.com/folder_wrench.png" border=0 alt="Icon" align="bottom" height="16" width="16">&#160;<span class="subhead">Naming Conventions</span><br>
+<br>
+<div class="spacer"><span class="largehead">Introduction<hr></span>DBISAM requires that certain naming conventions be adhered to when executing SQL.  The following rules and naming conventions apply to all supported SQL statements in DBISAM.<br>
+<br>
+<span class="largehead">Table Names<hr></span>ANSI-standard SQL specifies that each table name must be a single word comprised of alphanumeric characters and the underscore symbol (_).  However, DBISAM&#x27;s SQL is enhanced to support multi-word table names by enclosing them in double quotes (&quot;&quot;) or square brackets ([]):<br>
+<br>
+<pre>SELECT *
+FROM &quot;Customer Data&quot;</pre><br>
+DBISAM&#x27;s SQL also supports full file and path specifications in table references for SQL statements being executed within a local session.  Table references with path or filename extensions must be enclosed in double quotes (&quot;&quot;) or square brackets ([]).  For example:<br>
+<br>
+<pre>SELECT *
+FROM &quot;c:\sample\parts&quot;</pre><br>
+or<br>
+<br>
+<pre>SELECT *
+FROM &quot;parts.dat&quot;</pre><br>
+<div class="note"><img src="https://www.elevatesoft.com/information.png" border=0 alt="Information" align="bottom" height="16" width="16">&#160;It is not recommended that you specifiy the .dat file name extension in SQL statements for two reasons:</div>
+<br>
+1) First of all, it is possible for the developer to change the default table file extensions for data, index, and BLOB files from the defaults of &quot;.dat&quot;, &quot;.idx&quot;, and &quot;.blb&quot; to anything that is desired.  Please see the <a href="https://www.elevatesoft.com/manual?action=viewtopic&id=dbisam4&product=delphi&version=5&topic=dbisam_architecture" name="DBISAM Architecture">DBISAM Architecture</a> topic for more information.<br>
+<br>
+2) Using file paths and extensions at all in SQL statements makes the SQL less portable to other database engines or servers.<br>
+<br>
+DBISAM&#x27;s SQL also supports database name specifications in table references for SQL statements being executed within a remote session.  Table references with database must be enclosed in double quotes (&quot;&quot;) or square brackets ([]).  For example:<br>
+<br>
+<pre>SELECT *
+FROM &quot;\Sample Data\parts&quot;</pre><br>
+<div class="note"><img src="https://www.elevatesoft.com/information.png" border=0 alt="Information" align="bottom" height="16" width="16">&#160;The database name used with remote sessions is not a directory name like it is with local sessions.  Instead, it must be a logical database name that matches that of a database defined on the database server that you are accessing with the SQL statement.</div>
+<br>
+To use an in-memory table in an SQL statement within both local and remote sessions, just prefix the table name with the special &quot;Memory&quot; database name:<br>
+<br>
+<pre>SELECT *
+FROM &quot;\Memory\parts&quot;</pre><br>
+Please see the <a href="https://www.elevatesoft.com/manual?action=viewtopic&id=dbisam4&product=delphi&version=5&topic=in-memory_tables" name="In-Memory Tables">In-Memory Tables</a> topic for more information.<br>
+<br>
+<span class="largehead">Column Names<hr></span>ANSI-standard SQL specifies that each column name be a single word comprised of alphanumeric characters and the underscore symbol (_).  However, DBISAM&#x27;s SQL is enhanced to support multi-word column names.  Also, DBISAM&#x27;s SQL supports multi-word column names and column names that duplicate SQL keywords as long as those column names are enclosed in double quotes (&quot;&quot;) or square brackets ([]) or prefaced with an SQL table name or table correlation name.  For example, the following column name consists of two words:<br>
+<br>
+<pre>SELECT E.&quot;Emp Id&quot;
+FROM employee E</pre><br>
+In the next example, the column name is the same as the SQL keyword DATE:<br>
+<br>
+<pre>SELECT weblog.[date]
+FROM weblog</pre><br>
+<span class="largehead">String Constants<hr></span>ANSI-standard SQL specifies that string constants be enclosed in single quotes (&#x27;&#x27;), and DBISAM&#x27;s SQL follows this convention.  For example, the following string constant is used in an SQL SELECT WHERE clause:<br>
+<br>
+<pre>SELECT *
+FROM customer
+WHERE Company=&#x27;ABC Widgets&#x27;</pre><br>
+<div class="note"><img src="https://www.elevatesoft.com/information.png" border=0 alt="Information" align="bottom" height="16" width="16">&#160;String constants can contain any character in the ANSI character set except for the non-printable characters below character 32 (space).  For example, if you wish to embed a carriage-return and line feed in a string constant, you would need to use the following syntax:</div>
+<br>
+<pre>UPDATE customer SET Notes=&#x27;ABC Widgets&#x27;+
+#13+#10+&#x27;Located in New York City&#x27;</pre><br>
+The pound sign can be used with the ordinal value of any ANSI character in order to represent that single character as a constant.<br>
+<br>
+To streamline the above, you can use the <a href="https://www.elevatesoft.com/manual?action=viewcomp&id=dbisam4&product=delphi&version=5&comp=TDBISAMEngine" name="TDBISAMEngine">TDBISAMEngine</a> <a href="https://www.elevatesoft.com/manual?action=viewmethod&id=dbisam4&product=delphi&version=5&comp=TDBISAMEngine&method=QuotedSQLStr" name="QuotedSQLStr">QuotedSQLStr</a> method to properly format and escape any embedded single quotes or non-printable characters in a string constant.  Please see the <a href="https://www.elevatesoft.com/manual?action=viewtopic&id=dbisam4&product=delphi&version=5&topic=executing_sql_queries" name="Executing SQL Queries">Executing SQL Queries</a> topic for more information.<br>
+<br>
+<span class="largehead">Date, Time, TimeStamp, and Number Constants<hr></span>DBISAM&#x27;s SQL uses ANSI&#x2F;ISO date and number formatting for all date, time, timestamp (date&#x2F;time), and number constants, which is consistent with ANSI-standard SQL except for missing support for date and time interval constants, which are not supported in DBISAM&#x27;s SQL currently.  The formats are as follows:<br>
+<br>
+<div class="gridbox"><div class="gridbox_left"><div class="gridbox_right"><div class="gridboxbtm_back"><div class="gridboxbtm_left"><div class="gridboxbtm_right"><div class="gridboxhdr_back"><div class="gridboxhdr_left"><div class="gridboxhdr_right"><div class="gridbox_contents"><table class="gridhead" width="100%" cellspacing=1 cellpadding=4><tr align="center" valign="middle"><td rowspan="1" colspan="1" align="left" valign="top" width="40%"><span class="smallhead">Constant</span></td><td rowspan="1" colspan="1" align="left" valign="top" width="60%"><span class="smallhead">Format</span></td></tr>
+</table>
+<table class="gridshade" width="100%" cellspacing=1 cellpadding=4><tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">Dates</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">The date format is yyyy-mm-dd where yyyy is the year (4 digits required), mm is the month (leading zero optional), and the day (leading zero optional).<br>
+</td></tr>
+<tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">Times</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">The time format is hh:mm:ss.zzz am&#x2F;pm where hh is the hour (leading zero optional), mm is the minutes (leading zero optional), ss is the seconds (leading zero optional), zzz is the milliseconds (leading zero optional), and the am&#x2F;pm designation for times using the 12-hour clock.  The seconds and milliseconds are optional when specifying a time, as is the am&#x2F;pm designation.  If the am&#x2F;pm designation is omitted, the time is expected to be in 24-hour clock format.<br>
+</td></tr>
+<tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">Timestamps (date&#x2F;time)</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">The timestamp format is a combination of the date format and the time format with a space in-between the two formats.<br>
+</td></tr>
+<tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">Numbers</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">All numbers are expected to use the period (.) as the decimal separator and no monetary symbols must be used.  DBISAM&#x27;s SQL does not support scientific notation in number constants currently.</td></tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+All date, time, and timestamp constants must be enclosed in single quotes (&#x27;&#x27;) when specified in an SQL statement.  For example:<br>
+<br>
+<pre>SELECT *
+FROM orders
+WHERE (saledate &lt;= &#x27;1998-01-23&#x27;)</pre><br>
+<span class="largehead">Boolean Constants<hr></span>The boolean constants TRUE and FALSE can be used for specifying a True or False value.  These constants are case-insensitive (True=TRUE).  For example:<br>
+<br>
+<pre>SELECT *
+FROM transfers
+WHERE (paid = TRUE) AND NOT (incomplete = FALSE)</pre><br>
+<span class="largehead">Table Correlation Names<hr></span>Compliant with ANSI-standard SQL, table correlation names can be used in DBISAM&#x27;s SQL to explicitly associate a column with the table from which it is derived.  This is especially useful when multiple columns of the same name appear in the same query, typically in multi-table queries.  A table correlation name is defined by following the table reference in the SQL statement with a unique identifier.  This identifier, or table correlation name, can then be used to prefix a column name.  The base table name is the default implicit correlation name, irrespective of whether the table name is enclosed in double quotes (&quot;&quot;) or square brackets ([]).  The base table name is defined as the table name for the DBISAM table not including the full path or any file extensions.  For example, the base table name for the physical table &quot;c:\temp\customer.dat&quot; is &quot;customer&quot; as show in this example:<br>
+<br>
+<pre>SELECT *
+FROM &quot;c:\temp\customer.dat&quot;
+LEFT OUTER JOIN &quot;c:\temp\orders.dat&quot;
+ON (customer.custno = orders.custno)</pre><br>
+You may also use the physical file name for the table as a table correlation name, although it&#x27;s not required nor recommended:<br>
+<br>
+<pre>SELECT *
+FROM &quot;customer.dat&quot;
+LEFT OUTER JOIN &quot;orders.dat&quot;
+ON (&quot;customer.dat&quot;.custno = &quot;orders.dat&quot;.custno)</pre><br>
+And finally, you may use a distinctive token as a correlation name (and prefix all column references with the same correlation name):<br>
+<br>
+<pre>SELECT *
+FROM &quot;customer&quot; C
+LEFT OUTER JOIN &quot;orders&quot; O
+ON (C.custno = O.custno)</pre><br>
+<span class="largehead">Column Correlation Names<hr></span>You can use the AS keyword to assign a correlation name to a column or column expression within a DBISAM SQL SELECT statement, which is compliant with ANSI-standard SQL.  Column correlation names can be enclosed in double quotes (&quot;&quot;) and can contain embedded spaces.  The following example shows how to use the AS keyword to assign a column correlation name:<br>
+<br>
+<pre>SELECT
+customer.company AS &quot;Company Name&quot;,
+orders.orderno AS &quot;Order #&quot;,
+sum(items.qty) AS &quot;Total Qty&quot;
+FROM customer LEFT OUTER JOIN orders ON customer.custno=orders.custno
+LEFT OUTER JOIN items ON orders.orderno=items.orderno
+WHERE customer.company LIKE &#x27;%Diver%&#x27;
+GROUP BY 1,2
+ORDER BY 1</pre><br>
+You may also optionally exclude the AS keyword and simply specify the column correlation name directly after the column, as shown here:<br>
+<br>
+<pre>SELECT
+customer.company &quot;Company Name&quot;,
+orders.orderno &quot;Order #&quot;,
+sum(items.qty) &quot;Total Qty&quot;
+FROM customer LEFT OUTER JOIN orders ON customer.custno=orders.custno
+LEFT OUTER JOIN items ON orders.orderno=items.orderno
+WHERE customer.company LIKE &#x27;%Diver%&#x27;
+GROUP BY 1,2
+ORDER BY 1</pre><br>
+<span class="largehead">Embedded Comments<hr></span>Per ANSI-standard SQL, comments, or remarks, can be embedded in SQL statements to add clarity or explanation.  Text is designated as a comment and not treated as SQL by enclosing it within the beginning &#x2F;* and ending *&#x2F; comment symbols.  The symbols and comments need not be on the same line:<br>
+<br>
+<pre>&#x2F;*
+  This is a comment
+*&#x2F;
+SELECT SUBSTRING(company FROM 1 FOR 4) AS abbrev
+FROM customer</pre><br>
+Comments can also be embedded within an SQL statement.  This is useful when debugging an SQL statement, such as removing one clause for testing.<br>
+<br>
+<pre>SELECT company
+FROM customer
+&#x2F;* WHERE (state = &#x27;TX&#x27;) *&#x2F;
+ORDER BY company</pre><br>
+<span class="largehead">Reserved Words<hr></span>Below is an alphabetical list of words reserved by DBISAM&#x27;s SQL.  Avoid using these reserved words for the names of metadata objects (tables, columns, and indexes).  An exception occurs when reserved words are used as names for metadata objects.  If a metadata object must have a reserved word as it name, prevent the error by enclosing the name in double-quotes (&quot;&quot;) or square brackets ([]) or by prefixing the reference with the table name (in the case of a column name).<br>
+<br>
+<pre>ABS
+ACOS
+ADD
+ALL
+ALLTRIM
+ALTER
+AND
+AS
+ASC
+ASCENDING
+ASIN
+AT
+ATAN
+ATAN2
+AUTOINC
+AVG
+BETWEEN
+BINARY
+BIT
+BLOB
+BLOCK
+BOOL
+BOOLEAN
+BOTH
+BY
+BYTES
+CAST
+CEIL
+CEILING
+CHAR
+CHARACTER
+CHARCASE
+CHARS
+COALESCE
+COLUMN
+COLUMNS
+COMMIT
+COMPRESS
+CONCAT
+CONSTRAINT
+COS
+COT
+COUNT
+CREATE
+CURRENT_DATE
+CURRENT_GUID
+CURRENT_TIME
+CURRENT_TIMESTAMP
+DAY
+DAYOFWEEK
+DAYOFYEAR
+DAYSFROMMSECS
+DECIMAL
+DEFAULT
+DEGREES
+DELETE
+DELIMITER
+DESC
+DESCENDING
+DESCRIPTION
+DISTINCT
+DROP
+DUPBYTE
+ELSE
+EMPTY
+ENCRYPTED
+ESCAPE
+EXCEPT
+EXISTS
+EXP
+EXPORT
+EXTRACT
+FALSE
+FLOAT
+FLOOR
+FLUSH
+FOR
+FORCEINDEXREBUILD
+FROM
+FULL
+GRAPHIC
+GROUP
+GUID
+HAVING
+HEADERS
+HOUR
+HOURSFROMMSECS
+IDENT_CURRENT
+IDENTITY
+IF
+IFNULL
+IMPORT
+IN
+INCLUDE
+INDEX
+INNER
+INSERT
+INT
+INTEGER
+INTERSECT
+INTERVAL
+INTO
+IS
+JOIN
+KEY
+LARGEINT
+LAST
+LASTAUTOINC
+LCASE
+LEADING
+LEFT
+LENGTH
+LIKE
+LOCALE
+LOG
+LOG10
+LONGVARBINARY
+LONGVARCHAR
+LOWER
+LTRIM
+MAJOR
+MAX
+MAXIMUM
+MEMO
+MIN
+MINIMUM
+MINOR
+MINSFROMMSECS
+MINUTE
+MOD
+MONEY
+MONTH
+MSECOND
+MSECSFROMMSECS
+NOBACKUP
+NOCASE
+NOCHANGE
+NOJOINOPTIMIZE
+NONE
+NOT
+NULL
+NUMERIC
+OCCURS
+ON
+OPTIMIZE
+OR
+ORDER
+OUTER
+PAGE
+PI
+POS
+POSITION
+POWER
+PRIMARY
+RADIANS
+RAND
+RANGE
+REDEFINE
+RENAME
+REPAIR
+REPEAT
+REPLACE
+RIGHT
+ROLLBACK
+ROUND
+RTRIM
+RUNSUM
+SECOND
+SECSFROMMSECS
+SELECT
+SET
+SIGN
+SIN
+SIZE
+SMALLINT
+SPACE
+SQRT
+START
+STDDEV
+STOP
+SUBSTRING
+SUM
+TABLE
+TAN
+TEXT
+TEXTOCCURS
+TEXTSEARCH
+THEN
+TIME
+TIMESTAMP
+TO
+TOP
+TRAILBYTE
+TRAILING
+TRANSACTION
+TRIM
+TRUE
+TRUNC
+TRUNCATE
+UCASE
+UNION
+UNIQUE
+UPDATE
+UPGRADE
+UPPER
+USER
+VALUES
+VARBINARY
+VARBYTES
+VARCHAR
+VERIFY
+VERSION
+WEEK
+WHERE
+WITH
+WORD
+WORDS
+WORK
+YEAR
+YEARSFROMMSECS</pre><br>
+The following are operators used in DBISAM&#x27;s SQL.  Avoid using these characters in the names of metadata objects:<br>
+<br>
+<pre>|
++
+-
+*
+&#x2F;
+&lt;&gt;
+&lt;
+&gt;
+.
+;
+,
+=
+&lt;=
+&gt;=
+(
+)
+[
+]
+#</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="columnright"><div class="box"><div class="box_left"><div class="box_right"><div class="boxbtm_back"><div class="boxbtm_left"><div class="boxbtm_right"><div class="boxhdr_back"><div class="boxhdr_left"><div class="boxhdr_right"><div class="box_contents"><img src="https://www.elevatesoft.com/page_white_wrench.png" border=0 alt="More Support Options" align="bottom" height="16" width="16">&#160;<span class="sidehead">More Support Options</span><br>
+<br>
+<div class="spacer"><img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/forums?category=dbisam" name="Support Forums">Support Forums</a><br>
+<img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/supportfaq?category=dbisam" name="Frequently Asked Questions">Frequently Asked Questions</a><br>
+<img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/bulletins?category=dbisam" name="Technical Bulletins">Technical Bulletins</a><br>
+<img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/articles?category=dbisam" name="Technical Articles">Technical Articles</a><br>
+<hr><img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/incident?category=dbisam" name="Incident Reports">Incident Reports</a><br>
+<hr><img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/roadmap?category=dbisam" name="Roadmap">Roadmap</a><br>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer"><table width="100%" cellspacing=0 cellpadding=0><tr align="left" valign="top"><td rowspan="1" colspan="1" align="left" valign="top" width="2%"></td><td rowspan="1" colspan="1" align="left" valign="top" width="30%"><br>
+<br>
+<span class="small">This web page was last updated on</span><br>
+<span class="small">Tuesday, September 16, 2025  at  04:56 PM</span><br>
+<br>
+</td><td rowspan="1" colspan="1" align="right" valign="top" width="66%"><a class="menulink" href="https://www.elevatesoft.com/privacy" name="Privacy Policy">Privacy Policy</a><img src="https://www.elevatesoft.com/bullet_gray.png" border=0 alt="Bullet" align="top" height="16" width="16"><a class="menulink" href="https://www.elevatesoft.com/sitemap" name="Site Map">Site Map</a><br>
+<br>
+<span class="small">&#169; 2026 Elevate Software, Inc.  All Rights Reserved</span><br>
+<span class="small">Questions or comments ? <img src="https://www.elevatesoft.com/email.png" border=0 alt="E-mail" align="top" height="16" width="16"> E-mail us at <a href="mailto:info@elevatesoft.com" name="info@elevatesoft.com">info@elevatesoft.com</a></span><br>
+<br>
+</td><td rowspan="1" colspan="1" align="right" valign="top" width="2%"></td></tr>
+</table>
+</div>
+</div>
+</div>
+<img src="https://www.elevatesoft.com/bottombox.png" border=0 alt="Image" align="bottom" height="52" width="1000"></div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+ALTER TABLE no_such_canary ADD newcol INTEGER

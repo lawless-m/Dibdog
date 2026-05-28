@@ -1,0 +1,19 @@
+id = "0003-syntax-error-bare-from"
+status = "meaningful"
+provenance = "manual"
+tags = ["rejected", "syntax-error", "negative-test"]
+notes = """
+Three keywords with no projection, table, or predicate. Engine rejects
+with reqcode 0x2ead (parse error). The grammar MUST also reject; this
+is the canonical negative-test canary per ANTI_STUBS.md §"Negative
+tests are mandatory coverage". An over-permissive grammar that accepts
+this would silently degrade the project's correctness signal.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-27T12:29:51Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Slice #42 — agreed-rejection promotion (no expected.term; both grammar and engine reject)."

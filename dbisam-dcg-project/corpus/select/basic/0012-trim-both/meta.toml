@@ -1,0 +1,18 @@
+id = "0012-trim-both"
+status = "meaningful"
+provenance = "manual"
+source = "corpus/raw/trim-both.sql"
+tags = ["raw-import"]
+notes = """
+Added via tools/corpus-add.sh from the raw file at corpus/raw/trim-both.sql.
+SQL copied verbatim. Promote via tools/corpus-promote.sh once the
+grammar covers the construct(s) this query uses.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-27T09:15:55Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Promotion checks passed during slice #31 — TRIM special form."

@@ -1,0 +1,13 @@
+id = "0001-simple-projection"
+status = "meaningful"
+provenance = "manual"
+tags = ["select", "projection", "basic", "canary"]
+notes = "Smallest useful SELECT. Single uppercase identifier, single uppercase table, no WHERE, no ordering. The canary — if this doesn't parse/agree, everything downstream is broken."
+fixtures = []
+
+[[history]]
+at = "2026-05-26T20:30:00Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Promotion checks passed via tools/corpus-promote.sh: (1) no placeholders, (2) grammar parses to expected.term, (3) round-trip stable, (4) engine accepts. First meaningful entry in the project — promoted alongside slice #5 (lexical layer + bare SELECT)."

@@ -1,0 +1,1 @@
+select_statement(all_rows,[qualified(identifier('ORDERI'),identifier('REF')),qualified(identifier('ORDERI'),identifier('PRODUCT')),qualified(identifier('ORDERI'),identifier('DESC2'))],[table(identifier('ORDERI'),no_alias)],[]).

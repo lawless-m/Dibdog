@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX idx_unique_canary ON no_such_canary (v, w)

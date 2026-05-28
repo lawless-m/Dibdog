@@ -1,0 +1,39 @@
+id = "0205-mrsflowlog-2dbe086603d2"
+status = "expected-divergent"
+provenance = "mrsflow-runtime-log"
+source = "/tmp/mrsflow.log"
+first_seen_at = "2026-05-26T21:08:02.594767054+00:00"
+tags = ["harvest", "mrsflow-runtime", "dynamic-capture", "schema-divergence"]
+notes = """
+Captured at runtime from a mrsflow Exportmaster.Query path with
+MRSFLOW_SQL_LOG enabled. Unlike the static .pq/.m extraction
+(power_bi_observed/), this is the SQL string AFTER any M-language
+concatenation and parameter interpolation — i.e., what the engine
+actually sees on the wire.
+
+REJECTED. Error message: "Expected column name but instead found
+code in SELECT SQL statement" (reqcode 0x2ead, code_a=1, code_b=8).
+Investigation: `select code from CUSTOMER` accepts (CUSTOMER has a
+CODE column); `select code from product` accepts (product has a
+CODE column); `select code from analysis` rejects with the same
+message. The `analysis` table has SAREF/SACUST/SAPRODUCT/etc. but
+no `code` column. DBISAM's parser validates column-belongs-to-FROM-
+table EAGERLY, at parse time. The "Expected column name but
+instead found X" message is overloaded: true parse error OR
+"X is not a column on this table". The DCG should match the
+parser's syntactic strictness but stay schema-agnostic — schema
+validation is an engine concern, not a grammar concern. Catalogued
+in docs/reqcodes.md.
+"""
+fixtures = []
+
+[divergence]
+reason = "Engine rejects with reqcode 0x2ead (parse error) — the error message reads 'Expected column name but instead found code in SELECT SQL statement', but the actual cause is schema-level: the `analysis` table has no `code` column (it has SAREF/SACUST/SAPRODUCT/...). DBISAM's parser validates column-belongs-to-FROM-table eagerly and reuses the 0x2ead 'parse error' channel to surface it, which is why the message wording is misleading. The grammar accepts the SQL because column-to-table binding is a catalog concern outside the DCG's scope; the same SQL on a table that DOES have a `code` column (CUSTOMER, product) accepts cleanly."
+reference = "docs/reqcodes.md#0x2ead-parse-syntax-error"
+
+[[history]]
+at = "2026-05-27T11:00:32Z"
+from = "pending"
+to = "expected-divergent"
+by = "claude-code"
+reason = "Slice #39 triage — schema-validation rejection (table/column not in catalog); grammar is schema-agnostic by design."

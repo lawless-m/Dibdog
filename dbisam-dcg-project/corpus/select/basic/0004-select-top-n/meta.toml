@@ -1,0 +1,28 @@
+id = "0004-select-top-n"
+status = "meaningful"
+provenance = "manual"
+tags = ["select", "top", "dbisam-specific", "row-limit"]
+notes = """
+DBISAM places its row-limit clause AFTER the FROM (`SELECT * FROM t
+TOP n`), not before the projection (`SELECT TOP n ... FROM t`) the way
+T-SQL does, and not via a trailing LIMIT the way MySQL/Postgres do.
+This is a dialect quirk the grammar must handle and is the reason a
+generic SQL parser can't be reused as-is.
+
+Engine-verified by MrsFlow's em_smoke against rivsem04: returns one
+163-column product row.
+
+Companion negative observation worth a future entry: bare `SELECT *
+FROM product` (no TOP) is rejected by the engine on rivsem04 with
+reqcode 0x2ead. The reason is not yet diagnosed — possibly a
+query-size guard, possibly genuine dialect behaviour. Either way, the
+TOP form is the canonical accepted variant.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-27T08:22:04Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Promotion checks passed during slice #18 — TOP n now in grammar."

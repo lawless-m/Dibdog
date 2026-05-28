@@ -1,0 +1,15 @@
+id = "0100-empty-table"
+status = "meaningful"
+provenance = "manual"
+tags = ["empty-table", "maintenance", "statement-canary"]
+notes = """
+EMPTY TABLE on missing table. DBISAM EMPTY truncates; missing table errors operationally.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-28T09:58:17Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Slice #74 — statement-type canary."

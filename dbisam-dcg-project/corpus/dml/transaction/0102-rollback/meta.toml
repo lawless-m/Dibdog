@@ -1,0 +1,15 @@
+id = "0102-rollback"
+status = "meaningful"
+provenance = "manual"
+tags = ["rollback", "transaction", "statement-canary"]
+notes = """
+Bare ROLLBACK.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-28T09:58:17Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Slice #74 — statement-type canary."

@@ -1,0 +1,1 @@
+select (CODE) from CUSTOMER

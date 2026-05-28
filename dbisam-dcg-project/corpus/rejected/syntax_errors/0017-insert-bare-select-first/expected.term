@@ -1,0 +1,1 @@
+insert_statement(identifier(omg),cols([identifier(select),identifier(from),identifier(table),identifier(where),identifier(group),identifier(having),identifier(order),identifier(join)]),values([integer_literal(1),integer_literal(2),integer_literal(3),integer_literal(4),integer_literal(5),integer_literal(6),integer_literal(7),integer_literal(8)])).

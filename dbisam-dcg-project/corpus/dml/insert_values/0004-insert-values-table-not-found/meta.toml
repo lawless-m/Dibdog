@@ -1,0 +1,25 @@
+id = "0004-insert-values-table-not-found"
+status = "expected-divergent"
+provenance = "manual"
+tags = ["insert", "insert-values", "dml", "safe-no-mutation", "schema-divergence"]
+notes = """
+INSERT VALUES into a non-existent table. The engine validates the table
+exists at parse time and rejects with 0x2b02 (table not found) — so no
+mutation can happen. This is the safe-canary equivalent of
+`0002-update-empty-match` for the INSERT VALUES form.
+
+Grammar accepts (schema-agnostic per design); engine rejects. Same
+canonical pattern as `0201-mrsflowlog-22c841dbd6cf`.
+"""
+fixtures = []
+
+[divergence]
+reason = "Engine rejects with reqcode 0x2b02 (table not found) — 'no_such_table' doesn't exist in the catalog. The grammar accepts the SQL because schema validation is engine-side; the DCG is schema-agnostic. Same divergence pattern as the canonical 0201 entry. The entry is preserved as a non-mutating canary for the INSERT statement's parse path."
+reference = "docs/reqcodes.md#0x2b02-table-not-found"
+
+[[history]]
+at = "2026-05-27T13:40:13Z"
+from = "pending"
+to = "expected-divergent"
+by = "claude-code"
+reason = "Slice #49 — non-mutating INSERT canary against non-existent table (engine schema-rejects; grammar over-accepts by design)."

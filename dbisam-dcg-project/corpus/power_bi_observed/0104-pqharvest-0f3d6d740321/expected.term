@@ -1,0 +1,1 @@
+select_statement(all_rows,[identifier(code),identifier('EVVATNO')],[table(identifier(customer),no_alias)],[]).

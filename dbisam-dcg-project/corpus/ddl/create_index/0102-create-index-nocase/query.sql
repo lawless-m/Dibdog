@@ -1,0 +1,1 @@
+CREATE NOCASE INDEX idx_nocase_canary ON no_such_canary (v DESC)

@@ -1,0 +1,15 @@
+id = "0100-commit"
+status = "meaningful"
+provenance = "manual"
+tags = ["commit", "transaction", "statement-canary"]
+notes = """
+Bare COMMIT — engine accepts silently. Tests the transaction_statement parse path.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-28T09:58:17Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Slice #74 — statement-type canary."

@@ -1,0 +1,1 @@
+select_statement(all_rows,[identifier(saref),identifier(sacust),identifier(sainv),identifier(sadate),function_call('SUM',[identifier(saval)])],[table(identifier(analysis),no_alias)],[group_by([identifier(saref),identifier(sacust),identifier(sainv),identifier(sadate)])]).

@@ -1,0 +1,25 @@
+id = "0005-insert-select-empty"
+status = "expected-divergent"
+provenance = "manual"
+tags = ["insert", "insert-select", "dml", "safe-no-mutation", "schema-divergence"]
+notes = """
+INSERT INTO ... SELECT with `WHERE 1=0` to guarantee zero rows are
+inserted, plus a non-existent target table so the engine rejects with
+0x2b02 before any row movement. The SELECT side is syntactically
+complete and parses on its own; the INSERT wrapper is what's being
+tested here.
+
+Grammar accepts (schema-agnostic); engine rejects on table-not-found.
+"""
+fixtures = []
+
+[divergence]
+reason = "Engine rejects with reqcode 0x2b02 (table not found) — 'no_such_table' doesn't exist in the catalog. The grammar accepts the SQL because schema validation is engine-side; the DCG is schema-agnostic. Same divergence pattern as the canonical 0201 entry. The entry is preserved as a non-mutating canary for the INSERT statement's parse path."
+reference = "docs/reqcodes.md#0x2b02-table-not-found"
+
+[[history]]
+at = "2026-05-27T13:40:13Z"
+from = "pending"
+to = "expected-divergent"
+by = "claude-code"
+reason = "Slice #49 — non-mutating INSERT canary against non-existent table (engine schema-rejects; grammar over-accepts by design)."

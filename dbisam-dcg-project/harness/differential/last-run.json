@@ -1,0 +1,1119 @@
+{
+  "counts": {
+    "total": 137,
+    "meaningful": 119,
+    "scaffolded": 0,
+    "pending": 0,
+    "expected_divergent": 18,
+    "quarantined": 0,
+    "failing": 0,
+    "unclassified_disagreements": 0
+  },
+  "deltas_since_last_run": {
+    "meaningful": "+0",
+    "scaffolded": "+0",
+    "pending": "+0",
+    "expected_divergent": "+0",
+    "quarantined": "+0",
+    "failing": "+0",
+    "unclassified_disagreements": "+0"
+  },
+  "entries": [
+    {
+      "id": "0100-alter-table-add-column",
+      "status": "expected-divergent",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/ddl/alter_table/0100-alter-table-add-column/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "rejected",
+      "agreement": "grammar_over_permissive"
+    },
+    {
+      "id": "0100-create-index-basic",
+      "status": "expected-divergent",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/ddl/create_index/0100-create-index-basic/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "rejected",
+      "agreement": "grammar_over_permissive"
+    },
+    {
+      "id": "0101-create-index-unique",
+      "status": "expected-divergent",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/ddl/create_index/0101-create-index-unique/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "rejected",
+      "agreement": "grammar_over_permissive"
+    },
+    {
+      "id": "0102-create-index-nocase",
+      "status": "expected-divergent",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/ddl/create_index/0102-create-index-nocase/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "rejected",
+      "agreement": "grammar_over_permissive"
+    },
+    {
+      "id": "0100-drop-index-bare",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/ddl/drop_index/0100-drop-index-bare/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0101-drop-index-qualified",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/ddl/drop_index/0101-drop-index-qualified/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0100-drop-table-bare",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/ddl/drop_table/0100-drop-table-bare/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0101-drop-table-if-exists",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/ddl/drop_table/0101-drop-table-if-exists/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0100-empty-table",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/ddl/maintenance/0100-empty-table/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0101-optimize-table",
+      "status": "expected-divergent",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/ddl/maintenance/0101-optimize-table/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "rejected",
+      "agreement": "grammar_over_permissive"
+    },
+    {
+      "id": "0100-rename-table",
+      "status": "expected-divergent",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/ddl/rename_table/0100-rename-table/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "rejected",
+      "agreement": "grammar_over_permissive"
+    },
+    {
+      "id": "0003-delete-empty-match",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/dml/delete/0003-delete-empty-match/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0005-insert-select-empty",
+      "status": "expected-divergent",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/dml/insert_select/0005-insert-select-empty/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "rejected",
+      "agreement": "grammar_over_permissive"
+    },
+    {
+      "id": "0004-insert-values-table-not-found",
+      "status": "expected-divergent",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/dml/insert_values/0004-insert-values-table-not-found/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "rejected",
+      "agreement": "grammar_over_permissive"
+    },
+    {
+      "id": "0100-commit",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/dml/transaction/0100-commit/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0101-commit-work",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/dml/transaction/0101-commit-work/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0102-rollback",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/dml/transaction/0102-rollback/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0103-start-transaction",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/dml/transaction/0103-start-transaction/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0002-update-empty-match",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/dml/update/0002-update-empty-match/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0200-mrsflowlog-073909986a44",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0200-mrsflowlog-073909986a44/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0200-mrsflowlog-078b8738cbd5",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0200-mrsflowlog-078b8738cbd5/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0200-mrsflowlog-51d0b6c0ad90",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0200-mrsflowlog-51d0b6c0ad90/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0200-mrsflowlog-a34831736316",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0200-mrsflowlog-a34831736316/query.sql",
+      "grammar_verdict": "failed",
+      "engine_verdict": "rejected",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0200-mrsflowlog-a4942c26d073",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0200-mrsflowlog-a4942c26d073/query.sql",
+      "grammar_verdict": "failed",
+      "engine_verdict": "rejected",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0201-mrsflowlog-22c841dbd6cf",
+      "status": "expected-divergent",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0201-mrsflowlog-22c841dbd6cf/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "rejected",
+      "agreement": "grammar_over_permissive"
+    },
+    {
+      "id": "0201-mrsflowlog-4706c700f94e",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0201-mrsflowlog-4706c700f94e/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0201-mrsflowlog-630c81cec374",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0201-mrsflowlog-630c81cec374/query.sql",
+      "grammar_verdict": "failed",
+      "engine_verdict": "rejected",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0201-mrsflowlog-6a3cf778409a",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0201-mrsflowlog-6a3cf778409a/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0202-mrsflowlog-55e44cb46348",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0202-mrsflowlog-55e44cb46348/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0202-mrsflowlog-71eb8e037c4e",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0202-mrsflowlog-71eb8e037c4e/query.sql",
+      "grammar_verdict": "failed",
+      "engine_verdict": "rejected",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0202-mrsflowlog-d5e9e9a5b9f1",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0202-mrsflowlog-d5e9e9a5b9f1/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0203-mrsflowlog-6ce6961f3fd5",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0203-mrsflowlog-6ce6961f3fd5/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0203-mrsflowlog-8b2b21c717fa",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0203-mrsflowlog-8b2b21c717fa/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0204-mrsflowlog-384d10ab783a",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0204-mrsflowlog-384d10ab783a/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0204-mrsflowlog-79707288e3be",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0204-mrsflowlog-79707288e3be/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0205-mrsflowlog-2dbe086603d2",
+      "status": "expected-divergent",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0205-mrsflowlog-2dbe086603d2/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "rejected",
+      "agreement": "grammar_over_permissive"
+    },
+    {
+      "id": "0205-mrsflowlog-bc82c4f9cc59",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0205-mrsflowlog-bc82c4f9cc59/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0206-mrsflowlog-328680b785b3",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0206-mrsflowlog-328680b785b3/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0206-mrsflowlog-9fc9039997f6",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0206-mrsflowlog-9fc9039997f6/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0207-mrsflowlog-044b4117f136",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0207-mrsflowlog-044b4117f136/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0207-mrsflowlog-c5a8cb834c42",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0207-mrsflowlog-c5a8cb834c42/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0208-mrsflowlog-629cb91e2120",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0208-mrsflowlog-629cb91e2120/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0208-mrsflowlog-b1e98d7d945c",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0208-mrsflowlog-b1e98d7d945c/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0209-mrsflowlog-5bc52a255dc2",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0209-mrsflowlog-5bc52a255dc2/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0209-mrsflowlog-ccbafab46ecb",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0209-mrsflowlog-ccbafab46ecb/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0210-mrsflowlog-da5381a02b12",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0210-mrsflowlog-da5381a02b12/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0211-mrsflowlog-4be1bf687b07",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0211-mrsflowlog-4be1bf687b07/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0212-mrsflowlog-b09a9a310ae0",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0212-mrsflowlog-b09a9a310ae0/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0213-mrsflowlog-a1dbb34ad3a2",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/mrsflow_log/0213-mrsflowlog-a1dbb34ad3a2/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0100-pqharvest-90cb7620cdf7",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0100-pqharvest-90cb7620cdf7/query.sql",
+      "grammar_verdict": "failed",
+      "engine_verdict": "rejected",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0101-pqharvest-9c60999b6710",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0101-pqharvest-9c60999b6710/query.sql",
+      "grammar_verdict": "failed",
+      "engine_verdict": "rejected",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0101-pqharvest-d4d7fcf42a27",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0101-pqharvest-d4d7fcf42a27/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0102-pqharvest-1144db3bb979",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0102-pqharvest-1144db3bb979/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0102-pqharvest-754cf2f2fef7",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0102-pqharvest-754cf2f2fef7/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0103-pqharvest-e3c678496f10",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0103-pqharvest-e3c678496f10/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0103-pqharvest-f7d2b375034e",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0103-pqharvest-f7d2b375034e/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0104-pqharvest-0f3d6d740321",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0104-pqharvest-0f3d6d740321/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0104-pqharvest-2be0c72759d8",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0104-pqharvest-2be0c72759d8/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0105-pqharvest-ace1632c3b65",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0105-pqharvest-ace1632c3b65/query.sql",
+      "grammar_verdict": "failed",
+      "engine_verdict": "rejected",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0105-pqharvest-b349dc2b2751",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0105-pqharvest-b349dc2b2751/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0106-pqharvest-2d8cdb6680be",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0106-pqharvest-2d8cdb6680be/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0107-pqharvest-60e0f3add09d",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0107-pqharvest-60e0f3add09d/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0107-pqharvest-8a277a07883b",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0107-pqharvest-8a277a07883b/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0108-pqharvest-10a543adfec0",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0108-pqharvest-10a543adfec0/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0109-pqharvest-64d5b59bfc50",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0109-pqharvest-64d5b59bfc50/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0109-pqharvest-71e8bb012078",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0109-pqharvest-71e8bb012078/query.sql",
+      "grammar_verdict": "failed",
+      "engine_verdict": "rejected",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0110-pqharvest-d0ca792a6df9",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0110-pqharvest-d0ca792a6df9/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0110-pqharvest-e169070ba0dd",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0110-pqharvest-e169070ba0dd/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0112-pqharvest-522b3973f91f",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0112-pqharvest-522b3973f91f/query.sql",
+      "grammar_verdict": "failed",
+      "engine_verdict": "rejected",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0113-pqharvest-200698239752",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0113-pqharvest-200698239752/query.sql",
+      "grammar_verdict": "failed",
+      "engine_verdict": "rejected",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0114-pqharvest-36ea232c1754",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0114-pqharvest-36ea232c1754/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0115-pqharvest-b1f0b0e2b3a2",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0115-pqharvest-b1f0b0e2b3a2/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0116-pqharvest-5c30c1d8a870",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0116-pqharvest-5c30c1d8a870/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0117-pqharvest-06dbed4efd17",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0117-pqharvest-06dbed4efd17/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0118-pqharvest-9c787f352c39",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0118-pqharvest-9c787f352c39/query.sql",
+      "grammar_verdict": "failed",
+      "engine_verdict": "rejected",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0119-pqharvest-12e26e0d01ab",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0119-pqharvest-12e26e0d01ab/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0120-pqharvest-d0e98af97d88",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0120-pqharvest-d0e98af97d88/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0121-pqharvest-a0ee99ae4dac",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0121-pqharvest-a0ee99ae4dac/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0122-pqharvest-2379d0e60a7f",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0122-pqharvest-2379d0e60a7f/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0123-pqharvest-fd8df6d88ffd",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0123-pqharvest-fd8df6d88ffd/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0124-pqharvest-e4b7ff8d51e6",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0124-pqharvest-e4b7ff8d51e6/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0125-pqharvest-f7c2e6aac0fa",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0125-pqharvest-f7c2e6aac0fa/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0126-pqharvest-8dab4d19f8ae",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0126-pqharvest-8dab4d19f8ae/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0127-pqharvest-fda766a3faca",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0127-pqharvest-fda766a3faca/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0128-pqharvest-f80ab257a890",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0128-pqharvest-f80ab257a890/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0129-pqharvest-db5cce28a8da",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0129-pqharvest-db5cce28a8da/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0130-pqharvest-b228b1a2c745",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/power_bi_observed/0130-pqharvest-b228b1a2c745/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0006-repterr-union-quotes-orders",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0006-repterr-union-quotes-orders/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0007-repterr-quotes-half",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0007-repterr-quotes-half/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0008-repterr-orders-half",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0008-repterr-orders-half/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0009-repro1",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0009-repro1/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0010-repro2",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0010-repro2/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0011-repro3",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0011-repro3/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0012-ri-crm-poller__AttributesDao__line17",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0012-ri-crm-poller__AttributesDao__line17/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0013-ri-crm-poller__CustomerDao__line22",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0013-ri-crm-poller__CustomerDao__line22/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0014-ri-customer-indexer__ExportmasterService__line23",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0014-ri-customer-indexer__ExportmasterService__line23/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0015-ri-customer-indexer__ExportmasterService__line45",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0015-ri-customer-indexer__ExportmasterService__line45/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0016-ri-exportmaster-synchro__ExportmasterService__line110",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0016-ri-exportmaster-synchro__ExportmasterService__line110/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0017-ri-exportmaster-synchro__ExportmasterService__line209",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0017-ri-exportmaster-synchro__ExportmasterService__line209/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0018-ri-exportmaster-synchro__ExportmasterService__line211",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0018-ri-exportmaster-synchro__ExportmasterService__line211/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0019-ri-exportmaster-synchro__ExportmasterService__line222",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0019-ri-exportmaster-synchro__ExportmasterService__line222/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0020-ri-exportmaster-synchro__ExportmasterService__line60",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0020-ri-exportmaster-synchro__ExportmasterService__line60/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0021-ri-exportmaster-synchro__ExportmasterService__line85",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0021-ri-exportmaster-synchro__ExportmasterService__line85/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0022-ri-ingredient-indexer__ExportmasterService__line22",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0022-ri-ingredient-indexer__ExportmasterService__line22/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0023-ri-order-line-indexer__ExportmasterService__line23",
+      "status": "expected-divergent",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0023-ri-order-line-indexer__ExportmasterService__line23/query.sql",
+      "grammar_verdict": "failed",
+      "engine_verdict": "accepted",
+      "agreement": "grammar_bug"
+    },
+    {
+      "id": "0024-ri-order-line-indexer__ExportmasterService__line48",
+      "status": "expected-divergent",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0024-ri-order-line-indexer__ExportmasterService__line48/query.sql",
+      "grammar_verdict": "parsed",
+      "engine_verdict": "rejected",
+      "agreement": "grammar_over_permissive"
+    },
+    {
+      "id": "0025-ri-product-indexer__ExportmasterService__line27",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0025-ri-product-indexer__ExportmasterService__line27/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0026-ri-product-indexer__ExportmasterService__line32",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0026-ri-product-indexer__ExportmasterService__line32/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0027-ri-product-indexer__ExportmasterService__line54",
+      "status": "expected-divergent",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0027-ri-product-indexer__ExportmasterService__line54/query.sql",
+      "grammar_verdict": "parsed",
+      "engine_verdict": "rejected",
+      "agreement": "grammar_over_permissive"
+    },
+    {
+      "id": "0028-ri-profile-indexer__ExportmasterService__line21",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0028-ri-profile-indexer__ExportmasterService__line21/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0029-ri-exportmaster-synchro__ExportmasterService__line112",
+      "status": "expected-divergent",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0029-ri-exportmaster-synchro__ExportmasterService__line112/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "rejected",
+      "agreement": "grammar_over_permissive"
+    },
+    {
+      "id": "0030-ri-exportmaster-synchro__ExportmasterService__line134",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0030-ri-exportmaster-synchro__ExportmasterService__line134/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0031-ri-exportmaster-synchro__ExportmasterService__line170",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0031-ri-exportmaster-synchro__ExportmasterService__line170/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0032-ri-exportmaster-synchro__ExportmasterService__line234",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0032-ri-exportmaster-synchro__ExportmasterService__line234/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0033-ri-order-line-indexer__ExportmasterService__line75",
+      "status": "expected-divergent",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0033-ri-order-line-indexer__ExportmasterService__line75/query.sql",
+      "grammar_verdict": "parsed",
+      "engine_verdict": "rejected",
+      "agreement": "grammar_over_permissive"
+    },
+    {
+      "id": "0034-ri-price-discount-indexer__ExportmasterService__line23",
+      "status": "expected-divergent",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0034-ri-price-discount-indexer__ExportmasterService__line23/query.sql",
+      "grammar_verdict": "parsed",
+      "engine_verdict": "rejected",
+      "agreement": "grammar_over_permissive"
+    },
+    {
+      "id": "0035-ri-price-discount-indexer__ExportmasterService__line54",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0035-ri-price-discount-indexer__ExportmasterService__line54/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0036-ri-price-discount-indexer__ExportmasterService__line63",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/product_log/0036-ri-price-discount-indexer__ExportmasterService__line63/query.sql",
+      "grammar_verdict": "failed",
+      "engine_verdict": "rejected",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0003-syntax-error-bare-from",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/rejected/syntax_errors/0003-syntax-error-bare-from/query.sql",
+      "grammar_verdict": "failed",
+      "engine_verdict": "rejected",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0010-unbalanced-paren",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/rejected/syntax_errors/0010-unbalanced-paren/query.sql",
+      "grammar_verdict": "failed",
+      "engine_verdict": "rejected",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0011-trailing-comma-cols",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/rejected/syntax_errors/0011-trailing-comma-cols/query.sql",
+      "grammar_verdict": "failed",
+      "engine_verdict": "rejected",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0012-from-no-table",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/rejected/syntax_errors/0012-from-no-table/query.sql",
+      "grammar_verdict": "failed",
+      "engine_verdict": "rejected",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0013-comma-not-and",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/rejected/syntax_errors/0013-comma-not-and/query.sql",
+      "grammar_verdict": "failed",
+      "engine_verdict": "rejected",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0014-is-null-no-operand",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/rejected/syntax_errors/0014-is-null-no-operand/query.sql",
+      "grammar_verdict": "failed",
+      "engine_verdict": "rejected",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0015-cast-no-as",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/rejected/syntax_errors/0015-cast-no-as/query.sql",
+      "grammar_verdict": "failed",
+      "engine_verdict": "rejected",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0016-keyword-as-bare-ident",
+      "status": "expected-divergent",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/rejected/syntax_errors/0016-keyword-as-bare-ident/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "rejected",
+      "agreement": "grammar_over_permissive"
+    },
+    {
+      "id": "0017-insert-bare-select-first",
+      "status": "expected-divergent",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/rejected/syntax_errors/0017-insert-bare-select-first/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "rejected",
+      "agreement": "grammar_over_permissive"
+    },
+    {
+      "id": "0001-simple-projection",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/select/basic/0001-simple-projection/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0004-select-top-n",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/select/basic/0004-select-top-n/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0005-paren-projection",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/select/basic/0005-paren-projection/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0006-select-mixed-star",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/select/basic/0006-select-mixed-star/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0007-group-by-dedup",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/select/basic/0007-group-by-dedup/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0008-comma-join-bare",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/select/basic/0008-comma-join-bare/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0009-union-bare",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/select/basic/0009-union-bare/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0010-union-all-bare",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/select/basic/0010-union-all-bare/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0011-cast-varchar",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/select/basic/0011-cast-varchar/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    },
+    {
+      "id": "0012-trim-both",
+      "status": "meaningful",
+      "path": "/home/matt/Git/Dibdog/dbisam-dcg-project/harness/differential/../../corpus/select/basic/0012-trim-both/query.sql",
+      "grammar_verdict": "parsed_match",
+      "engine_verdict": "accepted",
+      "agreement": "agreed"
+    }
+  ]
+}

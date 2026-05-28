@@ -1,0 +1,1 @@
+drop_index(identifier(no_such_idx)).

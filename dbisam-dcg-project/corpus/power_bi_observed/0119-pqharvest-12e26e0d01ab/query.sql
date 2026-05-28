@@ -1,0 +1,1 @@
+select ref, custcode, INPUTDATE, ohinvref, ordstat.datedone from orderh left join ordstat on orderh.ref = ordstat.ref where ohinvref like '1%' and valnet = 0 and ordstat.lineno = 72 and ordstat.datedone is null

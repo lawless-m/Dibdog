@@ -1,0 +1,12 @@
+-- Extracted from: /nonreplicated/Public/java/bitB/ri-price-discount-indexer/src/main/java/com/ramsdens/intl/service/ExportmasterService.java
+-- 3 SQL string(s)
+
+-- line 23
+SELECT PRICES.SPHTYPE AS sphtype, PRICES.SPHRT AS sphrt, PRICES.SPHBASIS AS sphbasis, PRICES.SPHKEY1 AS sphkey1, PRICES.SPHKEY2 AS sphkey2, PRICES.SPHCURRENCY AS sphcurrency, PRICES.SPHQTY1 AS sphqty1, PRICES.SPHQTY2 AS sphqty2, PRICES.SPHQTY3 AS sphqty3, PRICES.SPHQTY4 AS sphqty4, PRICES.SPHQTY5 AS sphqty5, PRICES.SPHQTY6 AS sphqty6, PRICDETL.SpdDateEff AS spddateeff, PRICDETL.SpdDateExp AS spddateexp, PRICDETL.SpdValue1 AS spdvalue1, PRICDETL.SpdValue2 AS spdvalue2, PRICDETL.SpdValue3 AS spdvalue3, PRICDETL.SpdValue4 AS spdvalue4, PRICDETL.SpdValue5 AS spdvalue5, PRICDETL.SpdValue6 AS spdvalue6, PRICDETL.SpdNotes AS spdnotes FROM PRICES JOIN PRICDETL ON PRICES.SphLink = PRICDETL.SpdLink AND PRICES.SPHPERIOD = 1 JOIN MAXSPDDATEEFFS ON PRICDETL.SpdLink = MAXSPDDATEEFFS.SpdLink AND PRICDETL.SpdDateEff >= MAXSPDDATEEFFS.maxSpdDateEff WHERE (PRICDETL.SpdDateExp = '1899-12-30' OR PRICDETL.SpdDateExp >= ?);
+
+-- line 54
+SELECT PRICDETL.SpdLink, MAX(PRICDETL.SpdDateEff) as maxSpdDateEff INTO MAXSPDDATEEFFS FROM PRICDETL WHERE PRICDETL.SpdDateEff <= ? AND (PRICDETL.SpdDateExp = '1899-12-30' OR PRICDETL.SpdDateExp >= ?) GROUP BY PRICDETL.SpdLink;
+
+-- line 63
+INSERT INTO MAXSPDDATEEFFS (SpdLink, maxSpdDateEff)\nSELECT PRICDETL.SpdLink,\nMAX(PRICDETL.SpdDateEff) as maxSpdDateEff \nFROM PRICDETL LEFT JOIN MAXSPDDATEEFFS\nON PRICDETL.SpdLink = MAXSPDDATEEFFS.SpdLink\nWHERE PRICDETL.SpdDateEff > ? AND PRICDETL.SpdDateEff <= ? AND MAXSPDDATEEFFS.maxSpdDateEff IS null\nGROUP BY PRICDETL.SpdLink;
+

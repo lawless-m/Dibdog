@@ -1,0 +1,21 @@
+id = "0202-mrsflowlog-71eb8e037c4e"
+status = "meaningful"
+provenance = "mrsflow-runtime-log"
+source = "/tmp/mrsflow.log"
+first_seen_at = "2026-05-26T21:48:45.955267348+00:00"
+tags = ["harvest", "mrsflow-runtime", "dynamic-capture", "truncated-capture"]
+notes = """
+Captured at runtime from a mrsflow Exportmaster.Query path with
+MRSFLOW_SQL_LOG enabled. Unlike the static .pq/.m extraction
+(power_bi_observed/), this is the SQL string AFTER any M-language
+concatenation and parameter interpolation — i.e., what the engine
+actually sees on the wire.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-27T13:03:23Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Slice #45 — truncated-capture agreed-rejection; both grammar and engine reject the incomplete SQL string. Documents harvester buffer-truncation, not a real production query."

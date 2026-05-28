@@ -1,0 +1,1 @@
+select_statement(all_rows,[identifier(regioncode),identifier(countryname)],[table(identifier(rigeographic),no_alias)],[]).

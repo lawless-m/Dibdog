@@ -1,0 +1,23 @@
+id = "0005-paren-projection"
+status = "meaningful"
+provenance = "manual"
+tags = ["select", "projection", "parentheses", "round-trip-tricky"]
+notes = """
+A redundant pair of parentheses around a single-column projection.
+Engine treats `(CODE)` identically to `CODE`; the resulting AST term
+should not encode the parentheses (they're a surface-syntax artefact,
+not a semantic one). The DCG's generator will therefore emit the
+canonical form `select CODE from CUSTOMER`, and a round-trip
+(parse → term → generate → re-parse → term) must produce the same
+term — the surface SQL string is NOT expected to be byte-equal to the
+input. This is the round-trip-tricky entry per CORPUS.md's promotion
+bar (criterion 3).
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-27T08:48:37Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Promotion checks passed during slice #28 — parens + qualified identifiers."

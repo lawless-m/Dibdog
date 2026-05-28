@@ -1,0 +1,1 @@
+DROP INDEX no_such_canary.no_such_idx

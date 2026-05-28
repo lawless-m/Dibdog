@@ -1,0 +1,14 @@
+{
+  "verdict": "rejected",
+  "engine_version": "dbisam-4-unknown-build",
+  "captured_at": "2026-05-27T10:04:22Z",
+  "rows_affected": null,
+  "error_code": null,
+  "error_message": "Expected expression but instead found { in SELECT SQL statement",
+  "harness_reqcode": "0x2ead",
+  "harness_response_bytes": null,
+  "harness_table": null,
+  "harness_catalog": "NISAINT_CS",
+  "harness_code_a": 1,
+  "harness_code_b": 935
+}

@@ -1,0 +1,18 @@
+id = "0011-cast-varchar"
+status = "meaningful"
+provenance = "manual"
+source = "corpus/raw/cast-varchar.sql"
+tags = ["raw-import"]
+notes = """
+Added via tools/corpus-add.sh from the raw file at corpus/raw/cast-varchar.sql.
+SQL copied verbatim. Promote via tools/corpus-promote.sh once the
+grammar covers the construct(s) this query uses.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-27T08:51:19Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Promotion checks passed during slice #29 — CAST special form."

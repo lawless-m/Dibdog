@@ -1,0 +1,1 @@
+select_statement(all_rows,[star],[table(identifier('ORDERI'),no_alias)],[]).

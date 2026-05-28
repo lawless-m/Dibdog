@@ -1,0 +1,22 @@
+id = "0002-update-empty-match"
+status = "meaningful"
+provenance = "manual"
+tags = ["update", "dml", "string-literal", "safe-mutation"]
+notes = """
+UPDATE with a WHERE that matches zero rows on the live `product` table
+(verified: `code = 'NOPE'` is not a real product code on rivsem04). The
+engine accepts the statement and reports a successful execution; the
+table is not mutated.
+
+Safe to run repeatedly against the live database. Exercises: UPDATE
+keyword, SET clause with single assignment, numeric literal RHS,
+string-literal WHERE, lowercase table identifier.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-27T12:38:47Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Promotion checks passed during slice #44 — UPDATE statement."

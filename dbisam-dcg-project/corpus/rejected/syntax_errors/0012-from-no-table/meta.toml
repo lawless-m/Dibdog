@@ -1,0 +1,22 @@
+id = "0012-from-no-table"
+status = "meaningful"
+provenance = "manual"
+tags = ["rejected", "negative-test", "syntax-error"]
+notes = """
+Hand-written negative-test canary. The grammar AND the engine should
+both reject this SQL — agreed-rejection. Added in slice #52 to
+broaden the over-permissiveness alarm: if a future grammar change
+accidentally accepts this string, the dashboard's agreement column
+flips from 'agreed' to 'grammar_over_permissive' and the regression
+is visible.
+
+FROM keyword with no table reference. Should not parse — every FROM needs at least one table.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-27T13:48:24Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Slice #52 — hand-written negative-test canary."

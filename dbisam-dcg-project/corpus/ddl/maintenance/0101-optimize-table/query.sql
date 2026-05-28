@@ -1,0 +1,1 @@
+OPTIMIZE TABLE no_such_canary

@@ -1,0 +1,22 @@
+id = "0033-ri-order-line-indexer__ExportmasterService__line75"
+status = "expected-divergent"
+provenance = "product-log"
+source = "/tmp/harvest-ri/ri-order-line-indexer__ExportmasterService__line75.sql"
+tags = ["raw-import", "temp-table-pipeline", "schema-divergence"]
+notes = """
+Added via tools/corpus-add.sh from the raw file at /tmp/harvest-ri/ri-order-line-indexer__ExportmasterService__line75.sql.
+SQL copied verbatim. Promote via tools/corpus-promote.sh once the
+grammar covers the construct(s) this query uses.
+"""
+fixtures = []
+
+[divergence]
+reason = "Grammar parses cleanly. Engine rejects with 0x2b02 (table not found) because the target/source temp table (RIROCSPRODLOOKUP) is created at runtime by the Ramsden indexer pipeline and isn't in our test catalog. The temp-table pattern is DBISAM's workaround for missing CTEs — see memory dbisam-statement-vocabulary.md. The query itself is well-formed; only the catalog state differs between the pipeline-context environment and our probe environment. Same divergence pattern as 0201."
+reference = "docs/DIVERGENCES.md#1-table-existence-from-name-where-name-isnt-in-the-catalog"
+
+[[history]]
+at = "2026-05-27T15:19:23Z"
+from = "pending"
+to = "expected-divergent"
+by = "claude-code"
+reason = "Slice #53 — temp-table-pipeline target/source not in test catalog; grammar accepts, engine table-not-found rejects."

@@ -1,0 +1,1 @@
+DROP TABLE no_such_canary

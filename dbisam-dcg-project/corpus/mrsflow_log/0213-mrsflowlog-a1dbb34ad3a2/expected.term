@@ -1,0 +1,1 @@
+select_statement(all_rows,[identifier(code)],[table(identifier(product),no_alias)],[where(and(eq(identifier(commod),string_literal('*MEAT')),eq(identifier(group),string_literal('01'))))]).

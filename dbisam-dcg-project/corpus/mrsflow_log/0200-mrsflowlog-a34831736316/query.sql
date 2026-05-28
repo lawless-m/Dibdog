@@ -1,0 +1,1 @@
+SELECT 'Order' as "State", OrderH.REF as "Reference", OrderI.PRODUCT, OrderI.DESC1, OrderI.QUANTITY, OrderI.CUNIT, OrderI.PRICE as "Case_Price", OrderI.COST, OrderI.TOTNET as "Line_Value", OrderH.UF_ACCHAND as "IBM", OrderH.UF_EXPREPRODATE, OrderH.CONS1, OrderH.CONS2, OrderH.CONS3, OrderH.CONS4

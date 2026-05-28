@@ -1,0 +1,22 @@
+id = "0102-pqharvest-1144db3bb979"
+status = "meaningful"
+provenance = "power-bi-observed"
+source = "MrsFlow/examples/xlsx_pq/mnt/RIVSTS01_SHARE/Finance/Finance_Secure/VAT_and_Tax/REBV/2026/Copy_of_REBV_VAT_Return.xlsx/Analysis.m"
+tags = ["harvest", "static-extracted", "pq-literal", "dsn-verified"]
+notes = """
+Statically extracted from an Odbc.Query("dsn=Exp...", "<sql>") call
+in the named .pq / .m file via tools/harvest-pq.sh. The DSN is
+verified at the AST level (the call-site connection string actually
+starts with "dsn=Exp"), so this entry's SQL is provably destined for
+the DBISAM Exportmaster backend. Concat-arg and variable-bound SQL
+arguments are not handled by static harvest — they show up in the
+dynamic harvest (corpus/mrsflow_log/) instead.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-27T10:51:21Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Promotion checks passed during slice #37 — arithmetic."

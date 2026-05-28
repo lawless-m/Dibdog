@@ -1,0 +1,10 @@
+{
+  "verdict": "accepted",
+  "engine_version": "dbisam-4-unknown-build",
+  "captured_at": "2026-05-27T14:57:41Z",
+  "rows_affected": null,
+  "error_code": null,
+  "error_message": null,
+  "harness_reqcode": null,
+  "harness_response_bytes": 18716
+}

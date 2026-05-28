@@ -1,0 +1,544 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head><script type="text/javascript" async src="https://www.googletagmanager.com/gtag/js?id=UA-15048886-1"">
+
+</script>
+<script type="text/javascript">
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-15048886-1');
+</script>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link rel="alternate" type="application/rss+xml" title="Elevate Software Blog RSS 2.0 Feed" href="https://www.elevatesoft.com/blog?action=rss2feed"><meta name="Keywords" content="web builder,
+web development,
+rad web development,
+pascal web development,
+delphi web development,
+database web development,
+web application,
+rad web application,
+rapid web application development,
+delphi web application,
+pascal web application,
+database web application,
+web ide,
+web form designer,
+web wysiwyg form designer,
+web framework,
+html5,
+ajax,
+canvas,
+local storage,
+themes,
+javascript,
+javascript compiler,
+javascript compression
+database, sql database,
+sql database engine,
+delphi database,
+delphi database components,
+delphi database engine,
+delphi sql database,
+delphi sql database engine,
+compact delphi database,
+compact delphi database engine,
+compact delphi sql database,
+compact delphi sql database engine,
+embedded delphi database,
+embedded delphi database engine,
+embedded delphi sql database,
+embedded delphi sql database engine,
+compact lazarus database,
+compact lazarus database engine,
+compact lazarus sql database,
+compact lazarus sql database engine,
+embedded lazarus database,
+embedded lazarus database engine,
+embedded lazarus sql database,
+embedded lazarus sql database engine,
+compact free pascal database,
+compact free pascal database engine,
+compact free pascal sql database,
+compact free pascal sql database engine,
+embedded free pascal database,
+embedded free pascal database engine,
+embedded free pascal sql database,
+embedded free pascal sql database engine,
+odbc database,
+odbc database components,
+odbc database engine,
+odbc sql database,
+odbc sql database engine,
+compact odbc database,
+compact odbc database engine,
+compact odbc sql database,
+compact odbc sql database engine,
+embedded odbc database,
+embedded odbc database engine,
+embedded odbc sql database,
+embedded odbc sql database engine,
+vb database,
+vb database components,
+vb database engine,
+vb sql database,
+vb sql database engine,
+compact vb database,
+compact vb database engine,
+compact vb sql database,
+compact vb sql database engine,
+embedded vb database,
+embedded vb database engine,
+embedded vb sql database,
+embedded vb sql database engine,
+c# database,
+c# database components,
+c# database engine,
+c# sql database,
+c# sql database engine,
+compact c# database,
+compact c# database engine,
+compact c# sql database,
+compact c# sql database engine,
+embedded c# database,
+embedded c# database engine,
+embedded c# sql database,
+embedded c# sql database engine,
+.net database,
+.net database components,
+.net database engine,
+.net sql database,
+.net sql database engine,
+compact .net database,
+compact .net database engine,
+compact .net sql database,
+compact .net sql database engine,
+embedded .net database,
+embedded .net database engine,
+embedded .net sql database,
+embedded .net sql database engine
+php database,
+php database components,
+php database engine,
+php sql database,
+php sql database engine,
+compact php database,
+compact php database engine,
+compact php sql database,
+compact php sql database engine,
+embedded php database,
+embedded php database engine,
+embedded php sql database,
+embedded php sql database engine,">
+<meta name="google-site-verification" content="lm7_CbK2t-5fdfErGPRZRqauyTNNCPnzuNoCI9m9rKM">
+<meta name="Generator" content="Elevate Software, Inc. Automated Web Site System">
+<link rel="stylesheet" href="https://www.elevatesoft.com/elevate.css" type="text/css"><title>Optimizations</title></head>
+<body><div class="page"><div class="pagebody"><div class="pagecontent"><div class="header"><table width="100%" cellspacing=0 cellpadding=0><tr align="left" valign="middle"><td rowspan="1" colspan="1" align="left" valign="middle" width="2%"><br>
+</td><td rowspan="1" colspan="1" align="left" valign="middle" width="30%"><br>
+<a href="https://www.elevatesoft.com/home" name="Elevate Software"><img src="https://www.elevatesoft.com/whitelogosml.png" border=0 alt="Elevate Software" align="middle" height="100" width="250"></a></td><td rowspan="1" colspan="1" align="right" valign="middle" width="66%"><br>
+<br>
+<img src="https://www.elevatesoft.com/user.png" border=0 alt="Login" align="top" height="16" width="16">&#160;<a class="smalllink" href="https://www.elevatesoft.com/user?action=login&area=productmanuals_dbisam" name="Login">Login</a><br>
+<br>
+<a class="menulink" href="https://www.elevatesoft.com/products" name="Products">Products</a><img src="https://www.elevatesoft.com/bullet_gray.png" border=0 alt="Bullet" align="top" height="16" width="16"><a class="menulink" href="https://www.elevatesoft.com/sales" name="Sales">Sales</a><img src="https://www.elevatesoft.com/bullet_gray.png" border=0 alt="Bullet" align="top" height="16" width="16"><a class="menulink" href="https://www.elevatesoft.com/support" name="Support">Support</a><img src="https://www.elevatesoft.com/bullet_gray.png" border=0 alt="Bullet" align="top" height="16" width="16"><a class="menulink" href="https://www.elevatesoft.com/download" name="Downloads">Downloads</a><img src="https://www.elevatesoft.com/bullet_gray.png" border=0 alt="Bullet" align="top" height="16" width="16"><a class="menulink" href="https://www.elevatesoft.com/about" name="About">About</a></td><td rowspan="1" colspan="1" align="right" valign="middle" width="2%"><br>
+</td></tr>
+</table>
+<table width="100%" cellspacing=0 cellpadding=0><tr align="left" valign="middle"><td rowspan="1" colspan="1" align="left" valign="middle" width="2%"><br>
+</td><td rowspan="1" colspan="1" align="left" valign="middle" width="96%"><hr></td><td rowspan="1" colspan="1" align="left" valign="middle" width="2%"><br>
+</td></tr>
+</table>
+<table width="100%" cellspacing=0 cellpadding=0><tr align="left" valign="middle"><td rowspan="1" colspan="1" align="left" valign="middle" width="2%"><br>
+</td><td rowspan="1" colspan="1" align="left" valign="middle" width="96%"><a class="smalllink" href="https://www.elevatesoft.com/home" name="Home">Home</a>&#160;<span class="small">»</span>&#160;<a class="smalllink" href="https://www.elevatesoft.com/support" name="Technical Support">Technical Support</a>&#160;<span class="small">»</span>&#160;<a class="smalllink" href="https://www.elevatesoft.com/support?category=dbisam" name="DBISAM Technical Support">DBISAM Technical Support</a>&#160;<span class="small">»</span>&#160;<a class="smalllink" href="https://www.elevatesoft.com/manual?category=dbisam" name="Product Manuals">Product Manuals</a>&#160;<span class="small">»</span>&#160;<a class="smalllink" href="https://www.elevatesoft.com/manual?action=contents&id=dbisam4&product=delphi&version=5" name="DBISAM Version 4 Manual for Delphi 5">DBISAM Version 4 Manual for Delphi 5</a>&#160;<span class="small">»</span>&#160;<a class="smalllink" href="https://www.elevatesoft.com/manual?action=topics&id=dbisam4&product=delphi&version=5&section=sql_reference" name="SQL Reference">SQL Reference</a>&#160;<span class="small">»</span>&#160;<span class="small">Optimizations</span></td><td rowspan="1" colspan="1" align="left" valign="middle" width="2%"><br>
+</td></tr>
+</table>
+<br>
+</div>
+<div class="colmask rightmenu"><div class="columnleft"><div class="box"><div class="box_left"><div class="box_right"><div class="boxbtm_back"><div class="boxbtm_left"><div class="boxbtm_right"><div class="boxhdr_back"><div class="boxhdr_left"><div class="boxhdr_right"><div class="box_contents"><img src="https://www.elevatesoft.com/folder_wrench.png" border=0 alt="Icon" align="bottom" height="16" width="16">&#160;<span class="subhead">Optimizations</span><br>
+<br>
+<div class="spacer"><span class="largehead">Introduction<hr></span>DBISAM uses available indexes when optimizing SQL queries so that they execute in the least amount of time possible.  In addition, joins are re-arranged to allow for the least number of joins as possible since joins tend to be fairly expensive in DBISAM.<br>
+<br>
+<span class="largehead">Index Selection<hr></span>DBISAM will use an available index to optimize any expression in the WHERE clause of an SQL <a href="https://www.elevatesoft.com/manual?action=viewtopic&id=dbisam4&product=delphi&version=5&topic=select_statement" name="SELECT">SELECT</a>, <a href="https://www.elevatesoft.com/manual?action=viewtopic&id=dbisam4&product=delphi&version=5&topic=update_statement" name="UPDATE">UPDATE</a>, or <a href="https://www.elevatesoft.com/manual?action=viewtopic&id=dbisam4&product=delphi&version=5&topic=delete_statement" name="DELETE">DELETE</a> statement.  It will also use an available index to optimize any join expressions between multiple tables.  This index selection is based on the following rules:<br>
+<br>
+1) DBISAM only uses the first field of any given index for optimization.  This means that if you have an index containing the fields LastName and FirstName, then DBISAM can only use the this index for optimizing any conditions that refer to the LastName field.<br>
+<br>
+2) DBISAM can use both ascending and descending indexes for optimization.<br>
+<br>
+3) DBISAM will only use case-sensitive indexes for optimizing any conditions on string fields unless the condition contains the UPPER() or LOWER() SQL function.  In such a case DBISAM will only look for and use case-insensitive indexes for optimizing the condition.  Conditions on non-string fields such as integer or boolean fields can always use any index that contains the same field, regardless of the index&#x27;s case-insensitivity setting.<br>
+<br>
+4) DBISAM can mix and match the optimization of conditions so that it is possible to have one condition be optimized and the other not.  This is known as a partially-optimized query.<br>
+<br>
+<span class="largehead">How DBISAM Builds the Query Results<hr></span>Once an index is selected for optimizing a given condition of the WHERE clause, a range is set on the index in order to limit the index keys to those that match the current condition being optimized.  The index keys that satisfy the condition are then scanned, and during the scan a bitmap is built in physical record number order.  A bit is turned on if the physical record satisfies the condition, and a bit is turned off if it doesn&#x27;t.  This method of using bitmaps works well because it can represent sets of data with minimal memory consumption.  Also, DBISAM is able to quickly determine how many records are in the set (how many bits are turned on), and it can easily AND, OR, and NOT bitmaps together to fulfill boolean logic between multiple conditions.  Finally, because the bitmap is in physical record order, accessing the records using a bitmap is very direct since DBISAM uses fixed-length records with directly-addressable offsets in the physical table format.<br>
+<br>
+When optimizing SQL SELECT queries that contain both join conditions and WHERE conditions, DBISAM always processes the non-join conditions first if the conditions do not affect the target table, which is the table on the right side of a LEFT OUTER JOIN or the table on the left side of a RIGHT OUTER JOIN.  This can speed up join operations tremendously since the join conditions will only take into account the records existing in the source table(s) based upon the WHERE conditions. For example, consider the following query:<br>
+<br>
+<pre>SELECT
+OrderHdr.Cust_ID,
+OrderHdr.Order_Num,
+OrderDet.Model_Num,
+OrderDet.Cust_Item
+FROM OrderHdr, OrderDet
+WHERE OrderHdr.Order_Num=OrderDet.Order_Num AND
+      OrderHdr.Cust_ID=&#x27;C901&#x27;
+ORDER BY 1,2,3</pre><br>
+In this example, the WHERE condition:<br>
+<br>
+<pre>OrderHdr.Cust_ID=&#x27;C901&#x27;</pre><br>
+will be evaluated first before the join condition:<br>
+<br>
+<pre>OrderHdr.Order_Num=OrderDet.Order_Num</pre><br>
+so that the joins only need to process a small number of records in the OrderHdr table.<br>
+<br>
+When optimizing SQL SELECT queries that contain INNER JOINs that also contain selection conditions (conditions in an INNER JOIN clause that do not specify an actual join), the selection conditions are always processed at the same time as the join, even if they affect the target table, which is the table on the right side of the join.  This can speed up join operations tremendously since the join conditions will only take into account the records existing in the source table(s) based upon the selection conditions.  For example, consider the following query:<br>
+<br>
+<pre>SELECT
+OrderHdr.Cust_ID,
+OrderHdr.Order_Num,
+OrderDet.Model_Num,
+OrderDet.Cust_Item
+FROM OrderHdr INNER JOIN OrderDet ON
+OrderHdr.Order_Num=OrderDet.Order_Num AND OrderHdr.Cust_ID=&#x27;C901&#x27;
+ORDER BY 1,2,3</pre><br>
+In this example, the selection condition:<br>
+<br>
+<pre>OrderHdr.Cust_ID=&#x27;C901&#x27;</pre><br>
+will be evaluated first before the join condition:<br>
+<br>
+<pre>OrderHdr.Order_Num=OrderDet.Order_Num</pre><br>
+so that the joins only need to process a small number of records in the OrderHdr table.<br>
+<br>
+<div class="note"><img src="https://www.elevatesoft.com/information.png" border=0 alt="Information" align="bottom" height="16" width="16">&#160;If an SQL SELECT query can return a live result set, then the WHERE clause conditions are applied to the source table via an optimized filter and the table is opened.  If an SQL SELECT query contains joins or other items that cause DBISAM to only return a canned result set, then all of the records from the source tables that satisfy the WHERE clause conditions and join conditions are copied to a temporary table on disk and that table is opened as the query result set.  This process can be time-consuming when a large number of records are returned by the query, so it is recommended that you try to make your queries as selective as possible.</div>
+<br>
+<span class="largehead">How Joins are Processed<hr></span>Join conditions in SQL SELECT, UPDATE, or DELETE statements are processed in DBISAM using a technique known as nested-loop joins.  This means that DBISAM recursively processes the source tables in a master-detail, master-detail, etc. arrangement with a driving table and a destination table (which then becomes the driving table for any subsequent join conditions).  When using this technique, it is very important that the table with the smallest record count (after any non-join conditions from the WHERE clause have been applied) is specified as the first driving table in the processing of the joins.  DBISAM&#x27;s SQL optimizer will automatically optimize the join ordering so that the table with the smallest record count is placed as the first driving table as long as the joins are INNER JOINS or SQL-89 joins in the WHERE clause.  LEFT OUTER JOINs and RIGHT OUTER JOINs cannot be re-ordered in such a fashion and must be left alone.<br>
+<br>
+The following is an example that illustrates the nested-loop joins in DBISAM:<br>
+<br>
+<pre>SELECT c.Company,
+o.OrderNo,
+e.LastName,
+p.Description,
+v.VendorName
+FROM Customer c, Orders o, Items i, Vendors v, Parts p, Employee e
+WHERE c.CustNo=o.CustNo AND
+o.OrderNo=i.OrderNo AND
+i.PartNo=p.PartNo AND 
+p.VendorNo=v.VendorNo AND
+o.EmpNo=e.EmpNo
+ORDER BY e.LastName</pre><br>
+In this example, DBISAM would process the joins in this order:<br>
+<br>
+1) Customer table joined to Orders table on the CustNo column<br>
+<br>
+2) Orders table joined to Items table on the OrderNo column and Orders table joined to Employee table on EmpNo column (this is also known as a multi-way, or star, join)<br>
+<br>
+3) Items table joined to Parts table on the PartNo column<br>
+<br>
+4) Parts table joined to Vendors table on the VendorNo column<br>
+<br>
+In this case the Customer table is the smallest table in terms of record count, so making it the driving table in this case is a good choice.  Also, you&#x27;ll notice that in the case of the multi-way, or star, join between the Orders table and both the Items and Employee table, DBISAM will move the join order of the Employee table up in order to keep the join ordering as close to the order of the source tables in the FROM clause as possible.<br>
+<br>
+<div class="note"><img src="https://www.elevatesoft.com/information.png" border=0 alt="Information" align="bottom" height="16" width="16">&#160;You can use the NOJOINOPTIMIZE keyword at the end of the SQL SELECT, UPDATE, or DELETE statement in order to tell DBISAM not to reorder the joins.  Also, SQL UPDATE and DELETE statements cannot have their driver table reordered due to the fact that the driver table is the table being updated by these statements.</div>
+<br>
+<span class="largehead">Query Plans<hr></span>You can use the <a href="https://www.elevatesoft.com/manual?action=viewcomp&id=dbisam4&product=delphi&version=5&comp=TDBISAMQuery" name="TDBISAMQuery">TDBISAMQuery</a> <a href="https://www.elevatesoft.com/manual?action=viewprop&id=dbisam4&product=delphi&version=5&comp=TDBISAMQuery&prop=GeneratePlan" name="GeneratePlan">GeneratePlan</a> property to indicate that you want DBISAM to generate a query plan for the current SQL statement or script when it is executed.  The resulting query plan will be stored in the TDBISAMQuery <a href="https://www.elevatesoft.com/manual?action=viewprop&id=dbisam4&product=delphi&version=5&comp=TDBISAMQuery&prop=Plan" name="Plan">Plan</a> property.  Examining this query plan can tell you exactly what the SQL optimizer is doing when executing a given SQL statement or script.  For example, the query mentioned above would generate the following query plan:<br>
+<br>
+<pre>================================================================================
+SQL statement
+================================================================================
+
+SELECT c.Company,
+o.OrderNo,
+e.LastName,
+p.Description,
+v.VendorName
+FROM Customer c, Orders o, Items i, Vendors v, Parts p, Employee e
+WHERE c.CustNo=o.CustNo AND
+o.OrderNo=i.OrderNo AND
+i.PartNo=p.PartNo AND 
+p.VendorNo=v.VendorNo AND
+o.EmpNo=e.EmpNo
+ORDER BY e.LastName
+
+Result Set Generation
+---------------------
+
+Result set will be canned
+Result set will consist of one or more rows
+Result set will be ordered by the following column(s) using a case-sensitive 
+temporary index:
+
+LastName ASC
+
+Join Ordering
+-------------
+
+The driver table is the Customer table (c)
+
+The Customer table (c) is joined to the Orders table (o) with the INNER JOIN 
+expression:
+
+c.CustNo = o.CustNo
+
+The Orders table (o) is joined to the Items table (i) with the INNER JOIN 
+expression:
+
+o.OrderNo = i.OrderNo
+
+The Orders table (o) is joined to the Employee table (e) with the INNER JOIN 
+expression:
+
+o.EmpNo = e.EmpNo
+
+The Items table (i) is joined to the Parts table (p) with the INNER JOIN 
+expression:
+
+i.PartNo = p.PartNo
+
+The Parts table (p) is joined to the Vendors table (v) with the INNER JOIN 
+expression:
+
+p.VendorNo = v.VendorNo
+
+Optimized Join Ordering
+-----------------------
+
+The driver table is the Vendors table (v)
+
+The Vendors table (v) is joined to the Parts table (p) with the INNER JOIN 
+expression:
+
+v.VendorNo = p.VendorNo
+
+The Parts table (p) is joined to the Items table (i) with the INNER JOIN 
+expression:
+
+p.PartNo = i.PartNo
+
+The Items table (i) is joined to the Orders table (o) with the INNER JOIN 
+expression:
+
+i.OrderNo = o.OrderNo
+
+The Orders table (o) is joined to the Customer table (c) with the INNER JOIN 
+expression:
+
+o.CustNo = c.CustNo
+
+The Orders table (o) is joined to the Employee table (e) with the INNER JOIN 
+expression:
+
+o.EmpNo = e.EmpNo
+
+Join Execution
+--------------
+
+Costs ARE NOT being taken into account when executing this join
+Use the JOINOPTIMIZECOSTS clause at the end of the SQL statement to force the 
+optimizer to consider costs when optimizing this join
+
+The expression:
+
+v.VendorNo = p.VendorNo
+
+is OPTIMIZED
+
+The expression:
+
+p.PartNo = i.PartNo
+
+is OPTIMIZED
+
+The expression:
+
+i.OrderNo = o.OrderNo
+
+is OPTIMIZED
+
+The expression:
+
+o.CustNo = c.CustNo
+
+is OPTIMIZED
+
+The expression:
+
+o.EmpNo = e.EmpNo
+
+is OPTIMIZED
+
+================================================================================</pre><br>
+You&#x27;ll notice that the joins have been re-ordered to be in the most optimal order. You&#x27;ll also notice that the query plan mentions that the JOINOPTIMIZECOSTS clause is not being used.  Use a JOINOPTIMIZECOSTS clause to force the query optimizer to use I&#x2F;O cost projections to determine the most efficient way to process the conditions in a join expression.  If you have a join expression with multiple conditions in it, then using this clause may help improve the performance of the join expression, especially if it is already executing very slowly.<br>
+<br>
+<span class="largehead">Further Optimizations Provided by DBISAM<hr></span>In addition to just using indexes to speed up the querying process, DBISAM also provides a few other optimizations that can greatly increase a given query&#x27;s performance.  When building a bitmap for a given optimized condition, DBISAM can take advantage of statistics that are kept in DBISAM indexes.  These statistics accurately reflect the current make-up of the various values present in the index, and DBISAM uses this information to optimize the actual scan of the index.<br>
+<br>
+DBISAM looks at the optimization of the query conditions, and when multiple conditions are joined by an AND operator, DBISAM ensures that the most optimized query condition is executed first. For example, consider a table of 25,000 records with the following structure:<br>
+<br>
+<pre>Customer table
+
+Field       Data Type      Index
+---------------------------------------------------
+ID          Integer        Primary Index
+Name        String[30]
+State       String[2]      Secondary, case-sensitive,
+                           non-unique, ascending, index
+TotalOrders BCD[2]</pre><br>
+And consider the following SQL SELECT query:<br>
+<br>
+<pre>SELECT *
+FROM customer
+WHERE (TotalOrders &gt; 10000) and (State=&#x27;CA&#x27;)</pre><br>
+As you can see, the TotalOrders condition cannot be optimized since no indexes exist that would allow for optimization, whereas the State condition can be optimized.  If only 200 records in the table have a State field that contains &#x27;CA&#x27;, then processing the query in the order indicated by the expression would be very inefficient, since the following steps would take place:<br>
+<br>
+1) All 25,000 physical records would be read and evaluated to build a bitmap for the (TotalOrders &gt; 10000) condition.<br>
+<br>
+2) The resultant bitmap from the previous step would be ANDed together with a bitmap built using the optimized index scan for the State condition.<br>
+<br>
+DBISAM uses a much better approach because it knows that:<br>
+<br>
+1) The TotalOrders condition is not optimized<br>
+<br>
+2) The State condition is optimized<br>
+<br>
+3) Both conditions are joined using the AND operator<br>
+<br>
+it is able to reverse the query conditions in the WHERE clause and execute the index scan for the 200 records that satisfy the State condition first, and then proceed to only read the 200 records from disk in order to evaluate the TotalOrders condition.  DBISAM has just saved a tremendous amount of I&#x2F;O by simply reversing the query conditions.<br>
+<br>
+<div class="note"><img src="https://www.elevatesoft.com/information.png" border=0 alt="Information" align="bottom" height="16" width="16">&#160;This optimization only works with query conditions that are joined by the AND operator.  If the above two conditions were joined using the OR operator, then DBISAM would simply read all 25,000 records and evaluate the entire WHERE expression for each record.</div>
+<br>
+In the case of a completely un-optimized query, DBISAM&#x27;s read-ahead buffering can help tremendously in reducing network traffic and providing the most efficient reads with the least amount of I&#x2F;O calls to the operating system.  DBISAM will read up to 32 kilobytes of contiguous records on disk in the course of processing an un-optimized query.<br>
+<br>
+DBISAM can also optimize for the UPPER() and LOWER() SQL functions by using any case-insensitive indexes in the source tables to optimize the query condition.  Take the following table for example:<br>
+<br>
+<pre>Customer table
+
+Field       Data Type      Index
+---------------------------------------------------
+ID          Integer        Primary Index
+Name        String[30]
+State       String[2]      Secondary, case-insensitive,
+                           non-unique, ascending, index</pre><br>
+And consider the following SQL SELECT query:<br>
+<br>
+<pre>SELECT *
+FROM customer
+WHERE (UPPER(State)=&#x27;CA&#x27;)</pre><br>
+In this query, DBISAM will be able to select and use the case-insensitive index on the State field, and this is caused by the presence of the UPPER() function around the field name.  This can also be used to optimize joins.  For example, here are two tables that use case-insensitive indexes for optimizing joins:<br>
+<br>
+<pre>Customer table
+
+Field       Data Type      Index
+---------------------------------------------------
+ID          String[10]     Primary, case-insensitive
+                           index
+Name        String[30]
+State       String[2]</pre><br>
+<pre>Orders table
+
+Field       Data Type      Index
+---------------------------------------------------
+OrderNum    String[20]     Primary, case-insensitive
+                           index
+CustID      String[10]     Secondary, case-insensitive
+                           index
+TotalAmount BCD[2]</pre><br>
+And consider the following SQL SELECT query:<br>
+<br>
+<pre>SELECT *
+FROM Customer, Orders
+WHERE (UPPER(Customer.ID)=UPPER(Orders.CustID))</pre><br>
+In this query, the join condition will be optimized due to the presence of the UPPER() function around the Orders.CustID field.  The UPPER() function around the Customer.ID field is simply to ensure that the join is made on upper-case customer ID values only.<br>
+<br>
+<span class="largehead">Optimization Levels<hr></span>DBISAM determines the level of optimization for a WHERE or JOIN clause using the following rules:<br>
+<br>
+<pre>Optimized Condition = Fully-Optimized WHERE or JOIN clause
+
+Un-Optimized Condition = Un-Optimized WHERE or JOIN clause
+
+Optimized Condition AND Optimized Condition = Fully-
+Optimized WHERE or JOIN clause
+
+Optimized Condition AND Un-Optimized Condition = Partially-
+Optimized WHERE or JOIN clause
+
+Un-Optimized Condition AND Optimized Condition = Partially-
+Optimized WHERE or JOIN clause
+
+Un-Optimized Condition AND Un-Optimized Condition = Un-
+Optimized WHERE or JOIN clause
+
+Optimized Condition OR Optimized Condition = Fully-
+Optimized WHERE or JOIN clause
+
+Optimized Condition OR Un-Optimized Condition = Un-
+Optimized WHERE or JOIN clause
+
+Un-Optimized Condition OR Optimized Condition = Un-
+Optimized WHERE or JOIN clause
+
+Un-Optimized Condition OR Un-Optimized Condition = Un-
+Optimized WHERE or JOIN clause</pre><br>
+<div class="note"><img src="https://www.elevatesoft.com/information.png" border=0 alt="Information" align="bottom" height="16" width="16">&#160;The unary NOT operator causes any expression to become partially optimized. This is due to the fact that DBISAM must scan for, and remove, deleted records from the current records bitmap once it has taken the bitmap and performed the NOT operation on the bits.</div>
+<br>
+<span class="largehead">DBISAM Limitations<hr></span>DBISAM does not optimize multiple query conditions joined by an AND operator) by mapping them to a compound index that may be available.  To illustrate this point, consider a table with the following structure:<br>
+<br>
+<pre>Employee
+
+Field       Data Type      Index
+----------------------------------------------------------------------
+LastName    String[30]     Primary Index  (both fields are part of the
+FirstName   String[20]     Primary Index   primary index)</pre><br>
+And consider the following query:<br>
+<br>
+<pre>SELECT *
+FROM Employee
+WHERE (LastName=&#x27;Smith&#x27;) and (FirstName=&#x27;John&#x27;)</pre><br>
+Logically you would assume that DBISAM can use the one primary index in order to optimize the entire WHERE clause.  Unfortunately this is not the case, and instead DBISAM will only use the primary index for optimizing the LastName condition and resort to reading records in order to evaluate the FirstName condition.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="columnright"><div class="box"><div class="box_left"><div class="box_right"><div class="boxbtm_back"><div class="boxbtm_left"><div class="boxbtm_right"><div class="boxhdr_back"><div class="boxhdr_left"><div class="boxhdr_right"><div class="box_contents"><img src="https://www.elevatesoft.com/page_white_wrench.png" border=0 alt="More Support Options" align="bottom" height="16" width="16">&#160;<span class="sidehead">More Support Options</span><br>
+<br>
+<div class="spacer"><img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/forums?category=dbisam" name="Support Forums">Support Forums</a><br>
+<img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/supportfaq?category=dbisam" name="Frequently Asked Questions">Frequently Asked Questions</a><br>
+<img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/bulletins?category=dbisam" name="Technical Bulletins">Technical Bulletins</a><br>
+<img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/articles?category=dbisam" name="Technical Articles">Technical Articles</a><br>
+<hr><img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/incident?category=dbisam" name="Incident Reports">Incident Reports</a><br>
+<hr><img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/roadmap?category=dbisam" name="Roadmap">Roadmap</a><br>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer"><table width="100%" cellspacing=0 cellpadding=0><tr align="left" valign="top"><td rowspan="1" colspan="1" align="left" valign="top" width="2%"></td><td rowspan="1" colspan="1" align="left" valign="top" width="30%"><br>
+<br>
+<span class="small">This web page was last updated on</span><br>
+<span class="small">Tuesday, September 16, 2025  at  04:56 PM</span><br>
+<br>
+</td><td rowspan="1" colspan="1" align="right" valign="top" width="66%"><a class="menulink" href="https://www.elevatesoft.com/privacy" name="Privacy Policy">Privacy Policy</a><img src="https://www.elevatesoft.com/bullet_gray.png" border=0 alt="Bullet" align="top" height="16" width="16"><a class="menulink" href="https://www.elevatesoft.com/sitemap" name="Site Map">Site Map</a><br>
+<br>
+<span class="small">&#169; 2026 Elevate Software, Inc.  All Rights Reserved</span><br>
+<span class="small">Questions or comments ? <img src="https://www.elevatesoft.com/email.png" border=0 alt="E-mail" align="top" height="16" width="16"> E-mail us at <a href="mailto:info@elevatesoft.com" name="info@elevatesoft.com">info@elevatesoft.com</a></span><br>
+<br>
+</td><td rowspan="1" colspan="1" align="right" valign="top" width="2%"></td></tr>
+</table>
+</div>
+</div>
+</div>
+<img src="https://www.elevatesoft.com/bottombox.png" border=0 alt="Image" align="bottom" height="52" width="1000"></div>
+</body>
+</html>

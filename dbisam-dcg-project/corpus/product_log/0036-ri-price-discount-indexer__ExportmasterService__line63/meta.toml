@@ -1,0 +1,22 @@
+id = "0036-ri-price-discount-indexer__ExportmasterService__line63"
+status = "meaningful"
+provenance = "product-log"
+source = "/tmp/harvest-ri/ri-price-discount-indexer__ExportmasterService__line63.sql"
+tags = ["raw-import", "source-bug", "literal-backslash-n"]
+notes = """
+Added via tools/corpus-add.sh from the raw file at /tmp/harvest-ri/ri-price-discount-indexer__ExportmasterService__line63.sql.
+SQL copied verbatim. Promote via tools/corpus-promote.sh once the
+grammar covers the construct(s) this query uses.
+
+SOURCE BUG: contains literal backslash-n (`\\n`) sequences from a Java
+string builder that did not expand newline escapes. Both grammar and
+engine correctly reject. Tagged source-bug, kept as a regression canary.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-27T15:39:43Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Slice #59 — broken-source SQL agreed-rejection canary."

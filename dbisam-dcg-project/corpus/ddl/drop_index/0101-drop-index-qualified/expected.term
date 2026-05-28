@@ -1,0 +1,1 @@
+drop_index(qualified(identifier(no_such_canary),identifier(no_such_idx))).

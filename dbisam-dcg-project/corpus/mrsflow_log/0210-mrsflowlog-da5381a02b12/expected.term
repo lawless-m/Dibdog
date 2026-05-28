@@ -1,0 +1,1 @@
+select_statement(all_rows,[extract('MONTH',function_call('CURRENT_DATE',[]))],[table(identifier('CUSTOMER'),no_alias)],[top(1)]).

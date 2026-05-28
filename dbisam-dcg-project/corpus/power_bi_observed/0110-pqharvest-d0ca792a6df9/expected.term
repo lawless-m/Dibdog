@@ -1,0 +1,1 @@
+select_statement(all_rows,[qualified(identifier(niingred),identifier(niean)),qualified(identifier(risupplier),identifier(origin))],[joined(left,table(identifier(niingred),no_alias),table(identifier(risupplier),no_alias),eq(identifier('UF_RICOFOSUPPID'),identifier('SUPPLIER_ID')))],[where(eq(qualified(identifier(niingred),identifier(nilang)),string_literal('ENGLISH')))]).

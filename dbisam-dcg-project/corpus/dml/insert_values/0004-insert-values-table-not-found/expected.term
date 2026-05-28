@@ -1,0 +1,1 @@
+insert_statement(identifier(no_such_table),no_cols,values([integer_literal(1)])).

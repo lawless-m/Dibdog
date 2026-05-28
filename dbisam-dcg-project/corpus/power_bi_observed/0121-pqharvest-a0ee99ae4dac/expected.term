@@ -1,0 +1,1 @@
+select_statement(all_rows,[identifier(ref),identifier('EVVATNO'),identifier('CURRRATE')],[table(identifier(orderh),no_alias)],[where(and(eq(identifier('Sellco'),integer_literal(3)),cmp(gt,identifier(ohinvdate),arith(sub,function_call('CURRENT_DATE',[]),integer_literal(90)))))]).

@@ -1,0 +1,1 @@
+select_statement(all_rows,[identifier(saref),function_call('SUM',[identifier(saval)]),function_call('SUM',[identifier(sacost)])],[table(identifier(analysis),no_alias)],[where(eq(function_call('LEFT',[identifier(saproduct),integer_literal(1)]),string_literal('3'))),group_by([identifier(saref)])]).

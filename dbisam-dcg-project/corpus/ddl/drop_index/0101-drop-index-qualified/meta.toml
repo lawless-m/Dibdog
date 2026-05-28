@@ -1,0 +1,15 @@
+id = "0101-drop-index-qualified"
+status = "meaningful"
+provenance = "manual"
+tags = ["drop-index", "qualified", "ddl", "statement-canary"]
+notes = """
+DROP INDEX with table.name qualifier — DBISAM-specific form (SQL standard uses ON which DBISAM rejects).
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-28T09:58:17Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Slice #74 — statement-type canary."

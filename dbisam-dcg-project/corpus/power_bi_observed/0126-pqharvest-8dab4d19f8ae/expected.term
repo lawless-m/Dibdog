@@ -1,0 +1,1 @@
+select_statement(all_rows,[identifier(ref),identifier(uf_shipmentref),identifier(seqtype),identifier(custcode),identifier(ohinvdate)],[table(identifier(orderh),no_alias)],[where(is_not_null(identifier(ohinvdate)))]).

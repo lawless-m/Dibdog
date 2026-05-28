@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DBISAM engine verdict",
+  "description": "Per-entry cached output from the engine harness. Schema follows CORPUS.md §'engine_verdict.json'. Captured by corpus-refresh-verdicts (not yet built) against the live engine via dbisam-dcg-project/harness/engine.",
+  "type": "object",
+  "required": ["verdict", "engine_version", "captured_at"],
+  "properties": {
+    "verdict": {
+      "type": "string",
+      "enum": ["accepted", "rejected", "error"]
+    },
+    "engine_version": {
+      "description": "The DBISAM engine version string. 'unknown' is accepted in the seed corpus until version probing is added.",
+      "type": "string"
+    },
+    "captured_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "rows_affected": {
+      "type": ["integer", "null"]
+    },
+    "error_code": {
+      "type": ["integer", "null"],
+      "description": "Engine error code, e.g. from a DBISAM Engine Error #NNNN message. Distinct from the wire reqcode (which is captured in harness_reqcode while error_code decoding is not yet implemented; see task #7)."
+    },
+    "error_message": {
+      "type": ["string", "null"]
+    },
+    "harness_reqcode": {
+      "type": ["string", "null"],
+      "description": "The DBISAM wire reqcode from the response body header (e.g. '0x2b02' for table-not-found, '0x2ead' for parse error). See ../../docs/reqcodes.md for the catalogue."
+    },
+    "harness_response_bytes": {
+      "type": ["integer", "null"],
+      "description": "Size of the raw engine response, in bytes. Coarse sanity check, not authoritative."
+    },
+    "harness_table": {
+      "type": ["string", "null"],
+      "description": "0x2b02 only: the offending table name decoded from the rejection Pack stream."
+    },
+    "harness_catalog": {
+      "type": ["string", "null"],
+      "description": "0x2ead only: the database/catalog scope the engine reports the error against (e.g. 'NISAINT_CS')."
+    },
+    "harness_code_a": {
+      "type": ["integer", "null"],
+      "description": "0x2ead only: first numeric code from the rejection Pack stream. Empirically appears to be an error-class indicator (1 = expected-X-found-Y, 2 = missing-required-keyword) but the mapping is provisional."
+    },
+    "harness_code_b": {
+      "type": ["integer", "null"],
+      "description": "0x2ead only: second numeric code from the rejection Pack stream. Empirically appears to be a 1-based character position in the input SQL — verified against `select FOO from CUSTOMER` where code_b=8 lines up with the start byte of 'FOO'."
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,1 @@
+insert_statement(identifier(no_such_table),no_cols,from_select(select_statement(all_rows,[identifier(code)],[table(identifier('CUSTOMER'),no_alias)],[where(eq(integer_literal(1),integer_literal(0)))]))).

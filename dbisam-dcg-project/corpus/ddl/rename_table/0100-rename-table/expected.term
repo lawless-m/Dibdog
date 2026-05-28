@@ -1,0 +1,1 @@
+rename_table(identifier(no_such_a),identifier(no_such_b)).

@@ -1,0 +1,18 @@
+id = "0009-repro1"
+status = "meaningful"
+provenance = "product-log"
+source = "corpus/raw/repro1.sql"
+tags = ["raw-import"]
+notes = """
+Added via tools/corpus-add.sh from the raw file at corpus/raw/repro1.sql.
+SQL copied verbatim. Promote via tools/corpus-promote.sh once the
+grammar covers the construct(s) this query uses.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-27T10:03:40Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Promotion checks passed during slice #34 — double-quoted identifiers."

@@ -1,0 +1,21 @@
+id = "0105-pqharvest-b349dc2b2751"
+status = "meaningful"
+provenance = "power-bi-observed"
+source = "../MrsFlow/examples/xlsx_pq/mnt/RIVSTS01_SHARE/Finance/Finance_Secure/Commercial_Finance/Jacks_Docs/Budget_2024/Summary_Sheet_2024.xlsx/Exportmaster_Selling_Company.m"
+tags = ["harvest", "static-extracted", "pq-literal"]
+notes = """
+Statically extracted from a quoted SELECT string in a .pq / .m file
+via tools/harvest-pq.sh. Some entries will be syntactically incomplete
+because the source file builds the final SQL via Power Query M string
+concatenation (`& "..."`) at runtime — static extraction picks up
+the first quoted fragment only. The engine verdict captured for this
+entry is the authoritative signal on whether it stands on its own.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-26T21:53:04Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Promotion checks passed via tools/corpus-promote.sh during slice #16 — bare SELECT shape covered by slice #5's lexical+statement DCG."

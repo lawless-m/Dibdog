@@ -1,0 +1,1 @@
+select_statement(all_rows,[star],[table(identifier(no_such_table),no_alias)],[]).

@@ -1,0 +1,18 @@
+id = "0025-ri-product-indexer__ExportmasterService__line27"
+status = "meaningful"
+provenance = "product-log"
+source = "/tmp/harvest-ri/ri-product-indexer__ExportmasterService__line27.sql"
+tags = ["raw-import"]
+notes = """
+Added via tools/corpus-add.sh from the raw file at /tmp/harvest-ri/ri-product-indexer__ExportmasterService__line27.sql.
+SQL copied verbatim. Promote via tools/corpus-promote.sh once the
+grammar covers the construct(s) this query uses.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-27T14:57:58Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Harvest ri-* slice — production SQL from Java extraction."

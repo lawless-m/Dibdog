@@ -1,0 +1,18 @@
+id = "0035-ri-price-discount-indexer__ExportmasterService__line54"
+status = "meaningful"
+provenance = "product-log"
+source = "/tmp/harvest-ri/ri-price-discount-indexer__ExportmasterService__line54.sql"
+tags = ["raw-import"]
+notes = """
+Added via tools/corpus-add.sh from the raw file at /tmp/harvest-ri/ri-price-discount-indexer__ExportmasterService__line54.sql.
+SQL copied verbatim. Promote via tools/corpus-promote.sh once the
+grammar covers the construct(s) this query uses.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-27T15:37:11Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Slice #58 — SELECT INTO."

@@ -1,0 +1,1 @@
+select_statement(all_rows,[trim(both,string_literal(' '),identifier(cpyname))],[table(identifier('CUSTOMER'),no_alias)],[top(3)]).

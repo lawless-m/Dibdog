@@ -1,0 +1,12 @@
+health:
+{"ok":true,"target":"rivsem04"}
+
+verdicts:
+select count(*) from product                            => {"verdict":"accepted","bytes":4044}
+select CODE from CUSTOMER                               => {"verdict":"accepted","bytes":4052}
+select count(*) from analysis                           => {"verdict":"accepted","bytes":4044}
+select * from no_such_table                             => {"verdict":"rejected","detail":"reqcode=0x2b02"}
+this is not valid sql at all                            => {"verdict":"rejected","detail":"reqcode=0x2ead"}
+select from where                                       => {"verdict":"rejected","detail":"reqcode=0x2ead"}
+selectt CODE from CUSTOMER                              => {"verdict":"rejected","detail":"reqcode=0x2ead"}
+                                                        => {"verdict":"rejected","detail":"reqcode=0x2ead"}

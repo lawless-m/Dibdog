@@ -1,0 +1,1 @@
+select_statement(all_rows,[cast(identifier(uf_csa),type('VARCHAR',[10]))],[table(identifier('CUSTOMER'),no_alias)],[where(is_not_null(identifier(uf_csa))),top(3)]).

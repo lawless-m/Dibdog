@@ -1,0 +1,546 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head><script type="text/javascript" async src="https://www.googletagmanager.com/gtag/js?id=UA-15048886-1"">
+
+</script>
+<script type="text/javascript">
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-15048886-1');
+</script>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link rel="alternate" type="application/rss+xml" title="Elevate Software Blog RSS 2.0 Feed" href="https://www.elevatesoft.com/blog?action=rss2feed"><meta name="Keywords" content="web builder,
+web development,
+rad web development,
+pascal web development,
+delphi web development,
+database web development,
+web application,
+rad web application,
+rapid web application development,
+delphi web application,
+pascal web application,
+database web application,
+web ide,
+web form designer,
+web wysiwyg form designer,
+web framework,
+html5,
+ajax,
+canvas,
+local storage,
+themes,
+javascript,
+javascript compiler,
+javascript compression
+database, sql database,
+sql database engine,
+delphi database,
+delphi database components,
+delphi database engine,
+delphi sql database,
+delphi sql database engine,
+compact delphi database,
+compact delphi database engine,
+compact delphi sql database,
+compact delphi sql database engine,
+embedded delphi database,
+embedded delphi database engine,
+embedded delphi sql database,
+embedded delphi sql database engine,
+compact lazarus database,
+compact lazarus database engine,
+compact lazarus sql database,
+compact lazarus sql database engine,
+embedded lazarus database,
+embedded lazarus database engine,
+embedded lazarus sql database,
+embedded lazarus sql database engine,
+compact free pascal database,
+compact free pascal database engine,
+compact free pascal sql database,
+compact free pascal sql database engine,
+embedded free pascal database,
+embedded free pascal database engine,
+embedded free pascal sql database,
+embedded free pascal sql database engine,
+odbc database,
+odbc database components,
+odbc database engine,
+odbc sql database,
+odbc sql database engine,
+compact odbc database,
+compact odbc database engine,
+compact odbc sql database,
+compact odbc sql database engine,
+embedded odbc database,
+embedded odbc database engine,
+embedded odbc sql database,
+embedded odbc sql database engine,
+vb database,
+vb database components,
+vb database engine,
+vb sql database,
+vb sql database engine,
+compact vb database,
+compact vb database engine,
+compact vb sql database,
+compact vb sql database engine,
+embedded vb database,
+embedded vb database engine,
+embedded vb sql database,
+embedded vb sql database engine,
+c# database,
+c# database components,
+c# database engine,
+c# sql database,
+c# sql database engine,
+compact c# database,
+compact c# database engine,
+compact c# sql database,
+compact c# sql database engine,
+embedded c# database,
+embedded c# database engine,
+embedded c# sql database,
+embedded c# sql database engine,
+.net database,
+.net database components,
+.net database engine,
+.net sql database,
+.net sql database engine,
+compact .net database,
+compact .net database engine,
+compact .net sql database,
+compact .net sql database engine,
+embedded .net database,
+embedded .net database engine,
+embedded .net sql database,
+embedded .net sql database engine
+php database,
+php database components,
+php database engine,
+php sql database,
+php sql database engine,
+compact php database,
+compact php database engine,
+compact php sql database,
+compact php sql database engine,
+embedded php database,
+embedded php database engine,
+embedded php sql database,
+embedded php sql database engine,">
+<meta name="google-site-verification" content="lm7_CbK2t-5fdfErGPRZRqauyTNNCPnzuNoCI9m9rKM">
+<meta name="Generator" content="Elevate Software, Inc. Automated Web Site System">
+<link rel="stylesheet" href="https://www.elevatesoft.com/elevate.css" type="text/css"><title>Operators</title></head>
+<body><div class="page"><div class="pagebody"><div class="pagecontent"><div class="header"><table width="100%" cellspacing=0 cellpadding=0><tr align="left" valign="middle"><td rowspan="1" colspan="1" align="left" valign="middle" width="2%"><br>
+</td><td rowspan="1" colspan="1" align="left" valign="middle" width="30%"><br>
+<a href="https://www.elevatesoft.com/home" name="Elevate Software"><img src="https://www.elevatesoft.com/whitelogosml.png" border=0 alt="Elevate Software" align="middle" height="100" width="250"></a></td><td rowspan="1" colspan="1" align="right" valign="middle" width="66%"><br>
+<br>
+<img src="https://www.elevatesoft.com/user.png" border=0 alt="Login" align="top" height="16" width="16">&#160;<a class="smalllink" href="https://www.elevatesoft.com/user?action=login&area=productmanuals_dbisam" name="Login">Login</a><br>
+<br>
+<a class="menulink" href="https://www.elevatesoft.com/products" name="Products">Products</a><img src="https://www.elevatesoft.com/bullet_gray.png" border=0 alt="Bullet" align="top" height="16" width="16"><a class="menulink" href="https://www.elevatesoft.com/sales" name="Sales">Sales</a><img src="https://www.elevatesoft.com/bullet_gray.png" border=0 alt="Bullet" align="top" height="16" width="16"><a class="menulink" href="https://www.elevatesoft.com/support" name="Support">Support</a><img src="https://www.elevatesoft.com/bullet_gray.png" border=0 alt="Bullet" align="top" height="16" width="16"><a class="menulink" href="https://www.elevatesoft.com/download" name="Downloads">Downloads</a><img src="https://www.elevatesoft.com/bullet_gray.png" border=0 alt="Bullet" align="top" height="16" width="16"><a class="menulink" href="https://www.elevatesoft.com/about" name="About">About</a></td><td rowspan="1" colspan="1" align="right" valign="middle" width="2%"><br>
+</td></tr>
+</table>
+<table width="100%" cellspacing=0 cellpadding=0><tr align="left" valign="middle"><td rowspan="1" colspan="1" align="left" valign="middle" width="2%"><br>
+</td><td rowspan="1" colspan="1" align="left" valign="middle" width="96%"><hr></td><td rowspan="1" colspan="1" align="left" valign="middle" width="2%"><br>
+</td></tr>
+</table>
+<table width="100%" cellspacing=0 cellpadding=0><tr align="left" valign="middle"><td rowspan="1" colspan="1" align="left" valign="middle" width="2%"><br>
+</td><td rowspan="1" colspan="1" align="left" valign="middle" width="96%"><a class="smalllink" href="https://www.elevatesoft.com/home" name="Home">Home</a>&#160;<span class="small">»</span>&#160;<a class="smalllink" href="https://www.elevatesoft.com/support" name="Technical Support">Technical Support</a>&#160;<span class="small">»</span>&#160;<a class="smalllink" href="https://www.elevatesoft.com/support?category=dbisam" name="DBISAM Technical Support">DBISAM Technical Support</a>&#160;<span class="small">»</span>&#160;<a class="smalllink" href="https://www.elevatesoft.com/manual?category=dbisam" name="Product Manuals">Product Manuals</a>&#160;<span class="small">»</span>&#160;<a class="smalllink" href="https://www.elevatesoft.com/manual?action=contents&id=dbisam4&product=delphi&version=5" name="DBISAM Version 4 Manual for Delphi 5">DBISAM Version 4 Manual for Delphi 5</a>&#160;<span class="small">»</span>&#160;<a class="smalllink" href="https://www.elevatesoft.com/manual?action=topics&id=dbisam4&product=delphi&version=5&section=sql_reference" name="SQL Reference">SQL Reference</a>&#160;<span class="small">»</span>&#160;<span class="small">Operators</span></td><td rowspan="1" colspan="1" align="left" valign="middle" width="2%"><br>
+</td></tr>
+</table>
+<br>
+</div>
+<div class="colmask rightmenu"><div class="columnleft"><div class="box"><div class="box_left"><div class="box_right"><div class="boxbtm_back"><div class="boxbtm_left"><div class="boxbtm_right"><div class="boxhdr_back"><div class="boxhdr_left"><div class="boxhdr_right"><div class="box_contents"><img src="https://www.elevatesoft.com/folder_wrench.png" border=0 alt="Icon" align="bottom" height="16" width="16">&#160;<span class="subhead">Operators</span><br>
+<br>
+<div class="spacer"><span class="largehead">Introduction<hr></span>DBISAM allows comparison operators, extended comparison operators, arithmetic operators, string operators, date, time, and timestamp operators, and logical operators in SQL statements.  These operators are detailed below.<br>
+<br>
+<span class="largehead">Comparison Operators<hr></span>Use comparison operators to perform comparisons on data in SELECT, INSERT, UPDATE, or DELETE queries.  DBISAM&#x27;s SQL supports the following comparison operators:<br>
+<br>
+<div class="gridbox"><div class="gridbox_left"><div class="gridbox_right"><div class="gridboxbtm_back"><div class="gridboxbtm_left"><div class="gridboxbtm_right"><div class="gridboxhdr_back"><div class="gridboxhdr_left"><div class="gridboxhdr_right"><div class="gridbox_contents"><table class="gridhead" width="100%" cellspacing=1 cellpadding=4><tr align="center" valign="middle"><td rowspan="1" colspan="1" align="left" valign="top" width="40%"><span class="smallhead">Operator</span></td><td rowspan="1" colspan="1" align="left" valign="top" width="60%"><span class="smallhead">Description</span></td></tr>
+</table>
+<table class="gridshade" width="100%" cellspacing=1 cellpadding=4><tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">&lt;</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Determines if a value is less than another value.<br>
+</td></tr>
+<tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">&gt;</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Determines if a value is greater than another value.<br>
+</td></tr>
+<tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">=</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Determines if a value is equal to another value.<br>
+</td></tr>
+<tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">&lt;&gt;</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Determines if a value is not equal to another value.<br>
+</td></tr>
+<tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">&gt;=</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Determines if a value is greater than or equal to another value.<br>
+</td></tr>
+<tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">&lt;=</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Determines if a value is less than or equal to another value.</td></tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+Use comparison operators to compare two like values.  Values compared can be: column values, literals, or calculations.  The result of the comparison is a boolean value that is used in contexts like a WHERE clause to determine on a row-by-row basis whether a row meets the filtering criteria.  The following example uses the &gt;= comparison operator to show only the orders where the ItemsTotal column is greater than or equal to 1000:<br>
+<br>
+<pre>SELECT *
+FROM Orders
+WHERE (ItemsTotal &gt;= 1000)</pre><br>
+Comparisons must be between two values of the same or a compatible data type.  The result of a comparison operation can be modified by a logical operator, such as NOT.  The following example uses the &gt;= comparison operator and the logical NOT operator to show only the orders where the ItemsTotal column is not greater than or equal to 1000:<br>
+<br>
+<pre>SELECT *
+FROM Orders
+WHERE NOT (ItemsTotal &gt;= 1000)</pre><br>
+<div class="note"><img src="https://www.elevatesoft.com/information.png" border=0 alt="Information" align="bottom" height="16" width="16">&#160;Comparison operators can only be used in a WHERE or HAVING clause, or in the ON clause of a join - they cannot be used in the SELECT clause.  The only exception to this would be within the first argument to the IF() function, which allows comparison expressions for performing IF...ELSE boolean logic.</div>
+<br>
+<span class="largehead">Extended Comparison Operators<hr></span>Use extended comparison operators to perform comparisons on data in SELECT, INSERT, UPDATE, or DELETE queries.  DBISAM supports the following extended comparison operators:<br>
+<br>
+<div class="gridbox"><div class="gridbox_left"><div class="gridbox_right"><div class="gridboxbtm_back"><div class="gridboxbtm_left"><div class="gridboxbtm_right"><div class="gridboxhdr_back"><div class="gridboxhdr_left"><div class="gridboxhdr_right"><div class="gridbox_contents"><table class="gridhead" width="100%" cellspacing=1 cellpadding=4><tr align="center" valign="middle"><td rowspan="1" colspan="1" align="left" valign="top" width="40%"><span class="smallhead">Operator</span></td><td rowspan="1" colspan="1" align="left" valign="top" width="60%"><span class="smallhead">Description</span></td></tr>
+</table>
+<table class="gridshade" width="100%" cellspacing=1 cellpadding=4><tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">[NOT] BETWEEN</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Compares a value to a range formed by two values.<br>
+</td></tr>
+<tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">[NOT] IN</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Determines whether a value exists in a list of values.<br>
+</td></tr>
+<tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">[NOT] LIKE</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Compares, in part or in whole, one value with another.<br>
+</td></tr>
+<tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">IS [NOT] NULL</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Compares a value with an empty, or NULL, value.</td></tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+<span class="largehead">BETWEEN Extended Comparison Operator<hr></span>The BETWEEN extended comparison operator determines whether a value falls inside a range.  The syntax is as follows:<br>
+<br>
+<pre>value1 [NOT] BETWEEN value2 AND value3</pre><br>
+Use the BETWEEN extended comparison operator to compare a value to a value range.  If the value is greater than or equal to the low end of the range and less than or equal to the high end of the range, BETWEEN returns a TRUE value.  If the value is less than the low end value or greater than the high end value, BETWEEN returns a FALSE value.  For example, the expression below returns a FALSE value because 10 is not between 1 and 5:<br>
+<br>
+<pre>10 BETWEEN 1 AND 5</pre><br>
+Use NOT to return the converse of a BETWEEN comparison.  For example, the expression below returns a TRUE value:<br>
+<br>
+<pre>10 NOT BETWEEN 1 AND 5</pre><br>
+BETWEEN can be used with all non-BLOB data types, but all values compared must be of the same or a compatible data type.  The left-side and right-side values used in a BETWEEN comparison may be columns, literals, or calculated values.  The following example returns all orders where the SaleDate column is between January 1, 1998 and December 31, 1998:<br>
+<br>
+<pre>SELECT SaleDate
+FROM Orders
+WHERE (SaleDate BETWEEN &#x27;1998-01-01&#x27; AND &#x27;1998-12-31&#x27;)</pre><br>
+BETWEEN is useful when filtering to retrieve rows with contiguous values that fall within the specified range.  For filtering to retrieve rows with noncontiguous values, use the IN extended comparison operator.<br>
+<br>
+<span class="largehead">IN Extended Comparison Operator<hr></span>The IN extended comparison operator indicates whether a value exists in a set of values.  The syntax is as follows:<br>
+<br>
+<pre>value [NOT] IN (value_set)</pre><br>
+Use the IN extended comparison operator to filter a table based on the existence of a column value in a specified set of comparison values.  The set of comparison values can be a comma-separated list of column names, literals, or calculated values.  The following example returns all customers where the State column is either &#x27;CA&#x27; or &#x27;HI&#x27;:<br>
+<br>
+<pre>SELECT c.Company, c.State
+FROM Customer c
+WHERE (c.State IN (&#x27;CA&#x27;, &#x27;HI&#x27;))</pre><br>
+The value to compare with the values set can be any or a combination of a column value, a literal value, or a calculated value.  Use NOT to return the converse of an IN comparison.  IN can be used with all non-BLOB data types, but all values compared must be of the same or a compatible data type.<br>
+<br>
+IN is useful when filtering to retrieve rows with noncontiguous values.  For filtering to retrieve rows with contiguous values that fall within a specified range, use the BETWEEN extended comparison operator.<br>
+<br>
+<span class="largehead">LIKE Extended Comparison Operator<hr></span>The LIKE extended comparison operator indicates the similarity of one value as compared to another.  The syntax is as follows:<br>
+<br>
+<pre>value [NOT] LIKE [substitution_char] comparison_value
+[substitution_char] ESCAPE escape_char</pre><br>
+Use the LIKE extended comparison operator to filter a table based on the similarity of a column value to a comparison value.  Use of substitution characters allows the comparison to be based on the whole column value or just a portion.  The following example returns all customers where the Company column is equal to &#x27;Adventure Undersea&#x27;:<br>
+<br>
+<pre>SELECT *
+FROM Customer
+WHERE (Company LIKE &#x27;Adventure Undersea&#x27;)</pre><br>
+The wildcard substitution character (%) may be used in the comparison to represent an unknown number of characters.  LIKE returns a TRUE when the portion of the column value matches that portion of the comparison value not corresponding to the position of the wildcard character.  The wildcard character can appear at the beginning, middle, or end of the comparison value (or multiple combinations of these positions).  The following example retrieves rows where the column value begins with &#x27;A&#x27; and is followed by any number of any characters.  Matching values could include &#x27;Action Club&#x27; and &#x27;Adventure Undersea&#x27;, but not &#x27;Blue Sports&#x27;:<br>
+<br>
+<pre>SELECT *
+FROM Customer
+WHERE (Company LIKE &#x27;A%&#x27;)</pre><br>
+The single-character substitution character (_) may be used in the comparison to represent a single character.  LIKE returns a TRUE when the portion of the column value matches that portion of the comparison value not corresponding to the position of the single-character substitution character.  The single-character substitution character can appear at the beginning, middle, or end of the comparison value (or multiple combinations of these positions).  Use one single-character substitution character for each character to be wild in the filter pattern.  The following example retrieves rows where the column value begins with &#x27;b&#x27; ends with &#x27;n&#x27;, with one character of any value between.  Matching values could include &#x27;bin&#x27; and &#x27;ban&#x27;, but not &#x27;barn&#x27;:<br>
+<br>
+<pre>SELECT Words
+FROM Dictionary
+WHERE (Words LIKE &#x27;b_n&#x27;)</pre><br>
+The ESCAPE keyword can be used after the comparison to represent an escape character in the comparison value.  When an escape character is found in the comparison value, DBISAM will treat the next character after the escape character as a literal and not a wildcard character.  This allows for the use of the special wildcard characters as literal search characters in the comparison value.  For example, the following example retrieves rows where the column value contains the string constant &#x27;10%&#x27;:<br>
+<br>
+<pre>SELECT ID, Description
+FROM Items
+WHERE (Description LIKE &#x27;%10\%%&#x27;) ESCAPE &#x27;\&#x27;</pre><br>
+Use NOT to return the converse of a LIKE comparison.  LIKE can be used only with string or compatible data types such as memo columns. The comparison performed by the LIKE extended comparison operator is always case-sensitive.<br>
+<br>
+<span class="largehead">IS NULL Extended Comparison Operator<hr></span>The IS NULL extended comparison operator indicates whether a column contains a NULL value.  The syntax is as follows:<br>
+<br>
+<pre>column_reference IS [NOT] NULL</pre><br>
+Use the IS NULL extended comparison operator to filter a table based on the specified column containing a NULL (empty) value.  The following example returns all customers where the InvoiceDate column is null:<br>
+<br>
+<pre>SELECT *
+FROM Customer
+WHERE (InvoiceDate IS NULL)</pre><br>
+Use NOT to return the converse of a IS NULL comparison.<br>
+<br>
+<div class="note"><img src="https://www.elevatesoft.com/information.png" border=0 alt="Information" align="bottom" height="16" width="16">&#160;For a numeric column, a zero value is not the same as a NULL value.</div>
+<br>
+<span class="largehead">Value Operators<hr></span>Use value operators to return specific values based upon other expressions in SELECT, INSERT, UPDATE, or DELETE queries.  DBISAM supports the following value operators:<br>
+<br>
+<div class="gridbox"><div class="gridbox_left"><div class="gridbox_right"><div class="gridboxbtm_back"><div class="gridboxbtm_left"><div class="gridboxbtm_right"><div class="gridboxhdr_back"><div class="gridboxhdr_left"><div class="gridboxhdr_right"><div class="gridbox_contents"><table class="gridhead" width="100%" cellspacing=1 cellpadding=4><tr align="center" valign="middle"><td rowspan="1" colspan="1" align="left" valign="top" width="40%"><span class="smallhead">Operator</span></td><td rowspan="1" colspan="1" align="left" valign="top" width="60%"><span class="smallhead">Description</span></td></tr>
+</table>
+<table class="gridshade" width="100%" cellspacing=1 cellpadding=4><tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">CASE</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Evaluates a series of boolean expressions and returns the matching result value.</td></tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+<span class="largehead">CASE Value Operator<hr></span>The CASE value operator can be used in with two different syntaxes, one being the normal syntax while the other being a shorthand syntax.  The normal syntax is used to evaluate a series of boolean expressions and return the matching result value for the first boolean expression that returns True, and is as follows:<br>
+<br>
+<pre>CASE
+WHEN boolean expression THEN value
+[WHEN boolean expression THEN value]
+[ELSE] value
+END</pre><br>
+The following is an example of the normal CASE syntax.  It translate a credit card type into a more verbose description:<br>
+<br>
+<pre>SELECT CardType,
+CASE
+WHEN Upper(CardType)=&#x27;A&#x27; THEN &#x27;American Express&#x27;
+WHEN Upper(CardType)=&#x27;M&#x27; THEN &#x27;Mastercard&#x27;
+WHEN Upper(CardType)=&#x27;V&#x27; THEN &#x27;Visa&#x27;
+WHEN Upper(CardType)=&#x27;D&#x27; THEN &#x27;Diners Club&#x27;
+END AS CardDesc, 
+SUM(SalesAmount) AS TotalSales
+FROM Transactions
+GROUP BY CardType
+ORDER BY TotalSales DESC</pre><br>
+The shorthand syntax is as follows:<br>
+<br>
+<pre>CASE expression
+WHEN expression THEN value
+[WHEN expression THEN value]
+[ELSE] value
+END</pre><br>
+The primary difference between the shorthand syntax and the normal syntax is the inclusion of the expression directly after the CASE operator itself.  It is used as the comparison value for every WHEN expression.  All WHEN expressions must be type-compatible with this expression and can be any type, unlike the normal syntax which requires boolean expressions.  The rest of the shorthand syntax is the same as the normal syntax.<br>
+<br>
+The following is the above credit card type example using the shorthand syntax:<br>
+<br>
+<pre>SELECT CardType,
+CASE Upper(CardType)
+WHEN &#x27;A&#x27; THEN &#x27;American Express&#x27;
+WHEN &#x27;M&#x27; THEN &#x27;Mastercard&#x27;
+WHEN &#x27;V&#x27; THEN &#x27;Visa&#x27;
+WHEN &#x27;D&#x27; THEN &#x27;Diners Club&#x27;
+END AS CardDesc, 
+SUM(SalesAmount) AS TotalSales
+FROM Transactions
+GROUP BY CardType
+ORDER BY TotalSales DESC</pre><br>
+<span class="largehead">Arithmetic Operators<hr></span>Use arithmetic operators to perform arithmetic calculations on data in SELECT, INSERT, UPDATE, or DELETE queries.  DBISAM&#x27;s SQL supports the following arithmetic operators:<br>
+<br>
+<div class="gridbox"><div class="gridbox_left"><div class="gridbox_right"><div class="gridboxbtm_back"><div class="gridboxbtm_left"><div class="gridboxbtm_right"><div class="gridboxhdr_back"><div class="gridboxhdr_left"><div class="gridboxhdr_right"><div class="gridbox_contents"><table class="gridhead" width="100%" cellspacing=1 cellpadding=4><tr align="center" valign="middle"><td rowspan="1" colspan="1" align="left" valign="top" width="40%"><span class="smallhead">Operator</span></td><td rowspan="1" colspan="1" align="left" valign="top" width="60%"><span class="smallhead">Description</span></td></tr>
+</table>
+<table class="gridshade" width="100%" cellspacing=1 cellpadding=4><tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">+</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Add two numeric values together numeric value.<br>
+</td></tr>
+<tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">-</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Subtract one numeric value from another numeric value.<br>
+</td></tr>
+<tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">*</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Multiply one numeric value by another numeric value.<br>
+</td></tr>
+<tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">&#x2F;</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Divide one numeric value by another numeric value.<br>
+</td></tr>
+<tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">MOD</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Returns the modulus of the two integer arguments as an integer</td></tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+Calculations can be performed wherever non-aggregated data values are allowed, such as in a SELECT or WHERE clause.  In following example, a column value is multiplied by a numeric literal:<br>
+<br>
+<pre>SELECT (itemstotal * 0.0825) AS Tax
+FROM orders</pre><br>
+Arithmetic calculations are performed in the normal order of precedence: multiplication, division, modulus, addition, and then subtraction.  To cause a calculation to be performed out of the normal order of precedence, use parentheses around the operation to be performed first.  In the next example, the addition is performed before the multiplication:<br>
+<br>
+<pre>SELECT (n.numbers * (n.multiple + 1)) AS Result
+FROM numbertable n</pre><br>
+Arithmetic operators operate only on numeric values.<br>
+<br>
+<span class="largehead">String Operators<hr></span>Use string operators to perform string concatenation on character data in SELECT, INSERT, UPDATE, or DELETE queries.  DBISAM&#x27;s SQL supports the following string operators:<br>
+<br>
+<div class="gridbox"><div class="gridbox_left"><div class="gridbox_right"><div class="gridboxbtm_back"><div class="gridboxbtm_left"><div class="gridboxbtm_right"><div class="gridboxhdr_back"><div class="gridboxhdr_left"><div class="gridboxhdr_right"><div class="gridbox_contents"><table class="gridhead" width="100%" cellspacing=1 cellpadding=4><tr align="center" valign="middle"><td rowspan="1" colspan="1" align="left" valign="top" width="40%"><span class="smallhead">Operator</span></td><td rowspan="1" colspan="1" align="left" valign="top" width="60%"><span class="smallhead">Description</span></td></tr>
+</table>
+<table class="gridshade" width="100%" cellspacing=1 cellpadding=4><tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">+</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Concatenate two string values together.<br>
+</td></tr>
+<tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">||</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Concatenate two string values together.</td></tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+String operations can be performed wherever non-aggregated data values are allowed, such as in a SELECT or WHERE clause.  In following example, a column value concatenated with a second column value to provide a new calculated column in the query result set:<br>
+<br>
+<pre>SELECT (LastName + &#x27;, &#x27; + FirstName) AS FullName
+FROM Employee</pre><br>
+String operators operate only on string values or memo columns.<br>
+<br>
+<span class="largehead">Date, Time, and Timestamp Operators<hr></span>Use date, time, and timestamp operators to perform date, time, and timestamp calculations in SELECT, INSERT, UPDATE, or DELETE queries.  DBISAM&#x27;s SQL supports the following date, time, and timestamp operators:<br>
+<br>
+<div class="gridbox"><div class="gridbox_left"><div class="gridbox_right"><div class="gridboxbtm_back"><div class="gridboxbtm_left"><div class="gridboxbtm_right"><div class="gridboxhdr_back"><div class="gridboxhdr_left"><div class="gridboxhdr_right"><div class="gridbox_contents"><table class="gridhead" width="100%" cellspacing=1 cellpadding=4><tr align="center" valign="middle"><td rowspan="1" colspan="1" align="left" valign="top" width="40%"><span class="smallhead">Operator</span></td><td rowspan="1" colspan="1" align="left" valign="top" width="60%"><span class="smallhead">Description</span></td></tr>
+</table>
+<table class="gridshade" width="100%" cellspacing=1 cellpadding=4><tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">+</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Adding days or milliseconds to date, time, or timestamp values.<br>
+</td></tr>
+<tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">-</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Subtracting days or milliseconds from date, time, or timestamp values, or subtracting two date, time, or timestamp values to get the difference in days or millseconds.</td></tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+The rules for adding or subtracting dates, times, and timestamps in conjunction with integers are as follows:<br>
+<br>
+Adding an integer to a date is equivalent to adding days to the date<br>
+<br>
+Adding an integer to a time is equivalent to adding milliseconds to the time (be careful of wraparound since a time value is equal to the number of milliseconds elapsed since the beginning of the current day)<br>
+<br>
+Adding an integer to a timestamp is equivalent to adding milliseconds to the time portion of the timestamp (any milliseconds beyond the number of milliseconds in a day will result in an increment of the day value in the timestamp by 1)<br>
+<br>
+Subtracting an integer from a date is equivalent to subtracting days from the date<br>
+<br>
+Subtracting an integer from a time is equivalent to subtracting milliseconds from the time (be careful of going below 0, which will be ignored)<br>
+<br>
+Subtracting an integer from a timestamp is equivalent to subtracting milliseconds from the time portion of the timestamp (any milliseconds less than 0 for the time portion will result in a decrement of the day value in the timestamp by 1)<br>
+<br>
+Subtracting a date value from another date value will result in the number of days between the two dates (be sure to use the ABS() function to ensure a positive value if the second value is larger than the first)<br>
+<br>
+Subtracting a time value from another time value will result in the number of milliseconds between the two times (be sure to use the ABS() function to ensure a positive value if the second value is larger than the first)<br>
+<br>
+Subtracting a date value from a timestamp value will result in the number of milliseconds between the timestamp and the date (be sure to use the ABS() function to ensure a positive value if the second value is larger than the first)<br>
+<br>
+Subtracting a timestamp value from a timestamp value will result in the number of milliseconds between the timestamp and the other timestamp (be sure to use the ABS() function to ensure a positive value if the second value is larger than the first)<br>
+<br>
+The following example shows how you would add 30 days to a date to get an invoice due date for an invoice in a SELECT SQL statement:<br>
+<br>
+<pre>SELECT InvoiceDate, (InvoiceDate + 30) AS DueDate, BalanceDue
+FROM Invoices
+WHERE InvoiceDate BETWEEN &#x27;1999-01-01&#x27; AND &#x27;1999-01-31&#x27;</pre><br>
+Date, time, and timestamp operators operate only on date, time, or timestamp values in conjuction with integer values.<br>
+<br>
+<span class="largehead">Logical Operators<hr></span>Use logical operators to perform Boolean logic between different predicates (conditions) in an SQL WHERE clause.  DBISAM&#x27;s SQL supports the following logical operators:<br>
+<br>
+<div class="gridbox"><div class="gridbox_left"><div class="gridbox_right"><div class="gridboxbtm_back"><div class="gridboxbtm_left"><div class="gridboxbtm_right"><div class="gridboxhdr_back"><div class="gridboxhdr_left"><div class="gridboxhdr_right"><div class="gridbox_contents"><table class="gridhead" width="100%" cellspacing=1 cellpadding=4><tr align="center" valign="middle"><td rowspan="1" colspan="1" align="left" valign="top" width="40%"><span class="smallhead">Operator</span></td><td rowspan="1" colspan="1" align="left" valign="top" width="60%"><span class="smallhead">Description</span></td></tr>
+</table>
+<table class="gridshade" width="100%" cellspacing=1 cellpadding=4><tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">NOT</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">NOT a boolean value.<br>
+</td></tr>
+<tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">AND</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">AND two boolean values together.<br>
+</td></tr>
+<tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">OR</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">OR two boolean values together.</td></tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+This allows the source table(s) to be filtered based on multiple conditions.  Logical operators compare the boolean result of two predicate comparisons, each producing a boolean result.  If OR is used, either of the two predicate comparisons can result on a TRUE value for the whole expression to evaluate to TRUE.  If AND is used, both predicate comparisons must evaluate to TRUE for the whole expression to be TRUE; if either is FALSE, the whole is FALSE.  In the following example, if only one of the two predicate comparisons is TRUE, the row will be included in the query result set:<br>
+<br>
+<pre>SELECT *
+FROM Reservations
+WHERE ((ReservationDate &lt; &#x27;1998-01-31&#x27;) OR (Paid = TRUE))</pre><br>
+Logical operator comparisons are performed in the order of AND and then OR.  To perform a comparison out of the normal order of precedence, use parentheses around the comparison to be performed first.  The SELECT statement below retrieves all rows where the Shape column is &#x27;Round&#x27; and the Color &#x27;Blue&#x27;:<br>
+<br>
+<pre>SELECT Shape, Color
+FROM Objects
+WHERE (Color = &#x27;Red&#x27; OR Shape = &#x27;Round&#x27;) AND Color = &#x27;Blue&#x27;</pre><br>
+Without the parentheses, the default order of precedence is used and the logic changes.  The next example, a variation on the above statement, would return rows where the Shape is &#x27;Round&#x27; and the Color is &#x27;Blue&#x27;, but would also return rows where the Color is &#x27;Red&#x27;, regardless of the Shape:<br>
+<br>
+<pre>SELECT Shape, Color
+FROM Objects
+WHERE Color = &#x27;Red&#x27; OR Shape = &#x27;Round&#x27; AND Color = &#x27;Blue&#x27;</pre><br>
+Use the NOT operator to negate the boolean result of a comparison.  In the following example, only those rows where the Paid column contains a FALSE value are retrieved:<br>
+<br>
+<pre>SELECT *
+FROM reservations
+WHERE (NOT (Paid = TRUE))</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="columnright"><div class="box"><div class="box_left"><div class="box_right"><div class="boxbtm_back"><div class="boxbtm_left"><div class="boxbtm_right"><div class="boxhdr_back"><div class="boxhdr_left"><div class="boxhdr_right"><div class="box_contents"><img src="https://www.elevatesoft.com/page_white_wrench.png" border=0 alt="More Support Options" align="bottom" height="16" width="16">&#160;<span class="sidehead">More Support Options</span><br>
+<br>
+<div class="spacer"><img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/forums?category=dbisam" name="Support Forums">Support Forums</a><br>
+<img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/supportfaq?category=dbisam" name="Frequently Asked Questions">Frequently Asked Questions</a><br>
+<img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/bulletins?category=dbisam" name="Technical Bulletins">Technical Bulletins</a><br>
+<img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/articles?category=dbisam" name="Technical Articles">Technical Articles</a><br>
+<hr><img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/incident?category=dbisam" name="Incident Reports">Incident Reports</a><br>
+<hr><img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/roadmap?category=dbisam" name="Roadmap">Roadmap</a><br>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer"><table width="100%" cellspacing=0 cellpadding=0><tr align="left" valign="top"><td rowspan="1" colspan="1" align="left" valign="top" width="2%"></td><td rowspan="1" colspan="1" align="left" valign="top" width="30%"><br>
+<br>
+<span class="small">This web page was last updated on</span><br>
+<span class="small">Tuesday, September 16, 2025  at  04:56 PM</span><br>
+<br>
+</td><td rowspan="1" colspan="1" align="right" valign="top" width="66%"><a class="menulink" href="https://www.elevatesoft.com/privacy" name="Privacy Policy">Privacy Policy</a><img src="https://www.elevatesoft.com/bullet_gray.png" border=0 alt="Bullet" align="top" height="16" width="16"><a class="menulink" href="https://www.elevatesoft.com/sitemap" name="Site Map">Site Map</a><br>
+<br>
+<span class="small">&#169; 2026 Elevate Software, Inc.  All Rights Reserved</span><br>
+<span class="small">Questions or comments ? <img src="https://www.elevatesoft.com/email.png" border=0 alt="E-mail" align="top" height="16" width="16"> E-mail us at <a href="mailto:info@elevatesoft.com" name="info@elevatesoft.com">info@elevatesoft.com</a></span><br>
+<br>
+</td><td rowspan="1" colspan="1" align="right" valign="top" width="2%"></td></tr>
+</table>
+</div>
+</div>
+</div>
+<img src="https://www.elevatesoft.com/bottombox.png" border=0 alt="Image" align="bottom" height="52" width="1000"></div>
+</body>
+</html>

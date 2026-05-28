@@ -1,0 +1,1 @@
+select_statement(all_rows,[identifier(ref),identifier(uf_shipmentref),identifier(ohinvdate),identifier(uf_csa),identifier(incoterms),identifier(uf_frtpallqtyn)],[table(identifier(orderh),no_alias)],[where(and(eq(identifier(instatus),integer_literal(1)),is_not_null(identifier(ohinvref))))]).

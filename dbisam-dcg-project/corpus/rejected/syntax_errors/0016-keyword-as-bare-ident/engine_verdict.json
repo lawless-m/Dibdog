@@ -1,0 +1,1 @@
+{"verdict":"rejected","reqcode":"0x2ead","catalog":"NISAINT_CS","message":"Expected column name but instead found where in SELECT SQL statement","code_a":1,"code_b":8}

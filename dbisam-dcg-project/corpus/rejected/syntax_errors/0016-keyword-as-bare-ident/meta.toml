@@ -1,0 +1,48 @@
+id = "0016-keyword-as-bare-ident"
+status = "expected-divergent"
+provenance = "manual"
+tags = ["rejected", "schema-divergence", "keyword-named-column"]
+notes = """
+Initially added in slice #52 under the (incorrect) hypothesis that
+DBISAM rejected `select where from CUSTOMER` because `where` is a
+reserved keyword. Subsequent probing on rivsem04 (after Matt
+flagged that 'group' is a real column on the product table)
+disproved that:
+
+  • `select group from product`              → accepted (column exists)
+  • `select group from CUSTOMER`             → rejected (column doesn't exist)
+  • `select where from CUSTOMER`             → rejected (column doesn't exist)
+  • `select foobarbaz from product`          → rejected (column doesn't exist)
+
+All rejections produce the same `0x2ead "Expected column name but
+instead found X"` message, regardless of whether X is a SQL
+keyword or just an unknown identifier. The rejection is
+schema-only — DBISAM doesn't treat keyword-collision as a
+syntactic concern. So this entry is really just another canary for
+divergence #2 (column belongs to FROM table), specifically the
+keyword-named variant.
+
+Note for cross-engine portability: standard SQL engines (MySQL,
+PostgreSQL, SQL Server, etc.) DO reject bare keyword identifiers,
+requiring `\"group\"` or `[group]` instead. DBISAM is the outlier
+here. Queries written against DBISAM that happen to project a
+keyword-named column will not be portable; queries imported from
+other engines may need their existing quoting stripped.
+"""
+fixtures = []
+
+[divergence]
+reason = "Engine rejects with 0x2ead because the named column doesn't exist on the FROM table — NOT because the identifier happens to be a SQL keyword. The grammar accepts because column-belongs-to-table is a schema concern outside the DCG. Same divergence pattern as 0205-mrsflowlog-2dbe086603d2 (the canonical column-not-on-table canary). DBISAM is permissive about keyword-as-identifier in a way most other engines aren't — this entry documents that DBISAM-specific behaviour, not a grammar bug."
+reference = "docs/DIVERGENCES.md#2-column-belongs-to-from-table"
+
+[[history]]
+at = "2026-05-27T13:48:53Z"
+from = "pending"
+to = "expected-divergent"
+by = "claude-code"
+reason = "Slice #52 — initially added as over-permissive keyword-rejection canary."
+
+[[history]]
+at = "2026-05-27T13:55:00Z"
+by = "claude-code"
+reason = "Recategorised after live probing showed DBISAM permits keyword-named columns wholesale. The rejection is column-not-on-table (divergence #2), not a keyword check. Updated notes and [divergence] block; left status unchanged (still expected-divergent for the same reason 0205 is)."

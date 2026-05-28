@@ -1,0 +1,1 @@
+alter_table(identifier(no_such_canary),add_column(identifier(newcol),type('INTEGER',[]))).

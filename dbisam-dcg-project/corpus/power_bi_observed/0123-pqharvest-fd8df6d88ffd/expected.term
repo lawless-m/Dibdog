@@ -1,0 +1,1 @@
+select_statement(all_rows,[identifier(ref),identifier(product),identifier(desc1),identifier('Quantity'),identifier(cost)],[table(identifier(orderi),no_alias)],[where(in(identifier(product),[string_literal('*PALLET'),string_literal('*SPPALL')]))]).

@@ -1,0 +1,1 @@
+select_statement(all_rows,[qualified(identifier('Analysis'),identifier('SADATE'))],[table(identifier(analysis),no_alias),table(identifier(product),no_alias)],[where(eq(qualified(identifier(analysis),identifier(saproduct)),qualified(identifier(product),identifier(code)))),top(10)]).

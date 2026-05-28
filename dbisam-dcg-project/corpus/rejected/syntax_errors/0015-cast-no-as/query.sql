@@ -1,0 +1,1 @@
+select cast(code) from CUSTOMER

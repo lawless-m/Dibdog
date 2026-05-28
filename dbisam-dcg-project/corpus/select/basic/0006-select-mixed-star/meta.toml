@@ -1,0 +1,18 @@
+id = "0006-select-mixed-star"
+status = "meaningful"
+provenance = "manual"
+source = "corpus/raw/select-mixed-star.sql"
+tags = ["raw-import"]
+notes = """
+Added via tools/corpus-add.sh from the raw file at corpus/raw/select-mixed-star.sql.
+SQL copied verbatim. Promote via tools/corpus-promote.sh once the
+grammar covers the construct(s) this query uses.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-27T08:19:58Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Promotion checks passed — locks in DBISAM's tolerance of mixed star/identifier projection lists (corrects an earlier grammar-source comment that wrongly claimed engine rejection)."

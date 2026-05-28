@@ -1,0 +1,22 @@
+id = "0029-ri-exportmaster-synchro__ExportmasterService__line112"
+status = "expected-divergent"
+provenance = "product-log"
+source = "/tmp/harvest-ri/ri-exportmaster-synchro__ExportmasterService__line112.sql"
+tags = ["raw-import", "source-bug", "duplicate-where"]
+notes = """
+Added via tools/corpus-add.sh from the raw file at /tmp/harvest-ri/ri-exportmaster-synchro__ExportmasterService__line112.sql.
+SQL copied verbatim. Promote via tools/corpus-promote.sh once the
+grammar covers the construct(s) this query uses.
+"""
+fixtures = []
+
+[divergence]
+reason = "Grammar accepts the SQL because modifier_list//1 is order-agnostic and admits repeated modifiers (see DIVERGENCES.md §8 — clause ordering). The SQL has a duplicate WHERE clause: 'FROM ORDERH WHERE ORDERH.QTRESULTORDERREF IS NOT NULL WHERE ORDERH.INSTATUS = 1 AND …' — a Java string-concat bug in the indexer source code. Engine correctly rejects ('Expected end of statement but instead found WHERE'). This is an instance of the documented over-permissive clause-ordering divergence, plus the upstream source bug. Not worth a grammar fix because the cost of structuring modifier_list to enforce uniqueness and order is high and the engine catches the misuse anyway."
+reference = "docs/DIVERGENCES.md#8-clause-ordering"
+
+[[history]]
+at = "2026-05-27T15:39:43Z"
+from = "pending"
+to = "expected-divergent"
+by = "claude-code"
+reason = "Slice #59 — Java source-bug (duplicate WHERE); grammar over-permissive on repeated modifiers (divergence #8)."

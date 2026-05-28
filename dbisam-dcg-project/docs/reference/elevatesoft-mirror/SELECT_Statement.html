@@ -1,0 +1,578 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head><script type="text/javascript" async src="https://www.googletagmanager.com/gtag/js?id=UA-15048886-1"">
+
+</script>
+<script type="text/javascript">
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-15048886-1');
+</script>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<link rel="alternate" type="application/rss+xml" title="Elevate Software Blog RSS 2.0 Feed" href="https://www.elevatesoft.com/blog?action=rss2feed"><meta name="Keywords" content="web builder,
+web development,
+rad web development,
+pascal web development,
+delphi web development,
+database web development,
+web application,
+rad web application,
+rapid web application development,
+delphi web application,
+pascal web application,
+database web application,
+web ide,
+web form designer,
+web wysiwyg form designer,
+web framework,
+html5,
+ajax,
+canvas,
+local storage,
+themes,
+javascript,
+javascript compiler,
+javascript compression
+database, sql database,
+sql database engine,
+delphi database,
+delphi database components,
+delphi database engine,
+delphi sql database,
+delphi sql database engine,
+compact delphi database,
+compact delphi database engine,
+compact delphi sql database,
+compact delphi sql database engine,
+embedded delphi database,
+embedded delphi database engine,
+embedded delphi sql database,
+embedded delphi sql database engine,
+compact lazarus database,
+compact lazarus database engine,
+compact lazarus sql database,
+compact lazarus sql database engine,
+embedded lazarus database,
+embedded lazarus database engine,
+embedded lazarus sql database,
+embedded lazarus sql database engine,
+compact free pascal database,
+compact free pascal database engine,
+compact free pascal sql database,
+compact free pascal sql database engine,
+embedded free pascal database,
+embedded free pascal database engine,
+embedded free pascal sql database,
+embedded free pascal sql database engine,
+odbc database,
+odbc database components,
+odbc database engine,
+odbc sql database,
+odbc sql database engine,
+compact odbc database,
+compact odbc database engine,
+compact odbc sql database,
+compact odbc sql database engine,
+embedded odbc database,
+embedded odbc database engine,
+embedded odbc sql database,
+embedded odbc sql database engine,
+vb database,
+vb database components,
+vb database engine,
+vb sql database,
+vb sql database engine,
+compact vb database,
+compact vb database engine,
+compact vb sql database,
+compact vb sql database engine,
+embedded vb database,
+embedded vb database engine,
+embedded vb sql database,
+embedded vb sql database engine,
+c# database,
+c# database components,
+c# database engine,
+c# sql database,
+c# sql database engine,
+compact c# database,
+compact c# database engine,
+compact c# sql database,
+compact c# sql database engine,
+embedded c# database,
+embedded c# database engine,
+embedded c# sql database,
+embedded c# sql database engine,
+.net database,
+.net database components,
+.net database engine,
+.net sql database,
+.net sql database engine,
+compact .net database,
+compact .net database engine,
+compact .net sql database,
+compact .net sql database engine,
+embedded .net database,
+embedded .net database engine,
+embedded .net sql database,
+embedded .net sql database engine
+php database,
+php database components,
+php database engine,
+php sql database,
+php sql database engine,
+compact php database,
+compact php database engine,
+compact php sql database,
+compact php sql database engine,
+embedded php database,
+embedded php database engine,
+embedded php sql database,
+embedded php sql database engine,">
+<meta name="google-site-verification" content="lm7_CbK2t-5fdfErGPRZRqauyTNNCPnzuNoCI9m9rKM">
+<meta name="Generator" content="Elevate Software, Inc. Automated Web Site System">
+<link rel="stylesheet" href="https://www.elevatesoft.com/elevate.css" type="text/css"><title>SELECT Statement</title></head>
+<body><div class="page"><div class="pagebody"><div class="pagecontent"><div class="header"><table width="100%" cellspacing=0 cellpadding=0><tr align="left" valign="middle"><td rowspan="1" colspan="1" align="left" valign="middle" width="2%"><br>
+</td><td rowspan="1" colspan="1" align="left" valign="middle" width="30%"><br>
+<a href="https://www.elevatesoft.com/home" name="Elevate Software"><img src="https://www.elevatesoft.com/whitelogosml.png" border=0 alt="Elevate Software" align="middle" height="100" width="250"></a></td><td rowspan="1" colspan="1" align="right" valign="middle" width="66%"><br>
+<br>
+<img src="https://www.elevatesoft.com/user.png" border=0 alt="Login" align="top" height="16" width="16">&#160;<a class="smalllink" href="https://www.elevatesoft.com/user?action=login&area=productmanuals_dbisam" name="Login">Login</a><br>
+<br>
+<a class="menulink" href="https://www.elevatesoft.com/products" name="Products">Products</a><img src="https://www.elevatesoft.com/bullet_gray.png" border=0 alt="Bullet" align="top" height="16" width="16"><a class="menulink" href="https://www.elevatesoft.com/sales" name="Sales">Sales</a><img src="https://www.elevatesoft.com/bullet_gray.png" border=0 alt="Bullet" align="top" height="16" width="16"><a class="menulink" href="https://www.elevatesoft.com/support" name="Support">Support</a><img src="https://www.elevatesoft.com/bullet_gray.png" border=0 alt="Bullet" align="top" height="16" width="16"><a class="menulink" href="https://www.elevatesoft.com/download" name="Downloads">Downloads</a><img src="https://www.elevatesoft.com/bullet_gray.png" border=0 alt="Bullet" align="top" height="16" width="16"><a class="menulink" href="https://www.elevatesoft.com/about" name="About">About</a></td><td rowspan="1" colspan="1" align="right" valign="middle" width="2%"><br>
+</td></tr>
+</table>
+<table width="100%" cellspacing=0 cellpadding=0><tr align="left" valign="middle"><td rowspan="1" colspan="1" align="left" valign="middle" width="2%"><br>
+</td><td rowspan="1" colspan="1" align="left" valign="middle" width="96%"><hr></td><td rowspan="1" colspan="1" align="left" valign="middle" width="2%"><br>
+</td></tr>
+</table>
+<table width="100%" cellspacing=0 cellpadding=0><tr align="left" valign="middle"><td rowspan="1" colspan="1" align="left" valign="middle" width="2%"><br>
+</td><td rowspan="1" colspan="1" align="left" valign="middle" width="96%"><a class="smalllink" href="https://www.elevatesoft.com/home" name="Home">Home</a>&#160;<span class="small">»</span>&#160;<a class="smalllink" href="https://www.elevatesoft.com/support" name="Technical Support">Technical Support</a>&#160;<span class="small">»</span>&#160;<a class="smalllink" href="https://www.elevatesoft.com/support?category=dbisam" name="DBISAM Technical Support">DBISAM Technical Support</a>&#160;<span class="small">»</span>&#160;<a class="smalllink" href="https://www.elevatesoft.com/manual?category=dbisam" name="Product Manuals">Product Manuals</a>&#160;<span class="small">»</span>&#160;<a class="smalllink" href="https://www.elevatesoft.com/manual?action=contents&id=dbisam4&product=delphi&version=5" name="DBISAM Version 4 Manual for Delphi 5">DBISAM Version 4 Manual for Delphi 5</a>&#160;<span class="small">»</span>&#160;<a class="smalllink" href="https://www.elevatesoft.com/manual?action=topics&id=dbisam4&product=delphi&version=5&section=sql_reference" name="SQL Reference">SQL Reference</a>&#160;<span class="small">»</span>&#160;<span class="small">SELECT Statement</span></td><td rowspan="1" colspan="1" align="left" valign="middle" width="2%"><br>
+</td></tr>
+</table>
+<br>
+</div>
+<div class="colmask rightmenu"><div class="columnleft"><div class="box"><div class="box_left"><div class="box_right"><div class="boxbtm_back"><div class="boxbtm_left"><div class="boxbtm_right"><div class="boxhdr_back"><div class="boxhdr_left"><div class="boxhdr_right"><div class="box_contents"><img src="https://www.elevatesoft.com/folder_wrench.png" border=0 alt="Icon" align="bottom" height="16" width="16">&#160;<span class="subhead">SELECT Statement</span><br>
+<br>
+<div class="spacer"><span class="largehead">Introduction<hr></span>The SQL SELECT statement is used to retrieve data from tables.  You can use the SELECT statement to:<br>
+<ul><li>Retrieve a single row, or part of a row, from a table, referred to as a singleton select.</li><br>
+<li>Retrieve multiple rows, or parts of rows, from a table.</li><br>
+<li>Retrieve related rows, or parts of rows, from a join of two or more tables.</li></ul><span class="largehead">Syntax<hr></span><pre>SELECT [DISTINCT | ALL] * | column
+[AS correlation_name | correlation_name], [column...]
+
+[INTO destination_table]
+
+FROM table_reference
+[AS correlation_name | correlation_name] [EXCLUSIVE]
+
+[[[[INNER | [LEFT | RIGHT] OUTER JOIN] table_reference
+[AS correlation_name | correlation_name] [EXCLUSIVE]
+ON join_condition]
+
+[WHERE predicates]
+
+[GROUP BY group_list]
+
+[HAVING predicates]
+
+[[UNION | EXCEPT| INTERSECT] [ALL] [SELECT...]]
+
+[ORDER BY order_list [NOCASE]]
+
+[TOP number_of_rows]
+
+[LOCALE locale_name | LOCALE CODE locale_code]
+
+[ENCRYPTED WITH password]
+
+[NOJOINOPTIMIZE]
+[JOINOPTIMIZECOSTS]
+[NOWHEREJOINS]</pre><br>
+The SELECT clause defines the list of items returned by the SELECT statement.  The SELECT clause uses a comma-separated list composed of: table columns, literal values, and column or literal values modified by functions.  You cannot use parameters in this list of items.  Use an asterisk to retrieve values from all columns.  Columns in the column list for the SELECT clause may come from more than one table, but can only come from those tables listed in the FROM clause. The FROM clause identifies the table(s) from which data is retrieved.<br>
+<br>
+The following example retrieves data for two columns in all rows of a table:<br>
+<br>
+<pre>SELECT CustNo, Company
+FROM Orders</pre><br>
+You can use the AS keyword to specify a column correlation name, or alternately you can simply just specify the column correlation name after the selected column.  The following example uses both methods to give each selected column a more descriptive name in the query result set:<br>
+<br>
+<pre>SELECT Customer.CustNo AS &quot;Customer #&quot;,
+Customer.Company AS &quot;Company Name&quot;,
+Orders.OrderNo &quot;Order #&quot;,
+SUM(Items.Qty) &quot;Total Qty&quot;
+FROM Customer LEFT OUTER JOIN Orders ON Customer.Custno=Orders.Custno
+LEFT OUTER JOIN Items ON Orders.OrderNo=Items.OrderNo
+WHERE Customer.Company LIKE &#x27;%Diver%&#x27;
+GROUP BY 1,2
+ORDER BY 1</pre><br>
+Use DISTINCT to limit the retrieved data to only distinct rows.  The distinctness of rows is based on the combination of all of the columns in the SELECT clause columns list.  DISTINCT can only be used with simple column types like string and integer; it cannot be used with complex column types like blob.<br>
+<br>
+<span class="largehead">INTO Clause<hr></span>The INTO clause specifies a table into which the query results are generated.  The syntax is as follows:<br>
+<br>
+<pre>INTO destination_table</pre><br>
+Use an INTO clause to specify the table where the query results will be stored when the query has completed execution.  The following example shows how to generate all of the orders in the month of January as a table on disk named &quot;Results&quot;:<br>
+<br>
+<pre>SELECT *
+INTO &quot;Results&quot;
+FROM &quot;Orders&quot;</pre><br>
+If you do not specify a drive and directory in the destination table name, for local sessions, or a database name in the destination table name, for remote sessions, then the destination table will be created in the current active database for the query being executed.<br>
+<br>
+The following examples show the different options for the INTO clause and their resultant destination table names.<br>
+<br>
+This example produces a destination table in the current database called &quot;Results&quot;:<br>
+<br>
+<pre>SELECT *
+INTO &quot;Results&quot;
+FROM &quot;Orders&quot;</pre><br>
+This example produces a destination table called &quot;Results&quot; in the specified local database directory (valid for local sessions only):<br>
+<br>
+<pre>SELECT *
+INTO &quot;c:\MyData\Results&quot;
+FROM &quot;Orders&quot;</pre><br>
+This example produces a destination table called &quot;Results&quot; in the specified database (valid for remote sessions only):<br>
+<br>
+<pre>SELECT *
+INTO &quot;\MyRemoteDB\Results&quot;
+FROM &quot;Orders&quot;</pre><br>
+This example produces an in-memory destination table called &quot;Results&quot;:<br>
+<br>
+<pre>SELECT *
+INTO &quot;\Memory\Results&quot;
+FROM &quot;Orders&quot;</pre><br>
+There are some important caveats when using the INTO clause:<br>
+<ul><li>The INTO clause creates the resultant table from scratch, so if a table with the same name in the same location already exists, it will be overwritten.  This also means that any indexes defined for the table will be removed or modified, even if the result set columns match those of the existing table.</li><br>
+<br>
+<li>You must make sure that you close the query before trying to access the destination table with another table component.  If you do not an exception will be raised.</li><br>
+<br>
+<li>You must make sure to delete the table after you are done if you don&#x27;t wish to leave it on disk or in-memory for further use.</li><br>
+<br>
+<li>Remote sessions can only produce tables that are accessible from the database server and cannot automatically create a local table from a query on the database server by specifying a local path for the INTO clause.  The path for the INTO clause must be accessible from the database server in order for the query to be successfully executed.</li><br>
+<br>
+<li>The destination table cannot be passed to the INTO clause via a parameter.</li></ul><span class="largehead">FROM Clause<hr></span>The FROM clause specifies the tables from which a SELECT statement retrieves data.  The syntax is as follows:<br>
+<br>
+<pre>FROM table_reference [AS] [correlation_name]
+[, table_reference...]</pre><br>
+Use a FROM clause to specify the table or tables from which a SELECT statement retrieves data.  The value for a FROM clause is a comma-separated list of table names.  Specified table names must follow DBISAM&#x27;s SQL naming conventions for tables.  Please see the <a href="https://www.elevatesoft.com/manual?action=viewtopic&id=dbisam4&product=delphi&version=5&topic=naming_conventions" name="Naming Conventions">Naming Conventions</a> topic for more information.  The following SELECT statement below retrieves data from a single table:<br>
+<br>
+<pre>SELECT *
+FROM &quot;Customer&quot;</pre><br>
+The following SELECT statement below retrieves data from a single in-memory table:<br>
+<br>
+<pre>SELECT *
+FROM &quot;\Memory\Customer&quot;</pre><br>
+You can use the AS keyword to specify a table correlation name, or alternately you can simply just specify the table correlation name after the source table name.  The following example uses both methods to give each source table a shorter name to be used in qualifying source columns in the query:<br>
+<br>
+<pre>SELECT c.CustNo AS &quot;Customer #&quot;,
+c.Company AS &quot;Company Name&quot;,
+o.OrderNo &quot;Order #&quot;,
+SUM(i.Qty) &quot;Total Qty&quot;
+FROM Customer AS c LEFT OUTER JOIN Orders AS o ON c.Custno=o.Custno
+LEFT OUTER JOIN Items i ON o.OrderNo=i.OrderNo
+WHERE c.Company LIKE &#x27;%Diver%&#x27;
+GROUP BY 1,2
+ORDER BY 1</pre><br>
+Use the EXCLUSIVE keyword to specify that the table should be opened exclusively.<br>
+<br>
+<div class="note"><img src="https://www.elevatesoft.com/information.png" border=0 alt="Information" align="bottom" height="16" width="16">&#160;Be careful when using the EXCLUSIVE keyword with a table that is specified more than once in the same query, as is the case with recursive relationships between a table and itself.</div>
+<br>
+See the section below entitled JOIN clauses for more information on retrieving data from multiple tables in a single SELECT query.<br>
+<br>
+The table reference cannot be passed to a FROM clause via a parameter.<br>
+<br>
+<span class="largehead">JOIN Clauses<hr></span>There are three types of JOIN clauses that can be used in the FROM clause to perform relational joins between source tables.  The implicit join condition is always Cartesian for source tables without an explicit JOIN clause.<br>
+<br>
+<div class="gridbox"><div class="gridbox_left"><div class="gridbox_right"><div class="gridboxbtm_back"><div class="gridboxbtm_left"><div class="gridboxbtm_right"><div class="gridboxhdr_back"><div class="gridboxhdr_left"><div class="gridboxhdr_right"><div class="gridbox_contents"><table class="gridhead" width="100%" cellspacing=1 cellpadding=4><tr align="center" valign="middle"><td rowspan="1" colspan="1" align="left" valign="top" width="40%"><span class="smallhead">Join Type</span></td><td rowspan="1" colspan="1" align="left" valign="top" width="60%"><span class="smallhead">Description</span></td></tr>
+</table>
+<table class="gridshade" width="100%" cellspacing=1 cellpadding=4><tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">Cartesian</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Joins two tables, matching each row of one table with each row from the other.</td></tr>
+<tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">INNER</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Joins two tables, filtering out non-matching rows.</td></tr>
+<tr align="center" valign="middle"><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="40%">OUTER</td><td class="white" rowspan="1" colspan="1" align="left" valign="top" width="60%">Joins two tables, retaining non-matching rows.</td></tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+<span class="largehead">Cartesan Join<hr></span>A Cartesian join connects two tables in a non-relational manner.  The syntax is as follows:<br>
+<br>
+<pre>FROM table_reference, table_reference [,table_reference...]</pre><br>
+Use a Cartesian join to connect the column of two tables into one result set, but without correlation between the rows from the tables.  Cartesian joins match each row of the source table with each row of the joining table.  No column comparisons are used, just simple association.  If the source table has 10 rows and the joining table has 10, the result set will contain 100 rows as each row from the source table is joined with each row from the joined table.<br>
+<br>
+<span class="largehead">INNER JOIN Clause<hr></span>An INNER join connects two tables based on column values common between the two, excluding non-matches.  The syntax is as follows:<br>
+<br>
+<pre>FROM table_reference
+[INNER] JOIN table_reference ON predicate
+[[INNER] JOIN table_reference ON predicate...]</pre><br>
+Use an INNER JOIN to connect two tables, a source and joining table, that have values from one or more columns in common.  One or more columns from each table are compared in the ON clause for equal values.  For rows in the source table that have a match in the joining table, the data for the source table rows and matching joining table rows are included in the result set.  Rows in the source table without matches in the joining table are excluded from the joined result set.  In the following example the Customer and Orders tables are joined based on values in the CustNo column, which each table contains:<br>
+<br>
+<pre>SELECT *
+FROM Customer c INNER JOIN Orders o ON (c.CustNo=o.CustNo)</pre><br>
+More than one table may be joined with an INNER JOIN.  One use of the INNER JOIN operator and corresponding ON clause is required for each each set of two tables joined.  One columns comparison predicate in an ON clause is required for each column compared to join each two tables.  The following example joins the Customer table to Orders, and then Orders to Items.  In this case, the joining table Orders acts as a source table for the joining table Items:<br>
+<br>
+<pre>SELECT *
+FROM Customer c JOIN Orders o ON (c.CustNo = o.CustNo)
+JOIN Items i ON (o.OrderNo = i.OrderNo)</pre><br>
+Tables may also be joined using a concatenation of multiple column values to produce a single value for the join comparison predicate.  In the following example the ID1 and ID2 columns in the Joining table are concatenated and compared with the values in the single column ID in Source:<br>
+<br>
+<pre>SELECT *
+FROM Source s INNER JOIN Joining j ON (s.ID = j.ID1 || j.ID2)</pre><br>
+<span class="largehead">OUTER JOIN Clause<hr></span>The OUTER JOIN clause connects two tables based on column values common between the two, including non-matches.  The syntax is as follows:<br>
+<br>
+<pre>FROM table_reference LEFT | RIGHT [OUTER]
+JOIN table_reference ON predicate
+[LEFT | RIGHT [OUTER] JOIN table_reference ON predicate...]</pre><br>
+Use an OUTER JOIN to connect two tables, a source and joining table, that have one or more columns in common.  One or more columns from each table are compared in the ON clause for equal values.  The primary difference between inner and outer joins is that, in outer joins rows from the source table that do not have a match in the joining table are not excluded from the result set.  Columns from the joining table for rows in the source table without matches have NULL values.<br>
+<br>
+In the following example the Customer and Orders tables are joined based on values in the CustNo column, which each table contains.  For rows from Customer that do not have a matching value between Customer.CustNo and Orders.CustNo, the columns from Orders contain NULL values:<br>
+<br>
+<pre>SELECT *
+FROM Customer c LEFT OUTER JOIN Orders o ON (c.CustNo = o.CustNo)</pre><br>
+The LEFT modifier causes all rows from the table on the left of the OUTER JOIN operator to be included in the result set, with or without matches in the table to the right.  If there is no matching row from the table on the right, its columns contain NULL values.  The RIGHT modifier causes all rows from the table on the right of the OUTER JOIN operator to be included in the result set, with or without matches.  If there is no matching row from the table on the left, its columns contain NULL values.<br>
+<br>
+More than one table may be joined with an OUTER JOIN.  One use of the OUTER JOIN operator and corresponding ON clause is required for each each set of two tables joined.  One column comparison predicate in an ON clause is required for each column compared to join each two tables.  The following example joins the Customer table to the Orders table, and then Orders to Items.  In this case, the joining table Orders acts as a source table for the joining table Items:<br>
+<br>
+<pre>SELECT *
+FROM Customer c LEFT OUTER JOIN Orders o ON (c.CustNo = o.CustNo)
+LEFT OUTER JOIN Items i ON (o.OrderNo = i.OrderNo)</pre><br>
+Tables may also be joined using expressions to produce a single value for the join comparison predicate.  In the following example the ID1 and ID2 columns in Joining are separately compared with two values produced by the SUBSTRING function using the single column ID in Source:<br>
+<br>
+<pre>SELECT *
+FROM Source s RIGHT OUTER JOIN Joining j
+ON (SUBSTRING(s.ID FROM 1 FOR 2) = j.ID1) AND
+(SUBSTRING(s.ID FROM 3 FOR 1) = j.ID2)</pre><br>
+<span class="largehead">WHERE Clause<hr></span>The WHERE clause specifies filtering conditions for the SELECT statement.  The syntax is as follows:<br>
+<br>
+<pre>WHERE predicates</pre><br>
+Use a WHERE clause to limit the effect of a SELECT statement to a subset of rows in the table, and the clause is optional.<br>
+<br>
+The value for a WHERE clause is one or more logical expressions, or predicates, that evaluate to true or false for each row in the table.  Only those rows where the predicates evaluate to TRUE are retrieved by the SELECT statement.  For example, the SELECT statement below retrieves all rows where the State column contains a value of &#x27;CA&#x27;:<br>
+<br>
+<pre>SELECT Company, State
+FROM Customer
+WHERE State=&#x27;CA&#x27;</pre><br>
+A column used in the WHERE clause of a statement is not required to also appear in the SELECT clause of that statement.  In the preceding statement, the State column could be used in the WHERE clause even if it was not also in the SELECT clause.<br>
+<br>
+Multiple predicates must be separated by one of the logical operators OR or AND.  Each predicate can be negated with the NOT operator.  Parentheses can be used to isolate logical comparisons and groups of comparisons to produce different row evaluation criteria.  For example, the SELECT statement below retrieves all rows where the State column contains a value of &#x27;CA&#x27; or a value of &#x27;HI&#x27;:<br>
+<br>
+<pre>SELECT Company, State
+FROM Customer
+WHERE (State=&#x27;CA&#x27;) OR (State=&#x27;HI&#x27;)</pre><br>
+Subqueries are supported in the WHERE clause.  A subquery works like a search condition to restrict the number of rows returned by the outer, or &quot;parent&quot; query.  Such subqueries must be valid SELECT statements.  SELECT subqueries cannot be correlated in DBISAM&#x27;s SQL, i.e. they cannot refer to columns in the outer (or &quot;parent&quot;) statement.  In the following statement, the subquery is said to be un-correlated:<br>
+<br>
+<pre>SELECT *
+FROM &quot;Clients&quot; C
+WHERE C.Acct_Nbr IN
+  (SELECT H.Acct_Nbr
+  FROM &quot;Holdings&quot; H
+  WHERE H.Pur_Date BETWEEN &#x27;1994-01-01&#x27; AND &#x27;1994-12-31&#x27;)</pre><br>
+<div class="note"><img src="https://www.elevatesoft.com/information.png" border=0 alt="Information" align="bottom" height="16" width="16">&#160;Column correlation names cannot be used in filter comparisons in the WHERE clause.  Use the actual column name instead.</div>
+<br>
+A WHERE clause filters data prior to the aggregation of a GROUP BY clause.  For filtering based on aggregated values, use a HAVING clause.<br>
+<br>
+Columns devoid of data contain NULL values.  To filter using such column values, use the IS NULL predicate.<br>
+<br>
+<span class="largehead">GROUP BY Clause<hr></span>The GROUP BY clause combines rows with column values in common into single rows for the SELECT statement.  The syntax is as follows:<br>
+<br>
+<pre>GROUP BY column_reference [, column reference...]</pre><br>
+Use a GROUP BY clause to cause an aggregation process to be repeated once for each group of similar rows.  Similarity between rows is determined by the distinct values (or combination of values) in the columns specified in the GROUP BY.  For instance, a query with a SUM function produces a result set with a single row with the total of all the values for the column used in the SUM function.  But when a GROUP BY clause is added, the SUM function performs its summing action once for each group of rows.  In statements that support a GROUP BY clause, the use of a GROUP BY clause is optional.  A GROUP BY clause becomes necessary when both aggregated and non-aggregated columns are included in the same SELECT statement.<br>
+<br>
+In the statement below, the SUM function produces one subtotal of the ItemsTotal column for each distinct value in the CustNo column (i.e., one subtotal for each different customer):<br>
+<br>
+<pre>SELECT CustNo, SUM(ItemsTotal)
+FROM Orders
+GROUP BY CustNo</pre><br>
+The value for the GROUP BY clause is a comma-separated list of columns.  Each column in this list must meet the following criteria:<br>
+<ul><li>Be in one of the tables specified in the FROM clause of the query.</li><br>
+<li>Also be in the SELECT clause of the query.</li><br>
+<li>Cannot have an aggregate function applied to it (in the SELECT clause).</li><br>
+<li>Cannot be a BLOB column.</li></ul>When a GROUP BY clause is used, all table columns in the SELECT clause of the query must meet at least one of the following criteria, or it cannot be included in the SELECT clause:<br>
+<ul><li>Be in the GROUP BY clause of the query.</li><br>
+<li>Be the subject of an aggregate function.</li></ul>Literal values in the SELECT clause are not subject to the preceding criteria and are not required to be in the GROUP BY clause in addition to the SELECT clause.<br>
+<br>
+The distinctness of rows is based on the columns in the column list specified.  All rows with the same values in these columns are combined into a single row (or logical group).  Columns that are the subject of an aggregate function have their values across all rows in the group combined.  All columns not the subject of an aggregate function retain their value and serve to distinctly identify the group.  For example, in the SELECT statement below, the values in the Sales column are aggregated (totalled) into groups based on distinct values in the Company column.  This produces total sales for each company:<br>
+<br>
+<pre>SELECT C.Company, SUM(O.ItemsTotal) AS TotalSales
+FROM Customer C, Orders O
+WHERE C.CustNo=O.CustNo
+GROUP BY C.Company
+ORDER BY C.Company</pre><br>
+A column may be referenced in a GROUP BY clause by a column correlation name, instead of actual column names.  The statement below forms groups using the first column, Company, represented by the column correlation name Co:<br>
+<br>
+<pre>SELECT C.Company Co, SUM(O.ItemsTotal) AS TotalSales
+FROM Customer C, Orders O
+WHERE C.CustNo=O.CustNo
+GROUP BY Co
+ORDER BY 1</pre><br>
+<span class="largehead">HAVING Clause<hr></span>The HAVING clause specifies filtering conditions for a SELECT statement.  The syntax is as follows:<br>
+<br>
+<pre>HAVING predicates</pre><br>
+Use a HAVING clause to limit the rows retrieved by a SELECT statement to a subset of rows where aggregated column values meet the specified criteria.  A HAVING clause can only be used in a SELECT statement when:<br>
+<ul><li>The statement also has a GROUP BY clause.</li><br>
+<li>One or more columns are the subjects of aggregate functions.</li></ul>The value for a HAVING clause is one or more logical expressions, or predicates, that evaluate to true or false for each aggregate row retrieved from the table.  Only those rows where the predicates evaluate to true are retrieved by a SELECT statement.  For example, the SELECT statement below retrieves all rows where the total sales for individual companies exceed $1,000:<br>
+<br>
+<pre>SELECT Company, SUM(sales) AS TotalSales
+FROM Sales1998
+GROUP BY Company
+HAVING (SUM(sales) &gt;= 1000)
+ORDER BY Company</pre><br>
+Multiple predicates must be separated by one of the logical operators OR or AND.  Each predicate can be negated with the NOT operator.  Parentheses can be used to isolate logical comparisons and groups of comparisons to produce different row evaluation criteria.<br>
+<br>
+A SELECT statement can include both a WHERE clause and a HAVING clause.  The WHERE clause filters the data to be aggregated, using columns not the subject of aggregate functions.  The HAVING clause then further filters the data after the aggregation, using columns that are the subject of aggregate functions.  The SELECT query below performs the same operation as that above, but data limited to those rows where the State column is &#x27;CA&#x27;:<br>
+<br>
+<pre>SELECT Company, SUM(sales) AS TotalSales
+FROM Sales1998
+WHERE (State = &#x27;CA&#x27;)
+GROUP BY Company
+HAVING (TOTALSALES &gt;= 1000)
+ORDER BY Company</pre><br>
+A HAVING clause filters data after the aggregation of a GROUP BY clause.  For filtering based on row values prior to aggregation, use a WHERE clause.<br>
+<br>
+<span class="largehead">UNION, EXCEPT, or INTERSECT Clause<hr></span>The UNION clause concatenates the rows of one query result set to the end of another query result set and returns the resultant rows.  The EXCEPT clause returns all of the rows from one query result set that are not present in another query result set.  The INTERSECT clause returns all of the rows from one query result set that are also present in another query result set.  The syntax is as follows:<br>
+<br>
+<pre>[[UNION | EXCEPT| INTERSECT] [ALL] [SELECT...]]</pre><br>
+The SELECT statement for the source and destination query result sets must include the same number of columns for them to be UNION&#x2F;EXCEPT&#x2F;INTERSECT-compatible.  The source table structures themselve need not be the same as long as those columns included in the SELECT statements are:<br>
+<br>
+<pre>SELECT CustNo, Company
+FROM Customers
+EXCEPT
+SELECT OldCustNo, OldCompany
+FROM Old_Customers</pre><br>
+The data types for all columns retrieved by the UNION&#x2F;EXCEPT&#x2F;INTERSECT across the multiple query result sets must be identical.  If there is a data type difference between two query result sets for a given column, an error will occur.  The following query shows how to handle such a case to avoid an error:<br>
+<br>
+<pre>SELECT S.ID, CAST(S.Date_Field AS TIMESTAMP)
+FROM Source S
+UNION ALL
+SELECT J.ID, J.Timestamp_Field
+FROM Joiner J</pre><br>
+Matching names is not mandatory for result set columns retrieved by the UNION&#x2F;EXCEPT&#x2F;INTERSECT across the multiple query result sets.  Column name differences between the multiple query result sets are automatically handled.  If a column in two query result sets has a different name, the column in the UNION&#x2F;EXCEPT&#x2F;INTERSECTed result set will use the column name from the first SELECT statement.<br>
+<br>
+By default, non-distinct rows are aggregated into single rows in a UNION&#x2F;EXCEPT&#x2F;INTERSECT join.  Use ALL to retain non-distinct rows.<br>
+<br>
+<div class="note"><img src="https://www.elevatesoft.com/information.png" border=0 alt="Information" align="bottom" height="16" width="16">&#160;When using the EXCEPT or INTERSECT clauses with the ALL keyword, the resultant rows will reflect the total counts of duplicate matching rows in both query result sets.  For example, if using EXCEPT ALL with a query result set that has two &#x27;A&#x27; rows and a query result set that has 1 &#x27;A&#x27; row, the result set will contain 1 &#x27;A&#x27; row (1 matching out of the 2).  The same is true with INTERSECT.  If using INTERSECT ALL with a query result set that has three &#x27;A&#x27; rows and a query result set that has 2 &#x27;A&#x27; rows, the result set will contain 2 &#x27;A&#x27; rows (2 matching out of the 3).</div>
+<br>
+To join two query result sets with UNION&#x2F;EXCEPT&#x2F;INTERSECT where one query does not have a column included by another, a compatible literal or expression may be used instead in the SELECT statement missing the column.  For example, if there is no column in the Joining table corresponding to the Name column in Source an expression is used to provide a value for a pseudo Joining.Name column.  Assuming Source.Name is of type CHAR(10), the CAST function is used to convert an empty character string to CHAR(10):<br>
+<br>
+<pre>SELECT S.ID, S.Name
+FROM Source S
+INTERSECT
+SELECT J.ID, CAST(&#x27;&#x27; AS CHAR(10))
+FROM Joiner J</pre><br>
+If using an ORDER BY or TOP clause, these clauses must be specified after the last SELECT statement being joined with a UNION&#x2F;EXCEPT&#x2F;INTERSECT clause.  The WHERE, GROUP BY, HAVING, LOCALE, ENCRYPTED, NOJOINOPTIMIZE, JOINOPTIMIZECOSTS, and NOWHEREJOINS clauses can be specified for all or some of the individual SELECT statements being joined with a UNION&#x2F;EXCEPT&#x2F;INTERSECT clause.  The INTO clause can only be specified for the first SELECT statement in the list of unioned SELECT statements.  The following example shows how you could join two SELECT statements with a UNION clause and order the final joined result set:<br>
+<br>
+<pre>SELECT CustNo, Company
+FROM Customers
+UNION
+SELECT OldCustNo, Company
+FROM Old_Customers
+ORDER BY CustNo</pre><br>
+When referring to actual column names in the ORDER BY clause you must use the column name of the first SELECT statement being joined with the UNION&#x2F;EXCEPT&#x2F;INTERSECT clause.<br>
+<br>
+<span class="largehead">ORDER BY Clause<hr></span>The ORDER BY clause sorts the rows retrieved by a SELECT statement.  The syntax is as follows:<br>
+<br>
+<pre>ORDER BY column_reference [ASC|DESC]
+[, column_reference...[ASC|DESC]] [NOCASE]</pre><br>
+Use an ORDER BY clause to sort the rows retrieved by a SELECT statement based on the values from one or more columns.  In SELECT statements, use of this clause is optional.<br>
+<br>
+The value for the ORDER BY clause is a comma-separated list of column names.  The columns in this list must also be in the SELECT clause of the query statement.  Columns in the ORDER BY list can be from one or multiple tables.  If the columns used for an ORDER BY clause come from multiple tables, the tables must all be those that are part of a join.  They cannot be a table included in the statement only through a SELECT subquery.<br>
+<br>
+BLOB columns cannot be used in the ORDER BY clause.<br>
+<br>
+A column may be specified in an ORDER BY clause using a number representing the relative position of the column in the SELECT of the statement.  Column correlation names can also be used in an ORDER BY clause columns list.  Calculations cannot be used directly in an ORDER BY clause.  Instead, assign a column correlation name to the calculation and use that name in the ORDER BY clause.<br>
+<br>
+Use ASC (or ASCENDING) to force the sort to be in ascending order (smallest to largest), or DESC (or DESCENDING) for a descending sort order (largest to smallest).  When not specified, ASC is the implied default.<br>
+<br>
+Use NOCASE to force the sort to be case-insensitive.  This is also useful for allowing a live result set when an index is available that matches the ORDER BY clause but is marked as case-insensitive.  When not specified, case-sensitive is the implied default.<br>
+<br>
+The statement below sorts the result set ascending by the year extracted from the LastInvoiceDate column, then descending by the State column, and then ascending by the uppercase conversion of the Company column:<br>
+<br>
+<pre>SELECT EXTRACT(YEAR FROM LastInvoiceDate) AS YY,
+State,
+UPPER(Company)
+FROM Customer
+ORDER BY YY DESC, State ASC, 3</pre><br>
+<span class="largehead">TOP Clause<hr></span>The TOP clause cause the query to only return the top N number of rows, respecting any GROUP BY, HAVING, or ORDER BY clauses.  The syntax is as follows:<br>
+<br>
+<pre>TOP number_of_rows</pre><br>
+Use a TOP clause to only extract a certain number of rows in a SELECT statement, based upon any GROUP BY, HAVING, or ORDER BY clauses.  The rows that are selected start at the logical top of the result set and proceed to the total number of rows matching the TOP clause.  In SELECT statements, use of the clause is optional.<br>
+<br>
+<span class="largehead">LOCALE Clause<hr></span>Use a LOCALE clause to set the locale of a result set created by a canned query (not live).  The syntax is:<br>
+<br>
+<pre>LOCALE locale_name | LOCALE CODE locale_code</pre><br>
+If this clause is not used, the default locale of any canned result set is based upon the locale of the first table in the FROM clause of the SELECT statement.  A list of locales and their IDs can be retrieved via the <a href="https://www.elevatesoft.com/manual?action=viewcomp&id=dbisam4&product=delphi&version=5&comp=TDBISAMEngine" name="TDBISAMEngine">TDBISAMEngine</a> <a href="https://www.elevatesoft.com/manual?action=viewmethod&id=dbisam4&product=delphi&version=5&comp=TDBISAMEngine&method=GetLocaleNames" name="GetLocaleNames">GetLocaleNames</a> method. <br>
+<br>
+<span class="largehead">ENCRYPTED WITH Clause<hr></span>The ENCRYPTED WITH clause causes a SELECT statement that returns a canned result set to encrypt the temporary table on disk used for the result set with the specified password.  The syntax is as follows:<br>
+<br>
+<pre>ENCRYPTED WITH password</pre><br>
+Use an ENCRYPTED WITH clause to force the temporary table created by a SELECT statement that returns a canned result set to be encrypted with the specified password.  This clause can also be used to encrypt the contents of a table created by a SELECT statement that uses the INTO clause.<br>
+<br>
+<span class="largehead">NOJOINOPTIMIZE Clause<hr></span>The NOJOINOPTIMIZE clause causes all join re-ordering to be turned off for a SELECT statement.  The syntax is as follows:<br>
+<br>
+<pre>NOJOINOPTIMIZE</pre><br>
+Use a NOJOINOPTIMIZE clause to force the query optimizer to stop re-ordering joins for a SELECT statement.  In certain rare cases the query optimizer might not have enough information to know that re-ordering the joins will result in worse performance than if the joins were left in their original order, so in such cases you can include this clause to force the query optimizer to not perform the join re-ordering.<br>
+<br>
+<span class="largehead">JOINOPTIMIZECOSTS Clause<hr></span>The JOINOPTIMIZECOSTS clause causes the optimizer to take into account I&#x2F;O costs when optimizing join expressions.  The syntax is as follows:<br>
+<br>
+<pre>JOINOPTIMIZECOSTS</pre><br>
+Use a JOINOPTIMIZECOSTS clause to force the query optimizer to use I&#x2F;O cost projections to determine the most efficient way to process the conditions in a join expression.  If you have a join expression with multiple conditions in it, then using this clause may help improve the performance of the join expression, especially if it is already executing very slowly.<br>
+<br>
+<span class="largehead">NOWHEREJOINS Clause<hr></span>The NOWHEREJOINS clause causes the optimizer to treat any join expressions in the WHERE clause (SQL-89-style joins) as normal, un-optimized expressions instead of inner joins. The syntax is as follows:<br>
+<br>
+<pre>NOWHEREJOINS</pre><br>
+Use a NOWHEREJOINS clause to force the query optimizer to treat any joins in the WHERE clause as normal, un-optimized expressions instead of inner joins.  This is very useful when you need the conditions for filtering the results, but do not want to treat them as inner joins because they exhibit a low cardinality (there are lot of matching values).  Join conditions with a low cardinality can be slow because they cause a lot of overhead in processing the sets of rows in the DBISAM engine.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="columnright"><div class="box"><div class="box_left"><div class="box_right"><div class="boxbtm_back"><div class="boxbtm_left"><div class="boxbtm_right"><div class="boxhdr_back"><div class="boxhdr_left"><div class="boxhdr_right"><div class="box_contents"><img src="https://www.elevatesoft.com/page_white_wrench.png" border=0 alt="More Support Options" align="bottom" height="16" width="16">&#160;<span class="sidehead">More Support Options</span><br>
+<br>
+<div class="spacer"><img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/forums?category=dbisam" name="Support Forums">Support Forums</a><br>
+<img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/supportfaq?category=dbisam" name="Frequently Asked Questions">Frequently Asked Questions</a><br>
+<img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/bulletins?category=dbisam" name="Technical Bulletins">Technical Bulletins</a><br>
+<img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/articles?category=dbisam" name="Technical Articles">Technical Articles</a><br>
+<hr><img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/incident?category=dbisam" name="Incident Reports">Incident Reports</a><br>
+<hr><img src="https://www.elevatesoft.com/bullet_yellow.png" border=0 alt="Option" align="top" height="16" width="16">&#160;<a href="https://www.elevatesoft.com/roadmap?category=dbisam" name="Roadmap">Roadmap</a><br>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer"><table width="100%" cellspacing=0 cellpadding=0><tr align="left" valign="top"><td rowspan="1" colspan="1" align="left" valign="top" width="2%"></td><td rowspan="1" colspan="1" align="left" valign="top" width="30%"><br>
+<br>
+<span class="small">This web page was last updated on</span><br>
+<span class="small">Tuesday, September 16, 2025  at  04:56 PM</span><br>
+<br>
+</td><td rowspan="1" colspan="1" align="right" valign="top" width="66%"><a class="menulink" href="https://www.elevatesoft.com/privacy" name="Privacy Policy">Privacy Policy</a><img src="https://www.elevatesoft.com/bullet_gray.png" border=0 alt="Bullet" align="top" height="16" width="16"><a class="menulink" href="https://www.elevatesoft.com/sitemap" name="Site Map">Site Map</a><br>
+<br>
+<span class="small">&#169; 2026 Elevate Software, Inc.  All Rights Reserved</span><br>
+<span class="small">Questions or comments ? <img src="https://www.elevatesoft.com/email.png" border=0 alt="E-mail" align="top" height="16" width="16"> E-mail us at <a href="mailto:info@elevatesoft.com" name="info@elevatesoft.com">info@elevatesoft.com</a></span><br>
+<br>
+</td><td rowspan="1" colspan="1" align="right" valign="top" width="2%"></td></tr>
+</table>
+</div>
+</div>
+</div>
+<img src="https://www.elevatesoft.com/bottombox.png" border=0 alt="Image" align="bottom" height="52" width="1000"></div>
+</body>
+</html>

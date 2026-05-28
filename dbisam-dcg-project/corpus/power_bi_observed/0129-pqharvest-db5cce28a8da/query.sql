@@ -1,0 +1,1 @@
+select saref, sacust, saterr, sainv, sadate, saproduct, saextra, sacommod, saorgqty, saval, sawgtnet, product.uf_ibarcode from analysis left join product on saproduct = code where sasellco = 3 and sadate > current_date()-60

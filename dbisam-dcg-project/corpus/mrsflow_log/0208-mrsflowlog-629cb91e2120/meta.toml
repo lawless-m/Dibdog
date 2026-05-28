@@ -1,0 +1,21 @@
+id = "0208-mrsflowlog-629cb91e2120"
+status = "meaningful"
+provenance = "mrsflow-runtime-log"
+source = "/tmp/mrsflow.log"
+first_seen_at = "2026-05-26T21:08:02.686815022+00:00"
+tags = ["harvest", "mrsflow-runtime", "dynamic-capture"]
+notes = """
+Captured at runtime from a mrsflow Exportmaster.Query path with
+MRSFLOW_SQL_LOG enabled. Unlike the static .pq/.m extraction
+(power_bi_observed/), this is the SQL string AFTER any M-language
+concatenation and parameter interpolation — i.e., what the engine
+actually sees on the wire.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-27T10:32:40Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Promotion checks passed during slice #35 — ORDER BY."

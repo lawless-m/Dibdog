@@ -1,0 +1,18 @@
+id = "0013-ri-crm-poller__CustomerDao__line22"
+status = "meaningful"
+provenance = "product-log"
+source = "/tmp/harvest-ri/ri-crm-poller__CustomerDao__line22.sql"
+tags = ["raw-import"]
+notes = """
+Added via tools/corpus-add.sh from the raw file at /tmp/harvest-ri/ri-crm-poller__CustomerDao__line22.sql.
+SQL copied verbatim. Promote via tools/corpus-promote.sh once the
+grammar covers the construct(s) this query uses.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-05-27T15:24:32Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Slice #54 — predicates as function-call args."

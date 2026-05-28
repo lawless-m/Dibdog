@@ -1,0 +1,1 @@
+select_statement(all_rows,[identifier(code),function_call('SUM',[identifier('SAVAL')])],[table(identifier(analysis),no_alias)],[group_by([identifier(code)])]).
