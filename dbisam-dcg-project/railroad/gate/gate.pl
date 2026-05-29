@@ -26,7 +26,9 @@
 %
 % Exit 0 iff all three pass; exit 1 (loudly, naming offenders) otherwise.
 
-:- use_module('../../grammar/dcg').
+% dcg is imported ONLY by interp (Scryer corrupts dcg's discontiguous
+% generate_statement if two modules import dcg). We reach the DCG through
+% interp's dcg_accepts/1 and dcg_generate/2.
 :- use_module(interp).
 :- use_module(curated).
 :- use_module(library(lists)).
@@ -125,7 +127,7 @@ documented_divergence(Chars, Why) :-
 expected_divergent("select cast(code) from CUSTOMER",
     'CAST without AS: matches the generic function-call shape; the DCG\'s valid_function / cast-AS guard (elided from the diagram) rejects it').
 
-dcg_verdict(Chars, V) :- ( phrase(statement(_), Chars) -> V = accept ; V = reject ).
+dcg_verdict(Chars, V) :- ( dcg_accepts(Chars) -> V = accept ; V = reject ).
 ebnf_verdict(Chars, V) :- ( ebnf_accepts(Chars) -> V = accept ; V = reject ).
 
 % ------------------------------------------------------------
@@ -139,7 +141,7 @@ curated_check(Fails, N) :-
 
 check_asts([], []).
 check_asts([Ast|As], Fails) :-
-    ( catch(generate_statement(Ast, Chars), _, fail)
+    ( catch(dcg_generate(Ast, Chars), _, fail)
     -> ( ebnf_accepts(Chars)
        -> Fails = Rest
        ;  Fails = [ebnf_rejected_dcg_sentence(Ast, Chars)|Rest]
@@ -159,7 +161,7 @@ negative_check(Fails, N) :-
 
 check_negs([], []).
 check_negs([Str|Ss], Fails) :-
-    ( phrase(statement(_), Str)
+    ( dcg_accepts(Str)
     -> Fails = [negative_not_invalid(Str)|Rest]   % bad test datum: DCG accepts it
     ;  ( ebnf_accepts(Str)
        -> Fails = [ebnf_over_permissive(Str)|Rest]

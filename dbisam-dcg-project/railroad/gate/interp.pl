@@ -35,7 +35,12 @@
 % word can serve as either a keyword or an identifier depending on
 % position, while a quoted name can only be an identifier.
 
-:- module(interp, [ebnf_accepts/1, tokenize/2]).
+% NOTE: dcg is imported HERE ONLY. Scryer corrupts dcg's discontiguous
+% generate_statement/2 if dcg is use_module'd by two modules at once, so
+% interp is the single importer and re-exposes the DCG entry points the
+% gate needs (dcg_accepts/1, dcg_generate/2). Callers import interp, not
+% dcg.
+:- module(interp, [ebnf_accepts/1, tokenize/2, dcg_accepts/1, dcg_generate/2]).
 
 :- use_module('../../grammar/dcg').
 :- use_module('../grammar.ebnf.pl').    % explicit .pl: Scryer mis-resolves the dotted name
@@ -44,6 +49,10 @@
 ebnf_accepts(Chars) :-
     tokenize(Chars, Tokens),
     once(phrase(ebnf(nt(statement)), Tokens)).   % must consume every token
+
+% DCG entry points, re-exposed so callers never import dcg a second time.
+dcg_accepts(Chars)        :- phrase(statement(_), Chars).
+dcg_generate(Term, Chars) :- generate_statement(Term, Chars).
 
 % ============================================================
 % Stage 1 — tokeniser
@@ -72,7 +81,7 @@ next_token(S0, Tok, S) :-
        ; once(phrase(integer_literal(_), S0, S)), Tok = int )
     ; S0 = [C|_], ident_start_l(C)
     -> once(phrase(identifier(identifier(Atom)), S0, S)),
-       atom_upper(Atom, Up), Tok = word(Up)
+       tk_atom_upper(Atom, Up), Tok = word(Up)
     ; match_operator(S0, OpAtom, S)
     -> Tok = op(OpAtom)
     ; fail   % unlexable char (e.g. ODBC `{d '...'}`): not in the language,
@@ -112,16 +121,16 @@ skip_ws(S0, S) :- ws_one(S0, S1), !, skip_ws(S1, S).
 skip_ws(S, S).
 
 ws_one([C|S], S)            :- ws_char_l(C).
-ws_one(['-','-'|S0], S)     :- line_comment_tail(S0, S).
-ws_one(['/','*'|S0], S)     :- block_comment_tail(S0, S).
+ws_one(['-','-'|S0], S)     :- tk_line_comment_tail(S0, S).
+ws_one(['/','*'|S0], S)     :- tk_block_comment_tail(S0, S).
 
-line_comment_tail(['\n'|S], S) :- !.
-line_comment_tail(['\r'|S], S) :- !.
-line_comment_tail([], []).
-line_comment_tail([_|S0], S)   :- line_comment_tail(S0, S).
+tk_line_comment_tail(['\n'|S], S) :- !.
+tk_line_comment_tail(['\r'|S], S) :- !.
+tk_line_comment_tail([], []).
+tk_line_comment_tail([_|S0], S)   :- tk_line_comment_tail(S0, S).
 
-block_comment_tail(['*','/'|S], S) :- !.
-block_comment_tail([_|S0], S)      :- block_comment_tail(S0, S).
+tk_block_comment_tail(['*','/'|S], S) :- !.
+tk_block_comment_tail([_|S0], S)      :- tk_block_comment_tail(S0, S).
 
 % --- char classes (local) ---
 ws_char_l(' '). ws_char_l('\t'). ws_char_l('\n'). ws_char_l('\r').
@@ -130,7 +139,7 @@ ident_start_l('_').
 alpha_l(C) :- char_code(C, X), ( X >= 0'a, X =< 0'z ; X >= 0'A, X =< 0'Z ).
 digit_l(C) :- char_code(C, X), X >= 0'0, X =< 0'9.
 
-atom_upper(A, U) :- atom_chars(A, Cs), maplist(up_c, Cs, Us), atom_chars(U, Us).
+tk_atom_upper(A, U) :- atom_chars(A, Cs), maplist(up_c, Cs, Us), atom_chars(U, Us).
 up_c(C, U) :- ( char_code(C, X), X >= 0'a, X =< 0'z -> Y is X - 32, char_code(U, Y) ; U = C ).
 
 % ============================================================
