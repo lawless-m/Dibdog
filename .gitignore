@@ -11,3 +11,6 @@ dbisam-dcg-project.zip
 *.swp
 *.swo
 .DS_Store
+
+# Working extraction of dibdog-railroad.zip (the plan now lives at dbisam-dcg-project/railroad/PLAN.md)
+railroad-extracted/
