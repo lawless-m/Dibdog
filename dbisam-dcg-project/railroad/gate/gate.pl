@@ -7,7 +7,7 @@
 %
 %   1. CORPUS REPLAY (necessary). Every corpus query is parsed by BOTH
 %      the DCG and the EBNF; their accept/reject verdicts must agree.
-%      Corpus paths arrive on stdin, one per line.
+%      Corpus paths for a batch are read from a file (see corpus/1).
 %
 %   2. DCG→EBNF DIFFERENTIAL (the strong necessary check). The DCG run
 %      backwards — generate_statement/2 — emits canonical SQL for a
@@ -65,7 +65,7 @@ corpus(File) :-
     ( Fails == [] -> halt(0) ; halt(1) ).
 
 print_lines(_, []).
-print_lines(Tag, [X|Xs]) :- format("~w ~q~n", [Tag, X]), print_lines(Tag, Xs).
+print_lines(Tag, [X|Xs]) :- format("~s ~q~n", [Tag, X]), print_lines(Tag, Xs).
 
 report(Label, N, Fails) :-
     length(Fails, NF),
