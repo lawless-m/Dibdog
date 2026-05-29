@@ -34,19 +34,14 @@
 :- use_module(library(lists)).
 :- use_module(library(format)).
 
-:- initialization(main).
-
-% Two modes, so the gate runs as bounded short-lived processes (the
-% EBNF interpreter backtracks, and one 7-minute process over the whole
-% corpus grows heap past the box's memory). run.sh orchestrates:
-%   stdin = "SELFTEST"  -> the curated differential + the negatives
-%   stdin = corpus paths -> corpus replay for that batch only
-main :-
-    read_paths(Lines),
-    ( Lines == ['CURATED']   -> run_curated
-    ; Lines == ['NEGATIVES'] -> run_negatives
-    ; run_corpus(Lines)
-    ).
+% Entry points are selected by `scryer-prolog -g <goal>` rather than by
+% reading stdin: get_char on a pipe under -g races EOF on tiny inputs and
+% hangs. The gate runs as bounded short-lived processes (one process over
+% the whole corpus + curated + negatives grows heap past the box memory),
+% orchestrated by run.sh:
+%   -g run_curated            the curated differential
+%   -g run_negatives          the over-permissiveness negatives
+%   -g "corpus('paths.txt')"  corpus replay for the batch listed in the file
 
 run_curated :-
     curated_check(Fails, N),
@@ -58,10 +53,12 @@ run_negatives :-
     report("over-perm negatives", N, Fails),
     ( Fails == [] -> halt(0) ; halt(1) ).
 
-% Corpus batch: print one line per outcome so run.sh can aggregate.
+% Corpus batch: read the newline-separated paths from File and print one
+% line per outcome so run.sh can aggregate.
 %   DIVERGE <term>   a real disagreement (gate fails)
 %   DOC <term>       a documented elided-guard divergence (informational)
-run_corpus(Paths) :-
+corpus(File) :-
+    read_lines_file(File, Paths),
     replay_paths(Paths, Fails, Docs),
     print_lines("DOC", Docs),
     print_lines("DIVERGE", Fails),
@@ -74,8 +71,8 @@ report(Label, N, Fails) :-
     length(Fails, NF),
     P is N - NF,
     ( NF =:= 0
-    -> format("  [~w]  ~w/~w ok~n", [Label, P, N])
-    ;  format("  [~w]  ~w/~w ok — ~w FAILED:~n", [Label, P, N, NF]),
+    -> format("  [~s]  ~w/~w ok~n", [Label, P, N])
+    ;  format("  [~s]  ~w/~w ok — ~w FAILED:~n", [Label, P, N, NF]),
        print_fails(Fails)
     ).
 
@@ -204,9 +201,11 @@ negatives([
     "SELECT a FROM t GROUP BY a,",
     "SELECT a FROM t ORDER BY ,a",
     "SELECT a FROM t ORDER BY a,,b",
-    % --- union loop ---
-    "SELECT a FROM t UNION",
-    "SELECT a FROM t UNION ALL",
+    % --- union loop (second select incomplete; a trailing bare keyword
+    %     after a table would instead trip the elided alias guard, so these
+    %     keep a following SELECT to probe the loop itself) ---
+    "SELECT a FROM t UNION SELECT b FROM",
+    "SELECT a FROM t UNION ALL SELECT b FROM",
     % --- update set-list fold ---
     "UPDATE t SET a = 1,",
     "UPDATE t SET a = 1,, b = 2",
@@ -229,27 +228,26 @@ negatives([
 % Reading helpers
 % ------------------------------------------------------------
 
-read_paths(Paths) :-
-    read_one_line(Line),
-    ( Line == end_of_file -> Paths = []
-    ; Line == []          -> read_paths(Paths)        % skip blanks
-    ; atom_chars(Path, Line),
-      Paths = [Path|Rest],
-      read_paths(Rest)
+% Read newline-separated paths from a file (get_char on an opened file
+% is reliable, unlike on a pipe).
+read_lines_file(File, Lines) :-
+    open(File, read, S),
+    read_lines(S, Lines),
+    close(S).
+
+read_lines(S, Lines) :-
+    get_char(S, C),
+    ( C == end_of_file -> Lines = []
+    ; C == '\n'        -> read_lines(S, Lines)            % skip blanks
+    ; gather_line(S, [C], L), atom_chars(P, L),
+      Lines = [P|Rest], read_lines(S, Rest)
     ).
 
-read_one_line(Result) :-
-    get_char(C),
-    ( C == end_of_file -> Result = end_of_file
-    ; C == '\n'        -> Result = []
-    ; gather([C], Acc), reverse(Acc, Result)
-    ).
-
-gather(Acc, Result) :-
-    get_char(C),
-    ( C == end_of_file -> Acc = Result
-    ; C == '\n'        -> Acc = Result
-    ; gather([C|Acc], Result)
+gather_line(S, Acc, L) :-
+    get_char(S, C),
+    ( C == end_of_file -> reverse(Acc, L)
+    ; C == '\n'        -> reverse(Acc, L)
+    ; gather_line(S, [C|Acc], L)
     ).
 
 read_file_chars(Path, Chars) :-

@@ -6,10 +6,11 @@
 #   2. DCG->EBNF curated     (every curated sentence parses under the EBNF)
 #   3. over-perm negatives   (malformed strings rejected by both)
 #
-# The EBNF interpreter backtracks, so a single process over the whole
-# corpus grows heap past the box's memory. We therefore run corpus replay
-# as bounded short-lived BATCHES (memory freed each time) and the curated
-# + negative self-test as one process, then aggregate the verdict here.
+# Each check runs as its own short-lived Scryer process (one process over
+# everything grows heap past the box's memory), and corpus replay is split
+# into bounded batches. The mode is chosen by the -g goal — never stdin,
+# since get_char on a pipe under -g races EOF; corpus batch paths are passed
+# in a temp file.
 #
 # Run the extractor first so grammar.ebnf.pl is current:
 #   scryer-prolog -g main railroad/extractor.pl
@@ -22,7 +23,8 @@ RAILROAD="$(cd "$HERE/.." && pwd)"
 PROJECT="$(cd "$RAILROAD/.." && pwd)"
 REPO="$(cd "$PROJECT/.." && pwd)"
 SCRYER="${SCRYER:-scryer-prolog}"
-BATCH="${BATCH:-12}"
+GATE="$HERE/gate.pl"
+BATCH="${BATCH:-25}"
 
 if ! command -v "$SCRYER" >/dev/null 2>&1; then
   echo "gate: scryer-prolog not found on PATH" >&2
@@ -35,9 +37,10 @@ fi
 
 echo "== railroad equivalence gate =="
 
-# --- 2 + 3: curated differential and negatives (one process) ---
-echo SELFTEST | "$SCRYER" -g main "$HERE/gate.pl"
-selftest_rc=$?
+# --- 2: curated differential ---
+"$SCRYER" -g run_curated "$GATE"; curated_rc=$?
+# --- 3: over-permissiveness negatives ---
+"$SCRYER" -g run_negatives "$GATE"; neg_rc=$?
 
 # --- 1: corpus replay, in bounded batches ---
 paths="$(mktemp)"
@@ -45,21 +48,26 @@ paths="$(mktemp)"
   find "$PROJECT/corpus" -name query.sql 2>/dev/null
   find "$REPO/corpus/raw" -name '*.sql' 2>/dev/null
 } | sort > "$paths"
-ncorpus=$(wc -l < "$paths")
+ncorpus=$(grep -c . "$paths")
 
 diverge=0
 docs=0
 divlog="$(mktemp)"
 doclog="$(mktemp)"
-while IFS= read -r batch; do
-  out="$(printf '%s\n' $batch | "$SCRYER" -g main "$HERE/gate.pl")"
+batchfile="$(mktemp)"
+batch_no=0
+total_batches=$(( (ncorpus + BATCH - 1) / BATCH ))
+while [[ $((batch_no * BATCH)) -lt $ncorpus ]]; do
+  sed -n "$((batch_no*BATCH + 1)),$(((batch_no+1)*BATCH))p" "$paths" > "$batchfile"
+  out="$("$SCRYER" -g "corpus('$batchfile')" "$GATE")"
   while IFS= read -r line; do
     case "$line" in
       DIVERGE\ *) diverge=$((diverge+1)); echo "    ${line#DIVERGE }" >> "$divlog" ;;
       DOC\ *)     docs=$((docs+1));       echo "    ${line#DOC }"     >> "$doclog" ;;
     esac
   done <<< "$out"
-done < <(xargs -n "$BATCH" <<< "$(cat "$paths")")
+  batch_no=$((batch_no+1))
+done
 
 corpus_ok=$((ncorpus - diverge))
 if [[ "$diverge" -eq 0 ]]; then
@@ -73,10 +81,10 @@ if [[ "$docs" -gt 0 ]]; then
   cat "$doclog"
 fi
 
-rm -f "$paths" "$divlog" "$doclog"
+rm -f "$paths" "$divlog" "$doclog" "$batchfile"
 
 # --- aggregate verdict ---
-if [[ "$selftest_rc" -eq 0 && "$diverge" -eq 0 ]]; then
+if [[ "$curated_rc" -eq 0 && "$neg_rc" -eq 0 && "$diverge" -eq 0 ]]; then
   echo "GATE: PASS — extracted EBNF is equivalent to the DCG."
   exit 0
 else
