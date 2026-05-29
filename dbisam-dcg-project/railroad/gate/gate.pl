@@ -34,24 +34,39 @@
 
 :- initialization(main).
 
+% Two modes, so the gate runs as bounded short-lived processes (the
+% EBNF interpreter backtracks, and one 7-minute process over the whole
+% corpus grows heap past the box's memory). run.sh orchestrates:
+%   stdin = "SELFTEST"  -> the curated differential + the negatives
+%   stdin = corpus paths -> corpus replay for that batch only
 main :-
-    corpus_replay(CorpusFails, NCorpus),
-    curated_check(CuratedFails, NCurated),
-    negative_check(NegFails, NNeg),
-    nl,
-    format("== railroad equivalence gate ==~n", []),
-    report("corpus replay      ", NCorpus, CorpusFails),
-    report("DCG->EBNF curated  ", NCurated, CuratedFails),
-    report("over-perm negatives", NNeg, NegFails),
-    append(CorpusFails, CuratedFails, F1),
-    append(F1, NegFails, AllFails),
-    ( AllFails == []
-    -> format("~nGATE: PASS — extracted EBNF is equivalent to the DCG.~n", []),
-       halt(0)
-    ;  length(AllFails, NF),
-       format("~nGATE: FAIL — ~w divergence(s); EBNF is NOT published.~n", [NF]),
-       halt(1)
+    read_paths(Lines),
+    ( Lines == ['CURATED']   -> run_curated
+    ; Lines == ['NEGATIVES'] -> run_negatives
+    ; run_corpus(Lines)
     ).
+
+run_curated :-
+    curated_check(Fails, N),
+    report("DCG->EBNF curated  ", N, Fails),
+    ( Fails == [] -> halt(0) ; halt(1) ).
+
+run_negatives :-
+    negative_check(Fails, N),
+    report("over-perm negatives", N, Fails),
+    ( Fails == [] -> halt(0) ; halt(1) ).
+
+% Corpus batch: print one line per outcome so run.sh can aggregate.
+%   DIVERGE <term>   a real disagreement (gate fails)
+%   DOC <term>       a documented elided-guard divergence (informational)
+run_corpus(Paths) :-
+    replay_paths(Paths, Fails, Docs),
+    print_lines("DOC", Docs),
+    print_lines("DIVERGE", Fails),
+    ( Fails == [] -> halt(0) ; halt(1) ).
+
+print_lines(_, []).
+print_lines(Tag, [X|Xs]) :- format("~w ~q~n", [Tag, X]), print_lines(Tag, Xs).
 
 report(Label, N, Fails) :-
     length(Fails, NF),
@@ -68,21 +83,6 @@ print_fails([F|Fs]) :- format("        ~q~n", [F]), print_fails(Fs).
 % ------------------------------------------------------------
 % 1. Corpus replay
 % ------------------------------------------------------------
-
-corpus_replay(Fails, N) :-
-    read_paths(Paths),
-    length(Paths, N),
-    replay_paths(Paths, Fails, Docs),
-    length(Docs, ND),
-    ( ND =:= 0
-    -> true
-    ;  format("  [corpus replay      ]  ~w documented divergence(s) (elided semantic guards):~n", [ND]),
-       print_docs(Docs)
-    ).
-
-print_docs([]).
-print_docs([documented(P, Why)|Ds]) :-
-    format("        ~w~n          ~w~n", [P, Why]), print_docs(Ds).
 
 replay_paths([], [], []).
 replay_paths([Path|Ps], Fails, Docs) :-
