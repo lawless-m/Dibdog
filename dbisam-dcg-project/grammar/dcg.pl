@@ -60,7 +60,17 @@
     statement//1,
     parse_statement/2,
     generate_statement/2,
-    roundtrip_term/2
+    roundtrip_term/2,
+    % Lexical layer, exported for reuse by the railroad equivalence gate
+    % (railroad/). These are behaviour-inert exports: the gate's EBNF
+    % interpreter shares THIS lexer verbatim, so the only thing under
+    % test is the extracted production structure, never the tokeniser.
+    identifier//1,
+    string_literal//1,
+    integer_literal//1,
+    decimal_literal//1,
+    ws//0,
+    ws1//0
 ]).
 
 :- use_module(library(lists)).
