@@ -41,19 +41,9 @@
 :- use_module('../grammar.ebnf.pl').    % explicit .pl: Scryer mis-resolves the dotted name
 :- use_module(library(lists)).
 
-:- dynamic(tok/2).
-:- dynamic(memo/3).
-
 ebnf_accepts(Chars) :-
     tokenize(Chars, Tokens),
-    retractall(tok(_, _)),
-    retractall(memo(_, _, _)),
-    assert_tokens(Tokens, 0),
-    length(Tokens, N),
-    once(parse(nt(statement), 0, N)).   % must consume every token
-
-assert_tokens([], _).
-assert_tokens([T|Ts], I) :- assertz(tok(I, T)), I1 is I + 1, assert_tokens(Ts, I1).
+    once(phrase(ebnf(nt(statement)), Tokens)).   % must consume every token
 
 % ============================================================
 % Stage 1 — tokeniser
@@ -144,54 +134,48 @@ atom_upper(A, U) :- atom_chars(A, Cs), maplist(up_c, Cs, Us), atom_chars(U, Us).
 up_c(C, U) :- ( char_code(C, X), X >= 0'a, X =< 0'z -> Y is X - 32, char_code(U, Y) ; U = C ).
 
 % ============================================================
-% Stage 2 — packrat parse over the indexed token array
+% Stage 2 — the IR interpreter over the token list
 % ============================================================
 %
-% parse(Node, P0, P): Node derives tokens [P0..P). Nonterminals are
-% memoised at rule boundaries (packrat), so each (rule, position) is
-% solved once — turning the otherwise-exponential meta-interpreter into
-% a polynomial parser. The DCG's alternatives are authored longest-first,
-% which makes this PEG-style ordered-choice memo accept the same language;
-% the gate's corpus / curated / negative checks verify that empirically.
+% A straight recursive-descent DCG over the token list, with once/1 at
+% the top (we only need to know whether SOME derivation consumes every
+% token). Full backtracking is preserved — it is necessary because the
+% DCG resolves the elided alias guards by backtracking (trying a keyword
+% as an implicit alias, failing, retreating). Tokenising first removed
+% all lexical non-determinism, so the only backtracking left is genuine
+% grammar choice, which stays bounded.
+%
+% (A packrat / all-solutions memo was tried and rejected: PEG-style
+% first-match memo breaks the alias backtracking, and an all-solutions
+% memo enumerates the product of ambiguous sub-parses — exponential
+% blow-up. once/1 over plain backtracking is correct and bounded here.)
 
-parse(eps, P, P).
-parse(term(T), P0, P) :- tok(P0, Tk), match_term(T, Tk), P is P0 + 1.
-parse(leaf(L), P0, P) :- tok(P0, Tk), match_leaf(L, Tk), P is P0 + 1.
-% All-solutions memo: cache the full set of end positions a rule can
-% reach from P0, computed once, then backtrack over them. This shares
-% work (polynomial parsing) while preserving full CFG backtracking — so
-% the elided alias guards, which the DCG resolves by backtracking, still
-% resolve correctly here. (The grammar has no left recursion, so the
-% findall terminates: every recursive call has consumed >= 1 token.)
-parse(nt(R), P0, P) :-
-    ( memo(R, P0, Sols) -> true
-    ; findall(Pe, ( ebnf_rule(R, Node), parse(Node, P0, Pe) ), Raw),
-      sort(Raw, Sols),
-      assertz(memo(R, P0, Sols))
-    ),
-    member(P, Sols).
-parse(seq([]), P, P).
-parse(seq([N|Ns]), P0, P) :- parse(N, P0, P1), parse(seq(Ns), P1, P).
-parse(choice([N|_]), P0, P) :- parse(N, P0, P).
-parse(choice([_|Ns]), P0, P) :- Ns = [_|_], parse(choice(Ns), P0, P).
-parse(opt(N), P0, P) :- parse(N, P0, P).
-parse(opt(_), P, P).
-parse(zero_or_more(N), P0, P) :- parse(N, P0, P1), P1 > P0, parse(zero_or_more(N), P1, P).
-parse(zero_or_more(_), P, P).
-parse(one_or_more(N, none), P0, P) :- !, parse(N, P0, P1), parse(zero_or_more(N), P1, P).
-parse(one_or_more(N, Sep), P0, P) :- parse(N, P0, P1), parse(zero_or_more(seq([Sep, N])), P1, P).
+ebnf(eps) --> [].
+ebnf(term(T)) --> term_tok(T).
+ebnf(leaf(L)) --> leaf_tok(L).
+ebnf(nt(R)) --> { ebnf_rule(R, Node) }, ebnf(Node).
+ebnf(seq([])) --> [].
+ebnf(seq([N|Ns])) --> ebnf(N), ebnf(seq(Ns)).
+ebnf(choice([N|_])) --> ebnf(N).
+ebnf(choice([_|Ns])) --> { Ns = [_|_] }, ebnf(choice(Ns)).
+ebnf(opt(N)) --> ebnf(N).
+ebnf(opt(_)) --> [].
+ebnf(zero_or_more(N)) --> ebnf(N), ebnf(zero_or_more(N)).
+ebnf(zero_or_more(_)) --> [].
+ebnf(one_or_more(N, none)) --> !, ebnf(N), ebnf(zero_or_more(N)).
+ebnf(one_or_more(N, Sep)) --> ebnf(N), ebnf(zero_or_more(seq([Sep, N]))).
 
 % A word terminal (keyword) matches a bare-word token, case-insensitively
 % (the token text is already upper-cased). A symbol terminal matches an
 % operator token exactly.
-match_term(T, Tk) :- atom_chars(T, [C0|_]), word_char_l(C0), !, Tk = word(T).
-match_term(T, op(T)).
+term_tok(T) --> { atom_chars(T, [C0|_]), word_char_l(C0) }, !, [word(T)].
+term_tok(T) --> [op(T)].
 
-match_leaf(identifier, word(_)).
-match_leaf(identifier, qident).
-match_leaf(string_literal, str).
-match_leaf(integer_literal, int).
-match_leaf(decimal_literal, dec).
+leaf_tok(identifier)      --> [word(_)].
+leaf_tok(identifier)      --> [qident].
+leaf_tok(string_literal)  --> [str].
+leaf_tok(integer_literal) --> [int].
+leaf_tok(decimal_literal) --> [dec].
 
 word_char_l(C) :- alpha_l(C).
 word_char_l('_').
