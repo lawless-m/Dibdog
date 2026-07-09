@@ -1897,6 +1897,36 @@ string_chars([C|Cs])    --> [C], { C \== '''' }, string_chars(Cs).
 string_chars([]) --> [].
 
 % Keyword — case-insensitive match against an atom argument.
+%
+% CALLER CONTRACT — read before using keyword//1 in a new rule.
+% keyword//1 consumes exactly its argument's characters and stops. It
+% does NOT look ahead for a token boundary, so on input `island` a call
+% to `keyword(is)` matches `is` and leaves `land`. To avoid a keyword
+% silently absorbing the prefix of a longer identifier, EVERY caller
+% must make the boundary explicit by following the keyword with one of:
+%   (a) `ws1` — requires ≥1 whitespace/comment char (the common case,
+%       e.g. `keyword(where), ws1`); or
+%   (b) a required punctuation token that cannot be an identifier char
+%       — `['(']`, `[',']`, `[')']` (e.g. `keyword(values), ws, ['(']`);
+%       `ws` before it is fine because the punctuation still can't match
+%       an ident-continuation char; or
+%   (c) end-of-production where the CALLER of that production supplies
+%       the `ws1` (e.g. `maint_op//1`, `join_type//1`); or
+%   (d) — for `keyword(true)`/`keyword(false)` in `primary//1` only —
+%       an `identifier//1` fallback alternative tried next, so `phrase/2`
+%       full-input backtracking re-reads a keyword-prefixed word (e.g.
+%       `trueish`) as a whole identifier.
+% Do NOT write `keyword(K), ws, <identifier-or-value>` — that is the one
+% shape where a longer identifier can be mis-split (ws may match zero).
+%
+% Audited 2026-07-09: all ~60 keyword//1 call sites comply (verified
+% empirically — `trueish`, `notes`, `isolated`, `andes`, `orders`,
+% `betweenx`, `selecting`, `fromage` all parse as whole identifiers).
+% No boundary-lookahead variant is added, per the simplicity rule: there
+% is no violating call site to fix. (Note: whether a keyword may serve
+% as an *exact* column name — e.g. a column literally named `true` — is
+% a separate reserved-word question, not this boundary contract; see
+% DIVERGENCES.md #2/#9.)
 keyword(K) -->
     { atom_chars(K, KChars) },
     keyword_chars(KChars).
