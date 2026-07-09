@@ -1,60 +1,104 @@
-% The DBISAM DCG — first slice.
+% The DBISAM DCG — a bidirectional grammar for the DBISAM v4 SQL
+% dialect as spoken by the live engine on rivsem04.
 %
-% Scope at this commit:
-%   - Lexical layer: identifiers, integer literals, single-quoted
-%     string literals, whitespace.
-%   - Comments: `--` line comments (terminated by `\n`/`\r`/EOF) and
-%     `/* */` block comments (non-nesting per DBISAM, see slice #66).
-%     Both treated as whitespace-equivalent at the `ws`/`ws1` layer.
-%   - One statement: bare `SELECT <column-list> FROM <table>` where
-%     column-list is one or more comma-separated identifiers and
-%     table is a single identifier.
+% This file is the project's second reading of the SQL dialect: it
+% parses SQL to an AST and regenerates canonical SQL from an AST, and
+% every rule is calibrated against the real engine (probe notes tagged
+% "slice #NN" throughout cite what rivsem04 actually did). Where the
+% grammar and engine disagree by design, the disagreement is
+% catalogued — see the companions below.
 %
-% AST term shape:
-%   Top-level: either a bare `select_statement(...)` or a UNION tree.
-%     UNION is left-associative — `a UNION b UNION c` parses to
-%     `union(union(a, b), c)`. `UNION ALL` uses `union_all/2` likewise.
+% Companions:
+%   - docs/DIVERGENCES.md — the canonical index of grammar-vs-engine
+%     disagreements (over-accept / over-reject / both-reject), each
+%     with the design reason it sits where it does.
+%   - docs/reqcodes.md    — the engine's rejection reqcodes (0x2b02
+%     table-not-found, 0x2ead parse/schema error, …) and their
+%     decoded Pack-stream layouts.
+%   - CORPUS.md / ARCHITECTURE.md — the corpus format and the
+%     grammar/engine/differential harness split.
 %
-%   select_statement(Distinct, Columns, FromList, Modifiers)
-%     where Distinct ∈ {distinct, all_rows} — `distinct` iff the
-%                      SELECT clause used the DISTINCT keyword;
-%                      `all_rows` is the default (DBISAM's `ALL`
-%                      keyword is also accepted as a synonym for the
-%                      default).
-%     and   Columns  = [Item, ...] and each Item is either
-%                      `star` (for `*`) or `identifier(Atom)`,
-%     and   FromList = [table(identifier(Name), Alias), ...],
-%                      where Alias is `no_alias` or `identifier(A)`.
-%                      Single-table is just a one-element list.
-%     and   Modifiers = [Clause, ...] in source order; `[]` for the
-%                      bare form. Each Clause is a functor like
-%                      `top(Integer)`, `where(Pred)`, `group_by([..])`,
-%                      `order_by([..])` etc. as the grammar grows.
-%     Per Elevate docs §SELECT_Statement, source-order is
-%       WHERE, GROUP BY, HAVING, ORDER BY, TOP.
+% Scope (current):
+%   - Lexical layer: bare / double-quoted / bracketed identifiers,
+%     integer + decimal/float + single-quoted string (doubled-quote
+%     escape) + boolean literals, positional `?` parameters, and
+%     whitespace. `--` line comments and non-nesting `/* */` block
+%     comments are whitespace-equivalent at the `ws`/`ws1` layer.
+%   - Expressions: arithmetic (`arith/3`, `neg/1`), function calls
+%     (validated against the engine-probed catalogue in functions.pl /
+%     function_sigs.pl), `CAST`, `CASE` (simple + searched), qualified
+%     column refs.
+%   - Predicates: `=`, comparison operators, `IS [NOT] NULL`,
+%     `[NOT] IN` (value-list or single subselect), `[NOT] BETWEEN`,
+%     `[NOT] LIKE`, `NOT`, `AND`/`OR` with SQL precedence, and a bare
+%     Bit/Boolean column as a truth value (`truth/1` — DIVERGENCES.md
+%     #13).
+%   - Statements — `statement_body//1` dispatches 13 forms: SELECT
+%     (with UNION / UNION ALL trees and SELECT INTO), UPDATE, DELETE,
+%     INSERT, DROP TABLE, DROP INDEX, CREATE INDEX, ALTER TABLE,
+%     RENAME, maintenance (EMPTY/OPTIMIZE/VERIFY/REPAIR/UPGRADE),
+%     EXPORT, IMPORT, and transaction control (START/COMMIT/ROLLBACK).
+%     A single optional trailing `;` is tolerated.
+%
+% AST conventions:
+%   - One distinct functor per construct — no functor is reused for
+%     two readings (this is what keeps the bidirectional round-trip
+%     unambiguous; the generator keys purely on functor shape).
+%   - Identifiers are always wrapped: `identifier(Atom)`, and a
+%     qualified ref is `qualified(identifier(Q), identifier(N))`.
+%   - SELECT is `select_statement(Distinct, Columns, FromList,
+%     Modifiers)`:
+%       Distinct  ∈ {distinct, all_rows}  (`ALL` ≡ the `all_rows`
+%                   default).
+%       Columns   = [Item, …], Item ∈ {star, identifier/qualified,
+%                   literal, arith/neg, function_call(N, Args), cast/2,
+%                   case_when/2, aliased(Expr, identifier(A))}.
+%       FromList  = [table(identifier(Name), Alias) | joined(Type,
+%                   Left, Right, OnPred), …]; Alias is `no_alias` or
+%                   `identifier(A)`.
+%       Modifiers = [Clause, …] in SOURCE order; `[]` for none. Clause
+%                   ∈ {where(Pred), group_by([…]), having(Pred),
+%                   order_by([ord(V, asc|desc), …]), top(Integer)}.
+%                   Per Elevate docs §SELECT_Statement the engine's
+%                   source order is WHERE, GROUP BY, HAVING, ORDER BY,
+%                   TOP — but the grammar does NOT enforce it (see
+%                   DIVERGENCES.md #8: clause-order is an engine check).
+%   - Predicates form an `and/2`,`or/2`,`not/1` tree over atoms
+%     (`eq/2`, `cmp/3`, `is_null/1`, `is_not_null/1`, `in/2`,
+%     `not_in/2`, `between/3`, `not_between/3`, `like/2`, `not_like/2`,
+%     `truth/1`); UNION nodes are `union/2`,`union_all/2`, left-assoc.
+%
+% Schema/type-agnostic by design:
+%   The DCG is single-pass and syntactic — it does NOT know the
+%   catalog, column types, or aggregation context. Table/column
+%   existence, type checks, aggregation and clause-order rules are all
+%   left to the engine, which validates them at parse time. Those are
+%   the `over-accept` divergences (DIVERGENCES.md #1–#3, #7, #8).
 %
 % Case handling:
-%   - Keywords (SELECT, FROM) are case-insensitive. They are
-%     STRUCTURAL only — they don't appear in the AST.
-%   - Identifiers (column names, table names) preserve case as
-%     written. So `select code from CUSTOMER` and
-%     `SELECT code FROM CUSTOMER` produce identical AST terms.
+%   - Keywords are case-insensitive and STRUCTURAL only — they never
+%     appear in the AST.
+%   - Identifiers preserve case as written, so `select code from
+%     CUSTOMER` and `SELECT code FROM CUSTOMER` produce identical ASTs.
 %
 % Round-trip discipline:
 %   The generator (`generate_statement/2`) emits a CANONICAL form —
-%   uppercase keywords, single space separators, no trailing
-%   whitespace. The generated SQL is therefore not byte-equal to the
-%   original input, but re-parsing the generated SQL produces the
-%   same AST term. This is the property CORPUS.md's "Promotion bar"
-%   criterion 3 actually requires.
+%   uppercase keywords, single-space separators, no trailing
+%   whitespace. Generated SQL is therefore not byte-equal to the input,
+%   but re-parsing it yields the SAME AST term. That AST-fixpoint is
+%   what CORPUS.md's "Promotion bar" criterion 3 requires, and what
+%   tools/fuzz-roundtrip.pl checks.
 %
 % Anti-stub:
 %   - No placeholder atoms (`unimplemented`, `todo`, `_` in
 %     load-bearing positions).
 %   - No catch-all productions matching `[_]` or similar.
-%   - Constructs not in this file's scope (TOP n, UNION, WHERE,
-%     parenthesised projections, etc.) have NO rule and will fail
-%     to parse — which is honest. Future slices will add them.
+%   - Constructs genuinely out of scope have NO rule and fail honestly
+%     rather than pass via a stub — e.g. multi-statement input
+%     (DIVERGENCES.md #11), ODBC `{d '…'}` / `{fn …}` escapes
+%     (deliberately not modelled, #4), and subqueries outside the one
+%     accepted `IN (SELECT …)` position — derived tables, `EXISTS`,
+%     scalar subqueries (#5).
 
 :- module(dcg, [
     statement//1,
