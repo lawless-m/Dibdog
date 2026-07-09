@@ -1,0 +1,23 @@
+id = "0014-where-constant-truth"
+status = "meaningful"
+provenance = "manual"
+tags = ["select", "where", "predicate", "boolean", "constant", "regression-guard"]
+notes = """
+Integer constant used as a bare truth value in WHERE (`WHERE 1`). Probed
+on rivsem04 2026-07-09: the engine accepts integer constants 0/1 as
+Boolean predicates (DBISAM's Delphi-flavoured bit-as-integer), so grammar
+and engine agree here — this is the regression guard for the accept side
+of the truth/1 rule. The engine REJECTS non-Boolean values in the same
+slot (`WHERE 'x'`, `WHERE 1 + 1` → 0x2ead "Expected NULL, Boolean
+expression"), which the schema/type-agnostic grammar over-accepts; that
+divergence is documented in DIVERGENCES.md #13 and
+docs/investigations/bare-bit-predicate.md, not guarded by a corpus entry.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-07-09T00:00:00Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Promotion checks passed via tools/corpus-promote.sh (all four criteria). Regression guard for the accept side of the truth/1 predicate rule: engine accepts an integer constant as a Boolean predicate. Added while probing the constant-truth nuance left open by the bare-bit-predicate fix."

@@ -246,6 +246,46 @@ it down is stopping the next person re-deriving the `CASE WHEN c.customer` mista
 
 ---
 
+## Follow-up: constant / non-column truth values (probed 2026-07-09)
+
+The `truth(V) --> value(V)` fix admits *any* value in a predicate slot,
+not just a Bit column — so `WHERE 1`, `WHERE 'x'`, `WHERE 1 + 1`, and
+`CASE WHEN 1` all now parse. That raised the question the original probe
+didn't cover: does the engine accept a *constant* (non-column) truth
+value? Probed on rivsem04 via the engine harness (discrimination
+controls confirmed in-session: `no_such_table_xyz` → `0x2b02`,
+`nonexistent_col_xyz` → `0x2ead`):
+
+| SQL | Engine | reqcode / message |
+|-----|--------|-------------------|
+| `select CODE from CUSTOMER where 1` | **accepted** | `0x0000` |
+| `select CODE from CUSTOMER where 0` | **accepted** | `0x0000` |
+| `select case when 1 then 'Y' else 'N' end from CUSTOMER` | **accepted** | `0x0000` |
+| `select CODE from CUSTOMER where 'x'` | **rejected** | `0x2ead` "Expected NULL, Boolean expression but instead found 'x'" |
+| `select CODE from CUSTOMER where 1 + 1` | **rejected** | `0x2ead` "Expected NULL, Boolean expression but instead found +" |
+| `select CODE from CUSTOMER where CUSTOMER` (control) | accepted | `0x0000` |
+
+**Reading:** the predicate slot is **type-aware**. The engine treats a
+Bit column and an integer constant `0`/`1` as Boolean (DBISAM's
+Delphi-flavoured bit-as-integer), but rejects a string literal and an
+arithmetic expression there with an explicit type message ("Expected
+NULL, Boolean expression").
+
+**Disposition — over-accept, grammar unchanged.** The grammar's `truth/1`
+rule is broader than the engine's Boolean-type check, so it over-accepts
+`WHERE 'x'` and `WHERE 1 + 1`. This is left as-is, for the same reason as
+divergences #1–#3: the DCG is single-pass and type-agnostic; type
+inference is an engine concern. Narrowing `truth/1` to columns-only is
+**not** an option — it would turn the engine-accepted `WHERE 1` / `WHERE
+0` into a new over-reject. Recorded in `DIVERGENCES.md` #13.
+
+Regression guard for the accept side: `corpus/select/basic/0014-where-constant-truth/`
+(`WHERE 1`, `meaningful`). The reject side (`'x'`, `1 + 1`) is documented
+here and in #13 but not corpus-guarded — an `expected-divergent` entry
+could be added later if the over-accept ever needs automated tracking.
+
+---
+
 ## Cross-references
 
 - Grammar: `predicate_atom//1` `grammar/dcg.pl:1193`; predicate positions at

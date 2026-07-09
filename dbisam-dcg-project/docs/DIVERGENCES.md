@@ -258,7 +258,7 @@ are advisory; the corpus is empirical.
 
 - **See also**: memory `dbisam-docs-diverge-from-engine.md`
 
-## 13. Bare Bit/Boolean column as a predicate — RESOLVED 2026-07-09
+## 13. Bare Bit/Boolean column as a predicate — over-reject RESOLVED; residual type-aware over-accept
 
 - **Shape**: `select CODE from CUSTOMER c where c.CUSTOMER` — a lone
   Bit column used as a truth value, no comparison operator. Same for
@@ -287,10 +287,25 @@ are advisory; the corpus is empirical.
   generator stays unambiguous (mirror: `gen_predicate(truth(V), Chars)
   :- gen_value(V, Chars)`; `gen_value` has no `truth` clause, so a plain
   value never serialises as a predicate).
-- **Canonical entry**: `corpus/select/basic/0013-bare-bit-predicate/`
-  (status `meaningful` — the regression guard that the fix holds).
+- **Residual over-accept (type-aware predicate slot)**: the `truth/1`
+  rule admits *any* value as a predicate, but the engine's predicate
+  slot is type-aware. Probed 2026-07-09:
+  - `WHERE 1`, `WHERE 0`, `CASE WHEN 1` → engine **accepts** (integer
+    constants are Boolean; DBISAM's Delphi bit-as-integer) — grammar
+    agrees.
+  - `WHERE 'x'`, `WHERE 1 + 1` → engine **rejects** `0x2ead` "Expected
+    NULL, Boolean expression" — grammar **over-accepts**.
+  This is an `over-accept`, left as-is on the same reasoning as #1–#3:
+  the DCG is single-pass and type-agnostic; type inference is an engine
+  concern. Narrowing `truth/1` to columns-only is **not** viable — it
+  would make the engine-accepted `WHERE 1`/`WHERE 0` a new over-reject.
+- **Canonical entries**: `corpus/select/basic/0013-bare-bit-predicate/`
+  (bare Bit column, `meaningful` — guards the over-reject fix) and
+  `corpus/select/basic/0014-where-constant-truth/` (`WHERE 1`,
+  `meaningful` — guards the accept side of the constant case). The reject
+  side (`'x'`, `1 + 1`) is documented but not corpus-guarded.
 - **See also**: `docs/investigations/bare-bit-predicate.md` (the full
-  investigation and the live probe results).
+  investigation, both probe rounds, and the empirical tables).
 
 ---
 
