@@ -1249,17 +1249,34 @@ predicate_atom(P) -->
 predicate_atom(not(P)) -->
     keyword(not), ws1,
     predicate_atom(P).
+% All remaining predicate atoms share a leading value; left-factor it so
+% the value is parsed ONCE and the operator/keyword tail then decides the
+% predicate shape. This avoids re-parsing the (possibly deep) value
+% expression up to ~10 times per atom on backtracking.
+%
+% First-solution equivalence with the former one-clause-per-shape form:
+% predicate_tail//2's alternatives are in the SAME priority order as the
+% old clauses, so for a fixed value reading the shape chosen is
+% identical. And only value's greedy (first) reading can ever complete a
+% predicate — a shorter reading leaves a leading arithmetic operator
+% (`+ - * / mod`), which no tail, nor the empty `truth` tail via
+% and_rest/or_rest, can consume. So the value/shape search order is
+% behaviour-equivalent to the original.
+predicate_atom(P) --> value(L), predicate_tail(L, P).
+
+% predicate_tail(+LeftValue, -Predicate) — the operator/keyword part
+% after the leading value. Order is LOAD-BEARING (mirrors the former
+% predicate_atom clause order); the empty `truth` tail MUST stay last.
+%
 % Ordering matters: try IS [NOT] NULL first (the IS keyword would
 % otherwise parse as an identifier). For symbolic comparison operators,
 % try the longer prefixes first (`<=`, `>=`, `<>`, `!=` before `<`,
 % `>`, `=`) so the lexer doesn't half-consume them.
-predicate_atom(is_not_null(L)) -->
-    value(L),
+predicate_tail(L, is_not_null(L)) -->
     ws1, keyword(is),
     ws1, keyword(not),
     ws1, keyword(null).
-predicate_atom(is_null(L)) -->
-    value(L),
+predicate_tail(L, is_null(L)) -->
     ws1, keyword(is),
     ws1, keyword(null).
 % IN / NOT IN. RHS is either a value list `(v1, v2, ...)` or a
@@ -1279,59 +1296,48 @@ predicate_atom(is_null(L)) -->
 % spelled `select` (unlikely but possible) — but the keyword match
 % requires a non-identifier char after it (handled by ws1 in the
 % nested rule), so backtracking still resolves correctly.
-predicate_atom(not_in(L, Rhs)) -->
-    value(L),
+predicate_tail(L, not_in(L, Rhs)) -->
     ws1, keyword(not),
     ws1, keyword(in),
     ws, ['('], ws,
     in_rhs(Rhs),
     ws, [')'].
-predicate_atom(in(L, Rhs)) -->
-    value(L),
+predicate_tail(L, in(L, Rhs)) -->
     ws1, keyword(in),
     ws, ['('], ws,
     in_rhs(Rhs),
     ws, [')'].
-
-in_rhs(subselect(S)) --> select_chain(S).
-in_rhs(Vs) --> value_list(Vs).
 % BETWEEN / NOT BETWEEN — range predicate. Order: try NOT BETWEEN
 % before BETWEEN so the NOT prefix gets consumed correctly.
 % Probed accepted on rivsem04: bare numeric, qualified-col, `?`
 % params on both Lo and Hi, NOT BETWEEN. Lo/Hi are full value
 % expressions per standard.
-predicate_atom(not_between(V, Lo, Hi)) -->
-    value(V),
+predicate_tail(V, not_between(V, Lo, Hi)) -->
     ws1, keyword(not),
     ws1, keyword(between),
     ws1, value(Lo),
     ws1, keyword(and),
     ws1, value(Hi).
-predicate_atom(between(V, Lo, Hi)) -->
-    value(V),
+predicate_tail(V, between(V, Lo, Hi)) -->
     ws1, keyword(between),
     ws1, value(Lo),
     ws1, keyword(and),
     ws1, value(Hi).
-predicate_atom(not_like(L, R)) -->
-    value(L),
+predicate_tail(L, not_like(L, R)) -->
     ws1, keyword(not),
     ws1, keyword(like),
     ws1, string_literal(R).
-predicate_atom(like(L, R)) -->
-    value(L),
+predicate_tail(L, like(L, R)) -->
     ws1, keyword(like),
     ws1, string_literal(R).
-predicate_atom(cmp(Op, L, R)) -->
-    value(L),
+predicate_tail(L, cmp(Op, L, R)) -->
     ws, cmp_op(Op), ws,
     value(R).
-predicate_atom(eq(L, R)) -->
-    value(L),
+predicate_tail(L, eq(L, R)) -->
     ws, ['='], ws,
     value(R).
 % Bare Bit/Boolean column (or any value) used as a truth value, with no
-% comparison operator. LAST alternative: only reached when every
+% comparison operator. EMPTY tail, kept LAST: only reached when every
 % operator/keyword form above has failed, i.e. the value is followed by
 % no comparison. The engine on rivsem04 accepts a bare Bit column as a
 % predicate in WHERE (bare, AND-chain, NOT) and searched CASE WHEN —
@@ -1339,7 +1345,10 @@ predicate_atom(eq(L, R)) -->
 % DIVERGENCES.md #13. Distinct `truth/1` functor keeps the round-trip
 % unambiguous: gen_predicate(truth(V)) emits the value, and gen_value
 % has no `truth` clause, so a plain value never serialises as a predicate.
-predicate_atom(truth(V)) --> value(V).
+predicate_tail(V, truth(V)) --> [].
+
+in_rhs(subselect(S)) --> select_chain(S).
+in_rhs(Vs) --> value_list(Vs).
 
 % Comparison operators — longer prefixes first.
 % `<>` and `!=` both mean "not equal"; canonicalise to `ne`.
