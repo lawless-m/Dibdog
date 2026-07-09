@@ -7,7 +7,9 @@
 %
 % Exit codes:
 %   0 — parsed successfully; term written to stdout
-%   1 — grammar rejected the SQL
+%   1 — grammar rejected the SQL (a `furthest: <N>` diagnostic — the
+%       0-based char offset the parser reached before failing — is
+%       written to stderr; see parse_statement_diag/2)
 %   2 — file I/O error or invalid invocation
 
 :- use_module(library(os)).
@@ -26,14 +28,26 @@ main :-
 
 run(Path) :-
     catch(
-        (   phrase_from_file(statement(Term), Path)
-        ->  format("~q.~n", [Term]),
-            halt(0)
-        ;   format(user_error, "parse-to-term: grammar rejected ~q~n", [Path]),
-            halt(1)
+        (   phrase_from_file(read_all(Chars), Path)
+        ->  ( parse_statement(Chars, Term)
+            ->  format("~q.~n", [Term]),
+                halt(0)
+            ;   parse_statement_diag(Chars, diag(Furthest)),
+                format(user_error, "parse-to-term: grammar rejected ~q~n", [Path]),
+                format(user_error, "furthest: ~w~n", [Furthest]),
+                halt(1)
+            )
+        ;   format(user_error, "parse-to-term: could not read ~q~n", [Path]),
+            halt(2)
         ),
         Err,
         ( format(user_error, "parse-to-term: error ~q~n", [Err]),
           halt(2)
         )
     ).
+
+% Read the whole file into a char list (greedy — first solution is the
+% full contents). Kept local so the tool doesn't depend on a particular
+% library's sequence nonterminal.
+read_all([C|Cs]) --> [C], read_all(Cs).
+read_all([]) --> [].
