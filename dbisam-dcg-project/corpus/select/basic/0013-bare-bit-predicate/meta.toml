@@ -1,0 +1,20 @@
+id = "0013-bare-bit-predicate"
+status = "meaningful"
+provenance = "manual"
+tags = ["select", "where", "predicate", "boolean", "bit", "regression-guard"]
+notes = """
+Bare Bit/Boolean column used as a predicate with no comparison operator
+(`WHERE c.CUSTOMER`). The engine on rivsem04 accepts this; the grammar
+originally rejected it — the catalogue's first consequential over-reject.
+Fixed by the `predicate_atom(truth(V))` rule (2026-07-09). This entry is
+the regression guard that the fix holds: grammar and engine now agree.
+See docs/investigations/bare-bit-predicate.md and DIVERGENCES.md #13.
+"""
+fixtures = []
+
+[[history]]
+at = "2026-07-09T00:00:00Z"
+from = "pending"
+to = "meaningful"
+by = "claude-code"
+reason = "Promotion checks passed via tools/corpus-promote.sh: (1) no placeholders, (2) grammar parses query.sql to expected.term, (3) round-trip stable, (4) engine accepts. Closes the engine-side gap in the bare-bit-predicate investigation: live probe of rivsem04 confirmed the engine accepts a bare Bit column as a predicate in WHERE (bare, AND-chain, NOT) and searched CASE WHEN. Grammar fixed with the truth/1 alternative; this is the regression guard."

@@ -359,6 +359,10 @@ gen_predicate(eq(L, R), Chars) :-
 gen_predicate(is_null(L), Chars) :-
     gen_value(L, LChars),
     append(LChars, [' ','I','S',' ','N','U','L','L'], Chars).
+% Mirror of the bare-truth parse rule (predicate_atom(truth(V))): a bare
+% Bit/Boolean column used as a predicate serialises as just the value.
+gen_predicate(truth(V), Chars) :-
+    gen_value(V, Chars).
 gen_predicate(is_not_null(L), Chars) :-
     gen_value(L, LChars),
     append(LChars, [' ','I','S',' ','N','O','T',' ','N','U','L','L'], Chars).
@@ -1282,6 +1286,16 @@ predicate_atom(eq(L, R)) -->
     value(L),
     ws, ['='], ws,
     value(R).
+% Bare Bit/Boolean column (or any value) used as a truth value, with no
+% comparison operator. LAST alternative: only reached when every
+% operator/keyword form above has failed, i.e. the value is followed by
+% no comparison. The engine on rivsem04 accepts a bare Bit column as a
+% predicate in WHERE (bare, AND-chain, NOT) and searched CASE WHEN —
+% probed 2026-07-09, see docs/investigations/bare-bit-predicate.md and
+% DIVERGENCES.md #13. Distinct `truth/1` functor keeps the round-trip
+% unambiguous: gen_predicate(truth(V)) emits the value, and gen_value
+% has no `truth` clause, so a plain value never serialises as a predicate.
+predicate_atom(truth(V)) --> value(V).
 
 % Comparison operators — longer prefixes first.
 % `<>` and `!=` both mean "not equal"; canonicalise to `ne`.

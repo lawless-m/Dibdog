@@ -258,6 +258,40 @@ are advisory; the corpus is empirical.
 
 - **See also**: memory `dbisam-docs-diverge-from-engine.md`
 
+## 13. Bare Bit/Boolean column as a predicate — RESOLVED 2026-07-09
+
+- **Shape**: `select CODE from CUSTOMER c where c.CUSTOMER` — a lone
+  Bit column used as a truth value, no comparison operator. Same for
+  `where c.CUSTOMER and c.CODE > 0`, `where not c.CUSTOMER`, and
+  searched `case when c.CUSTOMER then 'Y' else 'N' end`.
+- **Engine**: **accepts** (`reqcode = 0x0000`). Probed on rivsem04
+  2026-07-09: accepted in WHERE (bare), WHERE (AND-chain), WHERE (NOT),
+  and searched CASE WHEN. The `= 1` / `= TRUE` controls also accept, on
+  the real `CUSTOMER.CUSTOMER` Bit column.
+- **Grammar**: originally **rejected** — `predicate_atom//1` had no
+  alternative for a bare `value`; every alternative required a following
+  operator/keyword. Now **accepts** via the added last alternative
+  `predicate_atom(truth(V)) --> value(V)`.
+- **Disposition**: **over-reject** — the catalogue's **first
+  consequential over-reject** (grammar turned away SQL the engine runs,
+  a false negative). **RESOLVED**: grammar fixed, so grammar and engine
+  now agree. Recorded here for the cross-reference and because a
+  consequential over-reject is worth remembering; it is not a standing
+  disagreement.
+- **Why it happened / the fix**: the belief that the `= TRUE` form was
+  *required* was inherited from the Pintail playbook, which changed
+  `CASE WHEN c.customer` to `= TRUE` on the grammar's rejection alone —
+  the engine was never probed. The fix is one added alternative, placed
+  **last** in `predicate_atom//1` so it only fires when no operator form
+  matched, with a distinct `truth/1` functor so the bidirectional
+  generator stays unambiguous (mirror: `gen_predicate(truth(V), Chars)
+  :- gen_value(V, Chars)`; `gen_value` has no `truth` clause, so a plain
+  value never serialises as a predicate).
+- **Canonical entry**: `corpus/select/basic/0013-bare-bit-predicate/`
+  (status `meaningful` — the regression guard that the fix holds).
+- **See also**: `docs/investigations/bare-bit-predicate.md` (the full
+  investigation and the live probe results).
+
 ---
 
 ## How to add a new divergence
