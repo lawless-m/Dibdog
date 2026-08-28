@@ -52,13 +52,14 @@ join_type ::= ( "LEFT" "OUTER" "JOIN" | "LEFT" "JOIN" | "RIGHT" "OUTER" "JOIN" |
 column_alias_opt ::= [ ( "AS" identifier | identifier ) ] ;
 column_or_star_bare ::= ( "*" | value ) ;
 additive ::= multiplicative { ( "+" multiplicative | "-" multiplicative | "||" multiplicative ) } ;
-predicate_atom ::= ( "(" predicate_or ")" | "NOT" predicate_atom | value "IS" "NOT" "NULL" | value "IS" "NULL" | value "NOT" "IN" "(" in_rhs ")" | value "IN" "(" in_rhs ")" | value "NOT" "BETWEEN" value "AND" value | value "BETWEEN" value "AND" value | value "NOT" "LIKE" string_literal | value "LIKE" string_literal | value cmp_op value | value "=" value ) ;
+predicate_atom ::= ( "(" predicate_or ")" | "NOT" predicate_atom | value predicate_tail ) ;
 order_item ::= ( value "DESC" | value "ASC" | value ) ;
 table_name ::= ( identifier "\" identifier | identifier ) ;
 multiplicative ::= unary { ( "*" unary | "/" unary | "MOD" unary ) } ;
+predicate_tail ::= [ ( "IS" "NOT" "NULL" | "IS" "NULL" | "NOT" "IN" "(" in_rhs ")" | "IN" "(" in_rhs ")" | "NOT" "BETWEEN" value "AND" value | "BETWEEN" value "AND" value | "NOT" "LIKE" string_literal | "LIKE" string_literal | cmp_op value | "=" value ) ] ;
+unary ::= ( "-" unary | primary ) ;
 cmp_op ::= ( "<=" | ">=" | "<>" | "!=" | "<" | ">" ) ;
 in_rhs ::= ( select_chain | value_list ) ;
-unary ::= ( "-" unary | primary ) ;
 primary ::= ( "(" value ")" | cast_expr | case_expr | function_call | identifier "." identifier | "TRUE" | "FALSE" | identifier | decimal_literal | integer_literal | string_literal | "?" ) ;
 function_call ::= ( "EXTRACT" "(" extract_field "FROM" value ")" | "TRIM" "(" trim_side string_literal trim_separator value ")" | "CONCAT" "(" func_arg "WITH" func_arg ")" | identifier "(" func_arg_list ")" ) ;
 case_expr ::= "CASE" case_body "END" ;
