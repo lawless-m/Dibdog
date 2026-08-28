@@ -1659,8 +1659,21 @@ func_arg_list([A|As]) -->
 % catches type mismatches at parse time — the grammar stays
 % schema-and-type-agnostic. Try predicate_or first so `1=1` resolves
 % to `cmp(eq, 1, 1)`; bare values fall through to the second clause.
-func_arg(P) --> predicate_or(P).
+% A *bare value* argument is just a value, so strip the truth/1 marker
+% predicate_or//1 puts on it. That marker means "bare column used as a
+% truth-valued predicate" (the Bit-column rule) and is only meaningful
+% in a real predicate position. Leaving it on made the same value parse
+% differently depending on argument position — func_arg_list//1 uses
+% func_arg//1 for the first argument but value//1 for the rest — which
+% broke round-trip for the CONCAT ... WITH form and drifted every
+% corpus term containing a function call. Compound predicates (IF's
+% comparison first arg) keep their structure; only a top-level truth/1
+% is unwrapped.
+func_arg(P) --> predicate_or(P0), { unwrap_truth(P0, P) }.
 func_arg(V) --> value(V).
+
+unwrap_truth(truth(V), V) :- !.
+unwrap_truth(P, P).
 
 func_arg_list_rest([]) --> [].
 func_arg_list_rest([A|As]) -->
