@@ -93,9 +93,7 @@ If a disagreement can't be triaged, an expected term can't be authored
 confidently, or the engine behaviour is genuinely confusing:
 
 1. Capture the case as a `pending` corpus entry with detailed `notes`.
-2. Open a question in `docs/QUESTIONS.md` (a running list of "needs
-   human"), citing the entry ID.
-3. Move on to the next unit of work.
+2. Move on to the next unit of work.
 
 Do not guess. Pending is honest; guessing produces scaffolded entries that
 look meaningful and aren't.
@@ -122,7 +120,6 @@ Before stopping:
 - [ ] Grammar harness green.
 - [ ] Differential harness has no unclassified disagreements.
 - [ ] Dashboard committed (so deltas are accurate next session).
-- [ ] `docs/QUESTIONS.md` updated with any new uncertainties.
 
 ## A note on the engine
 
