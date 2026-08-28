@@ -65,10 +65,11 @@ specification.
 ├── fixtures/        Schema-creation SQL for engine harness (not parsed)
 ├── harness/         The three harnesses (see ARCHITECTURE.md)
 ├── docs/
-│   ├── GRAMMAR.md       Human-readable BNF-style rendering
+│   ├── GRAMMAR.md       How to read the grammar; AST term vocabulary
 │   ├── DIVERGENCES.md   Catalogue of doc/engine/disassembly disagreements
-│   ├── REFERENCES.md    Source-of-truth catalogue
-│   └── QUESTIONS.md     Running list of unresolved engine-behaviour questions
+│   └── functions.md     Engine-verified function catalogue
+├── railroad/        Auto-generated EBNF + syntax diagrams (gate-proven)
+├── REFERENCES.md    Source-of-truth catalogue (repo root)
 └── reports/         Generated dashboards and coverage views
 ```
 
