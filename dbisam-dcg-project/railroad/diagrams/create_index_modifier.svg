@@ -1,1 +1,52 @@
-<svg class="railroad" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="224" height="108" viewBox="0 0 224 108"><g class="terminator"><circle cx="26" cy="20" r="5"/></g><path class="rail" d="M31 20 H40"/><path class="rail" d="M40 20 H60"/><path class="rail" d="M60 20 H163.8"/><path class="rail" d="M163.8 20 H183.8"/><path class="rail" d="M40 20 A10 10 0 0 1 50 30"/><path class="rail" d="M50 30 V33"/><path class="rail" d="M50 33 A10 10 0 0 0 60 43"/><path class="rail" d="M60 43 H80"/><g class="terminal"><rect x="80" y="32" width="63.8" height="22" rx="11" ry="11"/><text x="111.9" y="47">UNIQUE</text></g><path class="rail" d="M143.8 43 H163.8"/><path class="rail" d="M60 43 A10 10 0 0 1 70 53"/><path class="rail" d="M70 53 V67"/><path class="rail" d="M70 67 A10 10 0 0 0 80 77"/><g class="terminal"><rect x="80" y="66" width="63.8" height="22" rx="11" ry="11"/><text x="111.9" y="81">NOCASE</text></g><path class="rail" d="M143.8 77 A10 10 0 0 0 153.8 67"/><path class="rail" d="M153.8 67 V53"/><path class="rail" d="M153.8 53 A10 10 0 0 1 163.8 43"/><path class="rail" d="M163.8 43 A10 10 0 0 0 173.8 33"/><path class="rail" d="M173.8 33 V30"/><path class="rail" d="M173.8 30 A10 10 0 0 1 183.8 20"/><path class="rail" d="M183.8 20 H192.8"/><g class="terminator"><circle cx="197.8" cy="20" r="5"/></g></svg>
+<svg class="railroad-diagram" width="231" height="101" viewBox="0 0 231 101" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g transform="translate(.5 .5)">
+<g>
+<path d="M20 30v20m10 -20v20m-10 -10h20"></path>
+</g>
+<g>
+<path d="M40 40h0"></path>
+<path d="M191 40h0"></path>
+<path d="M40 40a10 10 0 0 0 10 -10v0a10 10 0 0 1 10 -10"></path>
+<g>
+<path d="M60 20h111"></path>
+</g>
+<path d="M171 20a10 10 0 0 1 10 10v0a10 10 0 0 0 10 10"></path>
+<path d="M40 40h20"></path>
+<g>
+<path d="M60 40h0"></path>
+<path d="M171 40h0"></path>
+<path d="M60 40h20"></path>
+<g class="terminal ">
+<path d="M80 40h0"></path>
+<path d="M151 40h0"></path>
+<rect x="80" y="29" width="71" height="22" rx="10" ry="10"></rect>
+<text x="115.5" y="44">UNIQUE</text>
+</g>
+<path d="M151 40h20"></path>
+<path d="M60 40a10 10 0 0 1 10 10v10a10 10 0 0 0 10 10"></path>
+<g class="terminal ">
+<path d="M80 70h0"></path>
+<path d="M151 70h0"></path>
+<rect x="80" y="59" width="71" height="22" rx="10" ry="10"></rect>
+<text x="115.5" y="74">NOCASE</text>
+</g>
+<path d="M151 70a10 10 0 0 0 10 -10v-10a10 10 0 0 1 10 -10"></path>
+</g>
+<path d="M171 40h20"></path>
+</g>
+<path d="M 191 40 h 20 m -10 -10 v 20 m 10 -20 v 20"></path>
+</g>
+<style>
+svg.railroad-diagram { background: transparent; }
+svg.railroad-diagram path { stroke-width: 2; stroke: #444; fill: none; }
+svg.railroad-diagram text { font: bold 13px ui-monospace, Menlo, Consolas, monospace; text-anchor: middle; }
+svg.railroad-diagram text.comment { font: italic 12px ui-monospace, Menlo, Consolas, monospace; }
+svg.railroad-diagram rect { stroke-width: 1.6px; stroke: #3a8a3a; fill: #d7f0d7; }
+svg.railroad-diagram g.terminal text { fill: #143a14; }
+svg.railroad-diagram g.non-terminal rect { stroke: #3a5a9a; fill: #e3ecfb; }
+svg.railroad-diagram g.non-terminal text { fill: #142a5a; }
+svg.railroad-diagram g.terminal.leaf rect { stroke: #b8862b; fill: #fbeede; stroke-dasharray: 4 2; }
+svg.railroad-diagram g.terminal.leaf text { fill: #5a3d05; font-style: italic; }
+svg.railroad-diagram a:hover g.non-terminal rect { fill: #cfe0fb; }
+</style>
+</svg>

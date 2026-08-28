@@ -1,0 +1,5 @@
+{
+  "private": true,
+  "type": "module",
+  "description": "Marks renderer.js and vendor/railroad.js as ES modules. No dependencies: the railroad-diagrams library is vendored (see vendor/README.md)."
+}

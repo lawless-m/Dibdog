@@ -1,1 +1,58 @@
-<svg class="railroad" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="467" height="62" viewBox="0 0 467 62"><g class="terminator"><circle cx="26" cy="31" r="5"/></g><path class="rail" d="M31 31 H40"/><g class="terminal"><rect x="40" y="20" width="49.2" height="22" rx="11" ry="11"/><text x="64.6" y="35">DROP</text></g><path class="rail" d="M89.2 31 H101.2"/><g class="terminal"><rect x="101.2" y="20" width="56.5" height="22" rx="11" ry="11"/><text x="129.45" y="35">TABLE</text></g><path class="rail" d="M157.7 31 H169.7"/><a xlink:href="#drop_if_exists_opt" href="#drop_if_exists_opt"><g class="nonterminal"><rect x="169.7" y="20" width="151.4" height="22"/><text x="245.39999999999998" y="35">drop_if_exists_opt</text></g></a><path class="rail" d="M321.1 31 H333.1"/><g class="leaf"><rect x="333.1" y="20" width="93" height="22" rx="11" ry="11"/><text x="379.6" y="35">identifier</text></g><path class="rail" d="M426.1 31 H435.1"/><g class="terminator"><circle cx="440.1" cy="31" r="5"/></g></svg>
+<svg class="railroad-diagram" width="554.5" height="62" viewBox="0 0 554.5 62" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g transform="translate(.5 .5)">
+<g>
+<path d="M20 21v20m10 -20v20m-10 -10h20"></path>
+</g>
+<path d="M40 31h10"></path>
+<g>
+<path d="M50 31h0"></path>
+<path d="M504.5 31h0"></path>
+<g class="terminal ">
+<path d="M50 31h0"></path>
+<path d="M104 31h0"></path>
+<rect x="50" y="20" width="54" height="22" rx="10" ry="10"></rect>
+<text x="77" y="35">DROP</text>
+</g>
+<path d="M104 31h10"></path>
+<path d="M114 31h10"></path>
+<g class="terminal ">
+<path d="M124 31h0"></path>
+<path d="M186.5 31h0"></path>
+<rect x="124" y="20" width="62.5" height="22" rx="10" ry="10"></rect>
+<text x="155.25" y="35">TABLE</text>
+</g>
+<path d="M186.5 31h10"></path>
+<path d="M196.5 31h10"></path>
+<g class="non-terminal ">
+<path d="M206.5 31h0"></path>
+<path d="M379.5 31h0"></path>
+<rect x="206.5" y="20" width="173" height="22"></rect>
+<a xlink:href="#drop_if_exists_opt"><text x="293" y="35">drop&#95;if&#95;exists&#95;opt</text>
+</a>
+</g>
+<path d="M379.5 31h10"></path>
+<path d="M389.5 31h10"></path>
+<g class="terminal leaf">
+<path d="M399.5 31h0"></path>
+<path d="M504.5 31h0"></path>
+<rect x="399.5" y="20" width="105" height="22" rx="10" ry="10"></rect>
+<text x="452" y="35">identifier</text>
+</g>
+</g>
+<path d="M504.5 31h10"></path>
+<path d="M 514.5 31 h 20 m -10 -10 v 20 m 10 -20 v 20"></path>
+</g>
+<style>
+svg.railroad-diagram { background: transparent; }
+svg.railroad-diagram path { stroke-width: 2; stroke: #444; fill: none; }
+svg.railroad-diagram text { font: bold 13px ui-monospace, Menlo, Consolas, monospace; text-anchor: middle; }
+svg.railroad-diagram text.comment { font: italic 12px ui-monospace, Menlo, Consolas, monospace; }
+svg.railroad-diagram rect { stroke-width: 1.6px; stroke: #3a8a3a; fill: #d7f0d7; }
+svg.railroad-diagram g.terminal text { fill: #143a14; }
+svg.railroad-diagram g.non-terminal rect { stroke: #3a5a9a; fill: #e3ecfb; }
+svg.railroad-diagram g.non-terminal text { fill: #142a5a; }
+svg.railroad-diagram g.terminal.leaf rect { stroke: #b8862b; fill: #fbeede; stroke-dasharray: 4 2; }
+svg.railroad-diagram g.terminal.leaf text { fill: #5a3d05; font-style: italic; }
+svg.railroad-diagram a:hover g.non-terminal rect { fill: #cfe0fb; }
+</style>
+</svg>

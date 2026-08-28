@@ -37,7 +37,8 @@ green before the diagrams are published.
 | `gate/curated.pl` | Curated AST set (from `tools/fuzz-roundtrip.pl`) for the DCG→EBNF differential. |
 | `gate/gate.pl` | The equivalence gate: corpus replay + curated differential + over-permissiveness negatives. |
 | `gate/run.sh` | Gate driver — enumerates the corpus and runs `gate.pl`. |
-| `renderer.js` | EBNF IR → one SVG per rule + cross-linked `index.html`. |
+| `renderer.js` | EBNF IR → one SVG per rule + cross-linked `index.html`. Maps the IR onto the vendored `railroad-diagrams` library; draws no geometry itself. |
+| `vendor/railroad.js` | The `railroad-diagrams` library (CC0), committed so rendering needs no network or `npm install`. See `vendor/README.md`. |
 
 ## Running it
 

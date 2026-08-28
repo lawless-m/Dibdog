@@ -1,1 +1,105 @@
-<svg class="railroad" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="206" height="368" viewBox="0 0 206 368"><g class="terminator"><circle cx="26" cy="31" r="5"/></g><path class="rail" d="M31 31 H40"/><path class="rail" d="M40 31 H60"/><g class="terminal"><rect x="60" y="20" width="49.2" height="22" rx="11" ry="11"/><text x="84.6" y="35">YEAR</text></g><path class="rail" d="M109.2 31 H145.7"/><path class="rail" d="M145.7 31 H165.7"/><path class="rail" d="M40 31 A10 10 0 0 1 50 41"/><path class="rail" d="M50 41 V55"/><path class="rail" d="M50 55 A10 10 0 0 0 60 65"/><g class="terminal"><rect x="60" y="54" width="56.5" height="22" rx="11" ry="11"/><text x="88.25" y="69">MONTH</text></g><path class="rail" d="M116.5 65 H145.7"/><path class="rail" d="M145.7 65 A10 10 0 0 0 155.7 55"/><path class="rail" d="M155.7 55 V41"/><path class="rail" d="M155.7 41 A10 10 0 0 1 165.7 31"/><path class="rail" d="M40 31 A10 10 0 0 1 50 41"/><path class="rail" d="M50 41 V89"/><path class="rail" d="M50 89 A10 10 0 0 0 60 99"/><g class="terminal"><rect x="60" y="88" width="49.2" height="22" rx="11" ry="11"/><text x="84.6" y="103">WEEK</text></g><path class="rail" d="M109.2 99 H145.7"/><path class="rail" d="M145.7 99 A10 10 0 0 0 155.7 89"/><path class="rail" d="M155.7 89 V41"/><path class="rail" d="M155.7 41 A10 10 0 0 1 165.7 31"/><path class="rail" d="M40 31 A10 10 0 0 1 50 41"/><path class="rail" d="M50 41 V123"/><path class="rail" d="M50 123 A10 10 0 0 0 60 133"/><g class="terminal"><rect x="60" y="122" width="85.7" height="22" rx="11" ry="11"/><text x="102.85" y="137">DAYOFWEEK</text></g><path class="rail" d="M145.7 133 A10 10 0 0 0 155.7 123"/><path class="rail" d="M155.7 123 V41"/><path class="rail" d="M155.7 41 A10 10 0 0 1 165.7 31"/><path class="rail" d="M40 31 A10 10 0 0 1 50 41"/><path class="rail" d="M50 41 V157"/><path class="rail" d="M50 157 A10 10 0 0 0 60 167"/><g class="terminal"><rect x="60" y="156" width="85.7" height="22" rx="11" ry="11"/><text x="102.85" y="171">DAYOFYEAR</text></g><path class="rail" d="M145.7 167 A10 10 0 0 0 155.7 157"/><path class="rail" d="M155.7 157 V41"/><path class="rail" d="M155.7 41 A10 10 0 0 1 165.7 31"/><path class="rail" d="M40 31 A10 10 0 0 1 50 41"/><path class="rail" d="M50 41 V191"/><path class="rail" d="M50 191 A10 10 0 0 0 60 201"/><g class="terminal"><rect x="60" y="190" width="41.9" height="22" rx="11" ry="11"/><text x="80.95" y="205">DAY</text></g><path class="rail" d="M101.9 201 H145.7"/><path class="rail" d="M145.7 201 A10 10 0 0 0 155.7 191"/><path class="rail" d="M155.7 191 V41"/><path class="rail" d="M155.7 41 A10 10 0 0 1 165.7 31"/><path class="rail" d="M40 31 A10 10 0 0 1 50 41"/><path class="rail" d="M50 41 V225"/><path class="rail" d="M50 225 A10 10 0 0 0 60 235"/><g class="terminal"><rect x="60" y="224" width="49.2" height="22" rx="11" ry="11"/><text x="84.6" y="239">HOUR</text></g><path class="rail" d="M109.2 235 H145.7"/><path class="rail" d="M145.7 235 A10 10 0 0 0 155.7 225"/><path class="rail" d="M155.7 225 V41"/><path class="rail" d="M155.7 41 A10 10 0 0 1 165.7 31"/><path class="rail" d="M40 31 A10 10 0 0 1 50 41"/><path class="rail" d="M50 41 V259"/><path class="rail" d="M50 259 A10 10 0 0 0 60 269"/><g class="terminal"><rect x="60" y="258" width="63.8" height="22" rx="11" ry="11"/><text x="91.9" y="273">MINUTE</text></g><path class="rail" d="M123.8 269 H145.7"/><path class="rail" d="M145.7 269 A10 10 0 0 0 155.7 259"/><path class="rail" d="M155.7 259 V41"/><path class="rail" d="M155.7 41 A10 10 0 0 1 165.7 31"/><path class="rail" d="M40 31 A10 10 0 0 1 50 41"/><path class="rail" d="M50 41 V293"/><path class="rail" d="M50 293 A10 10 0 0 0 60 303"/><g class="terminal"><rect x="60" y="292" width="63.8" height="22" rx="11" ry="11"/><text x="91.9" y="307">SECOND</text></g><path class="rail" d="M123.8 303 H145.7"/><path class="rail" d="M145.7 303 A10 10 0 0 0 155.7 293"/><path class="rail" d="M155.7 293 V41"/><path class="rail" d="M155.7 41 A10 10 0 0 1 165.7 31"/><path class="rail" d="M40 31 A10 10 0 0 1 50 41"/><path class="rail" d="M50 41 V327"/><path class="rail" d="M50 327 A10 10 0 0 0 60 337"/><g class="terminal"><rect x="60" y="326" width="71.1" height="22" rx="11" ry="11"/><text x="95.55" y="341">MSECOND</text></g><path class="rail" d="M131.1 337 H145.7"/><path class="rail" d="M145.7 337 A10 10 0 0 0 155.7 327"/><path class="rail" d="M155.7 327 V41"/><path class="rail" d="M155.7 41 A10 10 0 0 1 165.7 31"/><path class="rail" d="M165.7 31 H174.7"/><g class="terminator"><circle cx="179.7" cy="31" r="5"/></g></svg>
+<svg class="railroad-diagram" width="216.5" height="332" viewBox="0 0 216.5 332" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g transform="translate(.5 .5)">
+<g>
+<path d="M20 21v20m10 -20v20m-10 -10h20"></path>
+</g>
+<g>
+<path d="M40 31h0"></path>
+<path d="M176.5 31h0"></path>
+<path d="M40 31h20"></path>
+<g class="terminal ">
+<path d="M60 31h21.25"></path>
+<path d="M135.25 31h21.25"></path>
+<rect x="81.25" y="20" width="54" height="22" rx="10" ry="10"></rect>
+<text x="108.25" y="35">YEAR</text>
+</g>
+<path d="M156.5 31h20"></path>
+<path d="M40 31a10 10 0 0 1 10 10v10a10 10 0 0 0 10 10"></path>
+<g class="terminal ">
+<path d="M60 61h17"></path>
+<path d="M139.5 61h17"></path>
+<rect x="77" y="50" width="62.5" height="22" rx="10" ry="10"></rect>
+<text x="108.25" y="65">MONTH</text>
+</g>
+<path d="M156.5 61a10 10 0 0 0 10 -10v-10a10 10 0 0 1 10 -10"></path>
+<path d="M40 31a10 10 0 0 1 10 10v40a10 10 0 0 0 10 10"></path>
+<g class="terminal ">
+<path d="M60 91h21.25"></path>
+<path d="M135.25 91h21.25"></path>
+<rect x="81.25" y="80" width="54" height="22" rx="10" ry="10"></rect>
+<text x="108.25" y="95">WEEK</text>
+</g>
+<path d="M156.5 91a10 10 0 0 0 10 -10v-40a10 10 0 0 1 10 -10"></path>
+<path d="M40 31a10 10 0 0 1 10 10v70a10 10 0 0 0 10 10"></path>
+<g class="terminal ">
+<path d="M60 121h0"></path>
+<path d="M156.5 121h0"></path>
+<rect x="60" y="110" width="96.5" height="22" rx="10" ry="10"></rect>
+<text x="108.25" y="125">DAYOFWEEK</text>
+</g>
+<path d="M156.5 121a10 10 0 0 0 10 -10v-70a10 10 0 0 1 10 -10"></path>
+<path d="M40 31a10 10 0 0 1 10 10v100a10 10 0 0 0 10 10"></path>
+<g class="terminal ">
+<path d="M60 151h0"></path>
+<path d="M156.5 151h0"></path>
+<rect x="60" y="140" width="96.5" height="22" rx="10" ry="10"></rect>
+<text x="108.25" y="155">DAYOFYEAR</text>
+</g>
+<path d="M156.5 151a10 10 0 0 0 10 -10v-100a10 10 0 0 1 10 -10"></path>
+<path d="M40 31a10 10 0 0 1 10 10v130a10 10 0 0 0 10 10"></path>
+<g class="terminal ">
+<path d="M60 181h25.5"></path>
+<path d="M131 181h25.5"></path>
+<rect x="85.5" y="170" width="45.5" height="22" rx="10" ry="10"></rect>
+<text x="108.25" y="185">DAY</text>
+</g>
+<path d="M156.5 181a10 10 0 0 0 10 -10v-130a10 10 0 0 1 10 -10"></path>
+<path d="M40 31a10 10 0 0 1 10 10v160a10 10 0 0 0 10 10"></path>
+<g class="terminal ">
+<path d="M60 211h21.25"></path>
+<path d="M135.25 211h21.25"></path>
+<rect x="81.25" y="200" width="54" height="22" rx="10" ry="10"></rect>
+<text x="108.25" y="215">HOUR</text>
+</g>
+<path d="M156.5 211a10 10 0 0 0 10 -10v-160a10 10 0 0 1 10 -10"></path>
+<path d="M40 31a10 10 0 0 1 10 10v190a10 10 0 0 0 10 10"></path>
+<g class="terminal ">
+<path d="M60 241h12.75"></path>
+<path d="M143.75 241h12.75"></path>
+<rect x="72.75" y="230" width="71" height="22" rx="10" ry="10"></rect>
+<text x="108.25" y="245">MINUTE</text>
+</g>
+<path d="M156.5 241a10 10 0 0 0 10 -10v-190a10 10 0 0 1 10 -10"></path>
+<path d="M40 31a10 10 0 0 1 10 10v220a10 10 0 0 0 10 10"></path>
+<g class="terminal ">
+<path d="M60 271h12.75"></path>
+<path d="M143.75 271h12.75"></path>
+<rect x="72.75" y="260" width="71" height="22" rx="10" ry="10"></rect>
+<text x="108.25" y="275">SECOND</text>
+</g>
+<path d="M156.5 271a10 10 0 0 0 10 -10v-220a10 10 0 0 1 10 -10"></path>
+<path d="M40 31a10 10 0 0 1 10 10v250a10 10 0 0 0 10 10"></path>
+<g class="terminal ">
+<path d="M60 301h8.5"></path>
+<path d="M148 301h8.5"></path>
+<rect x="68.5" y="290" width="79.5" height="22" rx="10" ry="10"></rect>
+<text x="108.25" y="305">MSECOND</text>
+</g>
+<path d="M156.5 301a10 10 0 0 0 10 -10v-250a10 10 0 0 1 10 -10"></path>
+</g>
+<path d="M 176.5 31 h 20 m -10 -10 v 20 m 10 -20 v 20"></path>
+</g>
+<style>
+svg.railroad-diagram { background: transparent; }
+svg.railroad-diagram path { stroke-width: 2; stroke: #444; fill: none; }
+svg.railroad-diagram text { font: bold 13px ui-monospace, Menlo, Consolas, monospace; text-anchor: middle; }
+svg.railroad-diagram text.comment { font: italic 12px ui-monospace, Menlo, Consolas, monospace; }
+svg.railroad-diagram rect { stroke-width: 1.6px; stroke: #3a8a3a; fill: #d7f0d7; }
+svg.railroad-diagram g.terminal text { fill: #143a14; }
+svg.railroad-diagram g.non-terminal rect { stroke: #3a5a9a; fill: #e3ecfb; }
+svg.railroad-diagram g.non-terminal text { fill: #142a5a; }
+svg.railroad-diagram g.terminal.leaf rect { stroke: #b8862b; fill: #fbeede; stroke-dasharray: 4 2; }
+svg.railroad-diagram g.terminal.leaf text { fill: #5a3d05; font-style: italic; }
+svg.railroad-diagram a:hover g.non-terminal rect { fill: #cfe0fb; }
+</style>
+</svg>
