@@ -1,99 +1,99 @@
 <svg class="railroad-diagram" width="670" height="109" viewBox="0 0 670 109" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g transform="translate(.5 .5)">
 <g>
-<path d="M20 30v20m10 -20v20m-10 -10h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M20 30v20m10 -20v20m-10 -10h20"></path>
 </g>
-<path d="M40 40h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 40h10"></path>
 <g>
-<path d="M50 40h0"></path>
-<path d="M620 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M50 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M620 40h0"></path>
 <g class="non-terminal ">
-<path d="M50 40h0"></path>
-<path d="M206 40h0"></path>
-<rect x="50" y="29" width="156" height="22"></rect>
-<a xlink:href="#select_statement"><text x="128" y="44">select&#95;statement</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M50 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M206 40h0"></path>
+<rect stroke="#3a5a9a" fill="#e3ecfb" stroke-width="1.6" x="50" y="29" width="156" height="22"></rect>
+<a xlink:href="#select_statement"><text fill="#142a5a" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="128" y="44">select&#95;statement</text>
 </a>
 </g>
-<path d="M206 40h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M206 40h10"></path>
 <g>
-<path d="M216 40h0"></path>
-<path d="M620 40h0"></path>
-<path d="M216 40a10 10 0 0 0 10 -10v0a10 10 0 0 1 10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M216 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M620 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M216 40a10 10 0 0 0 10 -10v0a10 10 0 0 1 10 -10"></path>
 <g>
-<path d="M236 20h364"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M236 20h364"></path>
 </g>
-<path d="M600 20a10 10 0 0 1 10 10v0a10 10 0 0 0 10 10"></path>
-<path d="M216 40h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M600 20a10 10 0 0 1 10 10v0a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M216 40h20"></path>
 <g>
-<path d="M236 40h0"></path>
-<path d="M600 40h0"></path>
-<path d="M236 40h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M236 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M600 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M236 40h10"></path>
 <g>
-<path d="M246 40h0"></path>
-<path d="M590 40h0"></path>
-<path d="M246 40h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M246 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M590 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M246 40h20"></path>
 <g>
-<path d="M266 40h0"></path>
-<path d="M570 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M266 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M570 40h0"></path>
 <g class="terminal ">
-<path d="M266 40h0"></path>
-<path d="M328.5 40h0"></path>
-<rect x="266" y="29" width="62.5" height="22" rx="10" ry="10"></rect>
-<text x="297.25" y="44">UNION</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M266 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M328.5 40h0"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="266" y="29" width="62.5" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="297.25" y="44">UNION</text>
 </g>
-<path d="M328.5 40h10"></path>
-<path d="M338.5 40h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M328.5 40h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M338.5 40h10"></path>
 <g class="terminal ">
-<path d="M348.5 40h0"></path>
-<path d="M394 40h0"></path>
-<rect x="348.5" y="29" width="45.5" height="22" rx="10" ry="10"></rect>
-<text x="371.25" y="44">ALL</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M348.5 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M394 40h0"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="348.5" y="29" width="45.5" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="371.25" y="44">ALL</text>
 </g>
-<path d="M394 40h10"></path>
-<path d="M404 40h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M394 40h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M404 40h10"></path>
 <g class="non-terminal ">
-<path d="M414 40h0"></path>
-<path d="M570 40h0"></path>
-<rect x="414" y="29" width="156" height="22"></rect>
-<a xlink:href="#select_statement"><text x="492" y="44">select&#95;statement</text>
-</a>
-</g>
-</g>
-<path d="M570 40h20"></path>
-<path d="M246 40a10 10 0 0 1 10 10v10a10 10 0 0 0 10 10"></path>
-<g>
-<path d="M266 70h32.75"></path>
-<path d="M537.25 70h32.75"></path>
-<g class="terminal ">
-<path d="M298.75 70h0"></path>
-<path d="M361.25 70h0"></path>
-<rect x="298.75" y="59" width="62.5" height="22" rx="10" ry="10"></rect>
-<text x="330" y="74">UNION</text>
-</g>
-<path d="M361.25 70h10"></path>
-<path d="M371.25 70h10"></path>
-<g class="non-terminal ">
-<path d="M381.25 70h0"></path>
-<path d="M537.25 70h0"></path>
-<rect x="381.25" y="59" width="156" height="22"></rect>
-<a xlink:href="#select_statement"><text x="459.25" y="74">select&#95;statement</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M414 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M570 40h0"></path>
+<rect stroke="#3a5a9a" fill="#e3ecfb" stroke-width="1.6" x="414" y="29" width="156" height="22"></rect>
+<a xlink:href="#select_statement"><text fill="#142a5a" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="492" y="44">select&#95;statement</text>
 </a>
 </g>
 </g>
-<path d="M570 70a10 10 0 0 0 10 -10v-10a10 10 0 0 1 10 -10"></path>
-</g>
-<path d="M590 40h10"></path>
-<path d="M246 40a10 10 0 0 0 -10 10v29a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M570 40h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M246 40a10 10 0 0 1 10 10v10a10 10 0 0 0 10 10"></path>
 <g>
-<path d="M246 89h344"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M266 70h32.75"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M537.25 70h32.75"></path>
+<g class="terminal ">
+<path stroke="#444" stroke-width="2" fill="none" d="M298.75 70h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M361.25 70h0"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="298.75" y="59" width="62.5" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="330" y="74">UNION</text>
 </g>
-<path d="M590 89a10 10 0 0 0 10 -10v-29a10 10 0 0 0 -10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M361.25 70h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M371.25 70h10"></path>
+<g class="non-terminal ">
+<path stroke="#444" stroke-width="2" fill="none" d="M381.25 70h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M537.25 70h0"></path>
+<rect stroke="#3a5a9a" fill="#e3ecfb" stroke-width="1.6" x="381.25" y="59" width="156" height="22"></rect>
+<a xlink:href="#select_statement"><text fill="#142a5a" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="459.25" y="74">select&#95;statement</text>
+</a>
 </g>
-<path d="M600 40h20"></path>
+</g>
+<path stroke="#444" stroke-width="2" fill="none" d="M570 70a10 10 0 0 0 10 -10v-10a10 10 0 0 1 10 -10"></path>
+</g>
+<path stroke="#444" stroke-width="2" fill="none" d="M590 40h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M246 40a10 10 0 0 0 -10 10v29a10 10 0 0 0 10 10"></path>
+<g>
+<path stroke="#444" stroke-width="2" fill="none" d="M246 89h344"></path>
+</g>
+<path stroke="#444" stroke-width="2" fill="none" d="M590 89a10 10 0 0 0 10 -10v-29a10 10 0 0 0 -10 -10"></path>
+</g>
+<path stroke="#444" stroke-width="2" fill="none" d="M600 40h20"></path>
 </g>
 </g>
-<path d="M620 40h10"></path>
-<path d="M 630 40 h 20 m -10 -10 v 20 m 10 -20 v 20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M620 40h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M 630 40 h 20 m -10 -10 v 20 m 10 -20 v 20"></path>
 </g>
 <style>
 svg.railroad-diagram { background: transparent; }

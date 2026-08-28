@@ -56,7 +56,52 @@ function build(node) {
 // carries one shared stylesheet.
 function svgFor(node) { return Diagram(build(node)).toString(); }
 // Self-contained SVG with its own <style>, for the standalone .svg file.
-function standaloneSvgFor(node) { return Diagram(build(node)).toStandalone(RAIL_CSS); }
+function standaloneSvgFor(node) {
+  return withPresentationAttrs(Diagram(build(node)).toStandalone(RAIL_CSS));
+}
+
+// The standalone files carry their styling in an embedded <style>, which
+// a browser honours but a CSS-unaware consumer ignores — older librsvg,
+// and various document pipelines, then draw every rect with the default
+// black fill, turning a diagram into a row of solid bars. Restate the
+// same declarations as presentation attributes so those consumers get
+// the right picture. The stylesheet still wins wherever CSS is applied
+// (a stylesheet rule beats a presentation attribute), so hover states,
+// the font stack and italic comments are unaffected in a browser.
+//
+// Only the standalone files need this. index.html inlines the bare SVGs
+// and carries one shared stylesheet, and is always read by a browser.
+function withPresentationAttrs(svg) {
+  const PALETTE = {
+    'terminal':     { rect: 'stroke="#3a8a3a" fill="#d7f0d7"', text: '#143a14', extra: '' },
+    'non-terminal': { rect: 'stroke="#3a5a9a" fill="#e3ecfb"', text: '#142a5a', extra: '' },
+    'leaf':         { rect: 'stroke="#b8862b" fill="#fbeede" stroke-dasharray="4 2"',
+                      text: '#5a3d05', extra: ' font-style="italic"' },
+  };
+  const kindOf = cls =>
+    cls.includes('leaf') ? 'leaf' : cls.includes('non-terminal') ? 'non-terminal' : 'terminal';
+
+  // Track the enclosing <g> class, which is what the CSS selects on.
+  // String.replace scans left to right, so the stack stays in step.
+  const stack = [];
+  return svg.replace(/<g\b[^>]*>|<\/g>|<rect\b|<text\b|<path\b/g, tok => {
+    if (tok === '</g>') { stack.pop(); return tok; }
+    if (tok.startsWith('<g')) {
+      const m = /class="([^"]*)"/.exec(tok);
+      stack.push(m ? kindOf(m[1]) : (stack[stack.length - 1] || 'terminal'));
+      return tok;
+    }
+    const p = PALETTE[stack[stack.length - 1] || 'terminal'];
+    if (tok === '<path') return '<path stroke="#444" stroke-width="2" fill="none"';
+    if (tok === '<rect') return `<rect ${p.rect} stroke-width="1.6"`;
+    // Plain "monospace" rather than the stylesheet's font stack: a
+    // presentation attribute is not CSS, so a multi-family list is not
+    // resolved and renderers warn and fall back to a proportional face.
+    // A browser takes the full stack from the stylesheet either way.
+    return `<text fill="${p.text}" font-family="monospace"`
+         + ` font-size="13" font-weight="bold" text-anchor="middle"${p.extra}`;
+  });
+}
 
 // --- styling ------------------------------------------------
 // Recolour the library's classes to the project palette: green keyword

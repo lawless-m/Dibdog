@@ -1,27 +1,27 @@
 <svg class="railroad-diagram" width="335.5" height="71" viewBox="0 0 335.5 71" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g transform="translate(.5 .5)">
 <g>
-<path d="M20 30v20m10 -20v20m-10 -10h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M20 30v20m10 -20v20m-10 -10h20"></path>
 </g>
 <g>
-<path d="M40 40h0"></path>
-<path d="M295.5 40h0"></path>
-<path d="M40 40a10 10 0 0 0 10 -10v0a10 10 0 0 1 10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M295.5 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 40a10 10 0 0 0 10 -10v0a10 10 0 0 1 10 -10"></path>
 <g>
-<path d="M60 20h215.5"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 20h215.5"></path>
 </g>
-<path d="M275.5 20a10 10 0 0 1 10 10v0a10 10 0 0 0 10 10"></path>
-<path d="M40 40h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M275.5 20a10 10 0 0 1 10 10v0a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 40h20"></path>
 <g class="non-terminal ">
-<path d="M60 40h0"></path>
-<path d="M275.5 40h0"></path>
-<rect x="60" y="29" width="215.5" height="22"></rect>
-<a xlink:href="#case_when_list_searched"><text x="167.75" y="44">case&#95;when&#95;list&#95;searched</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M275.5 40h0"></path>
+<rect stroke="#3a5a9a" fill="#e3ecfb" stroke-width="1.6" x="60" y="29" width="215.5" height="22"></rect>
+<a xlink:href="#case_when_list_searched"><text fill="#142a5a" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="167.75" y="44">case&#95;when&#95;list&#95;searched</text>
 </a>
 </g>
-<path d="M275.5 40h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M275.5 40h20"></path>
 </g>
-<path d="M 295.5 40 h 20 m -10 -10 v 20 m 10 -20 v 20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M 295.5 40 h 20 m -10 -10 v 20 m 10 -20 v 20"></path>
 </g>
 <style>
 svg.railroad-diagram { background: transparent; }

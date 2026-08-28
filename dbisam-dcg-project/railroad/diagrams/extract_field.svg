@@ -1,93 +1,93 @@
 <svg class="railroad-diagram" width="216.5" height="332" viewBox="0 0 216.5 332" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g transform="translate(.5 .5)">
 <g>
-<path d="M20 21v20m10 -20v20m-10 -10h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M20 21v20m10 -20v20m-10 -10h20"></path>
 </g>
 <g>
-<path d="M40 31h0"></path>
-<path d="M176.5 31h0"></path>
-<path d="M40 31h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M176.5 31h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31h20"></path>
 <g class="terminal ">
-<path d="M60 31h21.25"></path>
-<path d="M135.25 31h21.25"></path>
-<rect x="81.25" y="20" width="54" height="22" rx="10" ry="10"></rect>
-<text x="108.25" y="35">YEAR</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 31h21.25"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M135.25 31h21.25"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="81.25" y="20" width="54" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="108.25" y="35">YEAR</text>
 </g>
-<path d="M156.5 31h20"></path>
-<path d="M40 31a10 10 0 0 1 10 10v10a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M156.5 31h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31a10 10 0 0 1 10 10v10a10 10 0 0 0 10 10"></path>
 <g class="terminal ">
-<path d="M60 61h17"></path>
-<path d="M139.5 61h17"></path>
-<rect x="77" y="50" width="62.5" height="22" rx="10" ry="10"></rect>
-<text x="108.25" y="65">MONTH</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 61h17"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M139.5 61h17"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="77" y="50" width="62.5" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="108.25" y="65">MONTH</text>
 </g>
-<path d="M156.5 61a10 10 0 0 0 10 -10v-10a10 10 0 0 1 10 -10"></path>
-<path d="M40 31a10 10 0 0 1 10 10v40a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M156.5 61a10 10 0 0 0 10 -10v-10a10 10 0 0 1 10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31a10 10 0 0 1 10 10v40a10 10 0 0 0 10 10"></path>
 <g class="terminal ">
-<path d="M60 91h21.25"></path>
-<path d="M135.25 91h21.25"></path>
-<rect x="81.25" y="80" width="54" height="22" rx="10" ry="10"></rect>
-<text x="108.25" y="95">WEEK</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 91h21.25"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M135.25 91h21.25"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="81.25" y="80" width="54" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="108.25" y="95">WEEK</text>
 </g>
-<path d="M156.5 91a10 10 0 0 0 10 -10v-40a10 10 0 0 1 10 -10"></path>
-<path d="M40 31a10 10 0 0 1 10 10v70a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M156.5 91a10 10 0 0 0 10 -10v-40a10 10 0 0 1 10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31a10 10 0 0 1 10 10v70a10 10 0 0 0 10 10"></path>
 <g class="terminal ">
-<path d="M60 121h0"></path>
-<path d="M156.5 121h0"></path>
-<rect x="60" y="110" width="96.5" height="22" rx="10" ry="10"></rect>
-<text x="108.25" y="125">DAYOFWEEK</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 121h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M156.5 121h0"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="60" y="110" width="96.5" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="108.25" y="125">DAYOFWEEK</text>
 </g>
-<path d="M156.5 121a10 10 0 0 0 10 -10v-70a10 10 0 0 1 10 -10"></path>
-<path d="M40 31a10 10 0 0 1 10 10v100a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M156.5 121a10 10 0 0 0 10 -10v-70a10 10 0 0 1 10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31a10 10 0 0 1 10 10v100a10 10 0 0 0 10 10"></path>
 <g class="terminal ">
-<path d="M60 151h0"></path>
-<path d="M156.5 151h0"></path>
-<rect x="60" y="140" width="96.5" height="22" rx="10" ry="10"></rect>
-<text x="108.25" y="155">DAYOFYEAR</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 151h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M156.5 151h0"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="60" y="140" width="96.5" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="108.25" y="155">DAYOFYEAR</text>
 </g>
-<path d="M156.5 151a10 10 0 0 0 10 -10v-100a10 10 0 0 1 10 -10"></path>
-<path d="M40 31a10 10 0 0 1 10 10v130a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M156.5 151a10 10 0 0 0 10 -10v-100a10 10 0 0 1 10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31a10 10 0 0 1 10 10v130a10 10 0 0 0 10 10"></path>
 <g class="terminal ">
-<path d="M60 181h25.5"></path>
-<path d="M131 181h25.5"></path>
-<rect x="85.5" y="170" width="45.5" height="22" rx="10" ry="10"></rect>
-<text x="108.25" y="185">DAY</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 181h25.5"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M131 181h25.5"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="85.5" y="170" width="45.5" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="108.25" y="185">DAY</text>
 </g>
-<path d="M156.5 181a10 10 0 0 0 10 -10v-130a10 10 0 0 1 10 -10"></path>
-<path d="M40 31a10 10 0 0 1 10 10v160a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M156.5 181a10 10 0 0 0 10 -10v-130a10 10 0 0 1 10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31a10 10 0 0 1 10 10v160a10 10 0 0 0 10 10"></path>
 <g class="terminal ">
-<path d="M60 211h21.25"></path>
-<path d="M135.25 211h21.25"></path>
-<rect x="81.25" y="200" width="54" height="22" rx="10" ry="10"></rect>
-<text x="108.25" y="215">HOUR</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 211h21.25"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M135.25 211h21.25"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="81.25" y="200" width="54" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="108.25" y="215">HOUR</text>
 </g>
-<path d="M156.5 211a10 10 0 0 0 10 -10v-160a10 10 0 0 1 10 -10"></path>
-<path d="M40 31a10 10 0 0 1 10 10v190a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M156.5 211a10 10 0 0 0 10 -10v-160a10 10 0 0 1 10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31a10 10 0 0 1 10 10v190a10 10 0 0 0 10 10"></path>
 <g class="terminal ">
-<path d="M60 241h12.75"></path>
-<path d="M143.75 241h12.75"></path>
-<rect x="72.75" y="230" width="71" height="22" rx="10" ry="10"></rect>
-<text x="108.25" y="245">MINUTE</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 241h12.75"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M143.75 241h12.75"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="72.75" y="230" width="71" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="108.25" y="245">MINUTE</text>
 </g>
-<path d="M156.5 241a10 10 0 0 0 10 -10v-190a10 10 0 0 1 10 -10"></path>
-<path d="M40 31a10 10 0 0 1 10 10v220a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M156.5 241a10 10 0 0 0 10 -10v-190a10 10 0 0 1 10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31a10 10 0 0 1 10 10v220a10 10 0 0 0 10 10"></path>
 <g class="terminal ">
-<path d="M60 271h12.75"></path>
-<path d="M143.75 271h12.75"></path>
-<rect x="72.75" y="260" width="71" height="22" rx="10" ry="10"></rect>
-<text x="108.25" y="275">SECOND</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 271h12.75"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M143.75 271h12.75"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="72.75" y="260" width="71" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="108.25" y="275">SECOND</text>
 </g>
-<path d="M156.5 271a10 10 0 0 0 10 -10v-220a10 10 0 0 1 10 -10"></path>
-<path d="M40 31a10 10 0 0 1 10 10v250a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M156.5 271a10 10 0 0 0 10 -10v-220a10 10 0 0 1 10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31a10 10 0 0 1 10 10v250a10 10 0 0 0 10 10"></path>
 <g class="terminal ">
-<path d="M60 301h8.5"></path>
-<path d="M148 301h8.5"></path>
-<rect x="68.5" y="290" width="79.5" height="22" rx="10" ry="10"></rect>
-<text x="108.25" y="305">MSECOND</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 301h8.5"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M148 301h8.5"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="68.5" y="290" width="79.5" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="108.25" y="305">MSECOND</text>
 </g>
-<path d="M156.5 301a10 10 0 0 0 10 -10v-250a10 10 0 0 1 10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M156.5 301a10 10 0 0 0 10 -10v-250a10 10 0 0 1 10 -10"></path>
 </g>
-<path d="M 176.5 31 h 20 m -10 -10 v 20 m 10 -20 v 20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M 176.5 31 h 20 m -10 -10 v 20 m 10 -20 v 20"></path>
 </g>
 <style>
 svg.railroad-diagram { background: transparent; }

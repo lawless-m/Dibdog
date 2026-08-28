@@ -1,85 +1,85 @@
 <svg class="railroad-diagram" width="341.5" height="122" viewBox="0 0 341.5 122" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g transform="translate(.5 .5)">
 <g>
-<path d="M20 21v20m10 -20v20m-10 -10h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M20 21v20m10 -20v20m-10 -10h20"></path>
 </g>
 <g>
-<path d="M40 31h0"></path>
-<path d="M301.5 31h0"></path>
-<path d="M40 31h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M301.5 31h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31h20"></path>
 <g>
-<path d="M60 31h1.25"></path>
-<path d="M280.25 31h1.25"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 31h1.25"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M280.25 31h1.25"></path>
 <g class="terminal ">
-<path d="M61.25 31h0"></path>
-<path d="M89.75 31h0"></path>
-<rect x="61.25" y="20" width="28.5" height="22" rx="10" ry="10"></rect>
-<text x="75.5" y="35">(</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M61.25 31h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M89.75 31h0"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="61.25" y="20" width="28.5" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="75.5" y="35">(</text>
 </g>
-<path d="M89.75 31h10"></path>
-<path d="M99.75 31h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M89.75 31h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M99.75 31h10"></path>
 <g class="non-terminal ">
-<path d="M109.75 31h0"></path>
-<path d="M231.75 31h0"></path>
-<rect x="109.75" y="20" width="122" height="22"></rect>
-<a xlink:href="#predicate_or"><text x="170.75" y="35">predicate&#95;or</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M109.75 31h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M231.75 31h0"></path>
+<rect stroke="#3a5a9a" fill="#e3ecfb" stroke-width="1.6" x="109.75" y="20" width="122" height="22"></rect>
+<a xlink:href="#predicate_or"><text fill="#142a5a" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="170.75" y="35">predicate&#95;or</text>
 </a>
 </g>
-<path d="M231.75 31h10"></path>
-<path d="M241.75 31h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M231.75 31h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M241.75 31h10"></path>
 <g class="terminal ">
-<path d="M251.75 31h0"></path>
-<path d="M280.25 31h0"></path>
-<rect x="251.75" y="20" width="28.5" height="22" rx="10" ry="10"></rect>
-<text x="266" y="35">)</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M251.75 31h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M280.25 31h0"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="251.75" y="20" width="28.5" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="266" y="35">)</text>
 </g>
 </g>
-<path d="M281.5 31h20"></path>
-<path d="M40 31a10 10 0 0 1 10 10v10a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M281.5 31h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31a10 10 0 0 1 10 10v10a10 10 0 0 0 10 10"></path>
 <g>
-<path d="M60 61h8.5"></path>
-<path d="M273 61h8.5"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 61h8.5"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M273 61h8.5"></path>
 <g class="terminal ">
-<path d="M68.5 61h0"></path>
-<path d="M114 61h0"></path>
-<rect x="68.5" y="50" width="45.5" height="22" rx="10" ry="10"></rect>
-<text x="91.25" y="65">NOT</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M68.5 61h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M114 61h0"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="68.5" y="50" width="45.5" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="91.25" y="65">NOT</text>
 </g>
-<path d="M114 61h10"></path>
-<path d="M124 61h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M114 61h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M124 61h10"></path>
 <g class="non-terminal ">
-<path d="M134 61h0"></path>
-<path d="M273 61h0"></path>
-<rect x="134" y="50" width="139" height="22"></rect>
-<a xlink:href="#predicate_atom"><text x="203.5" y="65">predicate&#95;atom</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M134 61h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M273 61h0"></path>
+<rect stroke="#3a5a9a" fill="#e3ecfb" stroke-width="1.6" x="134" y="50" width="139" height="22"></rect>
+<a xlink:href="#predicate_atom"><text fill="#142a5a" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="203.5" y="65">predicate&#95;atom</text>
 </a>
 </g>
 </g>
-<path d="M281.5 61a10 10 0 0 0 10 -10v-10a10 10 0 0 1 10 -10"></path>
-<path d="M40 31a10 10 0 0 1 10 10v40a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M281.5 61a10 10 0 0 0 10 -10v-10a10 10 0 0 1 10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31a10 10 0 0 1 10 10v40a10 10 0 0 0 10 10"></path>
 <g>
-<path d="M60 91h0"></path>
-<path d="M281.5 91h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 91h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M281.5 91h0"></path>
 <g class="non-terminal ">
-<path d="M60 91h0"></path>
-<path d="M122.5 91h0"></path>
-<rect x="60" y="80" width="62.5" height="22"></rect>
-<a xlink:href="#value"><text x="91.25" y="95">value</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 91h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M122.5 91h0"></path>
+<rect stroke="#3a5a9a" fill="#e3ecfb" stroke-width="1.6" x="60" y="80" width="62.5" height="22"></rect>
+<a xlink:href="#value"><text fill="#142a5a" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="91.25" y="95">value</text>
 </a>
 </g>
-<path d="M122.5 91h10"></path>
-<path d="M132.5 91h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M122.5 91h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M132.5 91h10"></path>
 <g class="non-terminal ">
-<path d="M142.5 91h0"></path>
-<path d="M281.5 91h0"></path>
-<rect x="142.5" y="80" width="139" height="22"></rect>
-<a xlink:href="#predicate_tail"><text x="212" y="95">predicate&#95;tail</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M142.5 91h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M281.5 91h0"></path>
+<rect stroke="#3a5a9a" fill="#e3ecfb" stroke-width="1.6" x="142.5" y="80" width="139" height="22"></rect>
+<a xlink:href="#predicate_tail"><text fill="#142a5a" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="212" y="95">predicate&#95;tail</text>
 </a>
 </g>
 </g>
-<path d="M281.5 91a10 10 0 0 0 10 -10v-40a10 10 0 0 1 10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M281.5 91a10 10 0 0 0 10 -10v-40a10 10 0 0 1 10 -10"></path>
 </g>
-<path d="M 301.5 31 h 20 m -10 -10 v 20 m 10 -20 v 20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M 301.5 31 h 20 m -10 -10 v 20 m 10 -20 v 20"></path>
 </g>
 <style>
 svg.railroad-diagram { background: transparent; }

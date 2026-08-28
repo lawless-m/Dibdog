@@ -1,39 +1,39 @@
 <svg class="railroad-diagram" width="324.5" height="71" viewBox="0 0 324.5 71" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g transform="translate(.5 .5)">
 <g>
-<path d="M20 30v20m10 -20v20m-10 -10h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M20 30v20m10 -20v20m-10 -10h20"></path>
 </g>
 <g>
-<path d="M40 40h0"></path>
-<path d="M284.5 40h0"></path>
-<path d="M40 40a10 10 0 0 0 10 -10v0a10 10 0 0 1 10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M284.5 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 40a10 10 0 0 0 10 -10v0a10 10 0 0 1 10 -10"></path>
 <g>
-<path d="M60 20h204.5"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 20h204.5"></path>
 </g>
-<path d="M264.5 20a10 10 0 0 1 10 10v0a10 10 0 0 0 10 10"></path>
-<path d="M40 40h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M264.5 20a10 10 0 0 1 10 10v0a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 40h20"></path>
 <g>
-<path d="M60 40h0"></path>
-<path d="M264.5 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M264.5 40h0"></path>
 <g class="terminal ">
-<path d="M60 40h0"></path>
-<path d="M122.5 40h0"></path>
-<rect x="60" y="29" width="62.5" height="22" rx="10" ry="10"></rect>
-<text x="91.25" y="44">WHERE</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M122.5 40h0"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="60" y="29" width="62.5" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="91.25" y="44">WHERE</text>
 </g>
-<path d="M122.5 40h10"></path>
-<path d="M132.5 40h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M122.5 40h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M132.5 40h10"></path>
 <g class="non-terminal ">
-<path d="M142.5 40h0"></path>
-<path d="M264.5 40h0"></path>
-<rect x="142.5" y="29" width="122" height="22"></rect>
-<a xlink:href="#predicate_or"><text x="203.5" y="44">predicate&#95;or</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M142.5 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M264.5 40h0"></path>
+<rect stroke="#3a5a9a" fill="#e3ecfb" stroke-width="1.6" x="142.5" y="29" width="122" height="22"></rect>
+<a xlink:href="#predicate_or"><text fill="#142a5a" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="203.5" y="44">predicate&#95;or</text>
 </a>
 </g>
 </g>
-<path d="M264.5 40h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M264.5 40h20"></path>
 </g>
-<path d="M 284.5 40 h 20 m -10 -10 v 20 m 10 -20 v 20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M 284.5 40 h 20 m -10 -10 v 20 m 10 -20 v 20"></path>
 </g>
 <style>
 svg.railroad-diagram { background: transparent; }

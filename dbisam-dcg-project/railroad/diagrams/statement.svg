@@ -1,31 +1,31 @@
 <svg class="railroad-diagram" width="466" height="62" viewBox="0 0 466 62" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g transform="translate(.5 .5)">
 <g>
-<path d="M20 21v20m10 -20v20m-10 -10h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M20 21v20m10 -20v20m-10 -10h20"></path>
 </g>
-<path d="M40 31h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31h10"></path>
 <g>
-<path d="M50 31h0"></path>
-<path d="M416 31h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M50 31h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M416 31h0"></path>
 <g class="non-terminal ">
-<path d="M50 31h0"></path>
-<path d="M189 31h0"></path>
-<rect x="50" y="20" width="139" height="22"></rect>
-<a xlink:href="#statement_body"><text x="119.5" y="35">statement&#95;body</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M50 31h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M189 31h0"></path>
+<rect stroke="#3a5a9a" fill="#e3ecfb" stroke-width="1.6" x="50" y="20" width="139" height="22"></rect>
+<a xlink:href="#statement_body"><text fill="#142a5a" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="119.5" y="35">statement&#95;body</text>
 </a>
 </g>
-<path d="M189 31h10"></path>
-<path d="M199 31h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M189 31h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M199 31h10"></path>
 <g class="non-terminal ">
-<path d="M209 31h0"></path>
-<path d="M416 31h0"></path>
-<rect x="209" y="20" width="207" height="22"></rect>
-<a xlink:href="#trailing_semicolon_opt"><text x="312.5" y="35">trailing&#95;semicolon&#95;opt</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M209 31h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M416 31h0"></path>
+<rect stroke="#3a5a9a" fill="#e3ecfb" stroke-width="1.6" x="209" y="20" width="207" height="22"></rect>
+<a xlink:href="#trailing_semicolon_opt"><text fill="#142a5a" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="312.5" y="35">trailing&#95;semicolon&#95;opt</text>
 </a>
 </g>
 </g>
-<path d="M416 31h10"></path>
-<path d="M 426 31 h 20 m -10 -10 v 20 m 10 -20 v 20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M416 31h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M 426 31 h 20 m -10 -10 v 20 m 10 -20 v 20"></path>
 </g>
 <style>
 svg.railroad-diagram { background: transparent; }

@@ -1,87 +1,87 @@
 <svg class="railroad-diagram" width="429" height="119" viewBox="0 0 429 119" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g transform="translate(.5 .5)">
 <g>
-<path d="M20 30v20m10 -20v20m-10 -10h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M20 30v20m10 -20v20m-10 -10h20"></path>
 </g>
 <g>
-<path d="M40 40h0"></path>
-<path d="M389 40h0"></path>
-<path d="M40 40a10 10 0 0 0 10 -10v0a10 10 0 0 1 10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M389 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 40a10 10 0 0 0 10 -10v0a10 10 0 0 1 10 -10"></path>
 <g>
-<path d="M60 20h309"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 20h309"></path>
 </g>
-<path d="M369 20a10 10 0 0 1 10 10v0a10 10 0 0 0 10 10"></path>
-<path d="M40 40h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M369 20a10 10 0 0 1 10 10v0a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 40h20"></path>
 <g>
-<path d="M60 40h0"></path>
-<path d="M369 40h0"></path>
-<path d="M60 40h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M369 40h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 40h20"></path>
 <g class="terminal ">
-<path d="M80 40h120.25"></path>
-<path d="M228.75 40h120.25"></path>
-<rect x="200.25" y="29" width="28.5" height="22" rx="10" ry="10"></rect>
-<text x="214.5" y="44">&#42;</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M80 40h120.25"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M228.75 40h120.25"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="200.25" y="29" width="28.5" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="214.5" y="44">&#42;</text>
 </g>
-<path d="M349 40h20"></path>
-<path d="M60 40a10 10 0 0 1 10 10v19a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M349 40h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 40a10 10 0 0 1 10 10v19a10 10 0 0 0 10 10"></path>
 <g>
-<path d="M80 79h0"></path>
-<path d="M349 79h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M80 79h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M349 79h0"></path>
 <g class="non-terminal ">
-<path d="M80 79h0"></path>
-<path d="M168 79h0"></path>
-<rect x="80" y="68" width="88" height="22"></rect>
-<a xlink:href="#func_arg"><text x="124" y="83">func&#95;arg</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M80 79h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M168 79h0"></path>
+<rect stroke="#3a5a9a" fill="#e3ecfb" stroke-width="1.6" x="80" y="68" width="88" height="22"></rect>
+<a xlink:href="#func_arg"><text fill="#142a5a" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="124" y="83">func&#95;arg</text>
 </a>
 </g>
-<path d="M168 79h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M168 79h10"></path>
 <g>
-<path d="M178 79h0"></path>
-<path d="M349 79h0"></path>
-<path d="M178 79a10 10 0 0 0 10 -10v0a10 10 0 0 1 10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M178 79h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M349 79h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M178 79a10 10 0 0 0 10 -10v0a10 10 0 0 1 10 -10"></path>
 <g>
-<path d="M198 59h131"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M198 59h131"></path>
 </g>
-<path d="M329 59a10 10 0 0 1 10 10v0a10 10 0 0 0 10 10"></path>
-<path d="M178 79h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M329 59a10 10 0 0 1 10 10v0a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M178 79h20"></path>
 <g>
-<path d="M198 79h0"></path>
-<path d="M329 79h0"></path>
-<path d="M198 79h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M198 79h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M329 79h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M198 79h10"></path>
 <g>
-<path d="M208 79h0"></path>
-<path d="M319 79h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M208 79h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M319 79h0"></path>
 <g class="terminal ">
-<path d="M208 79h0"></path>
-<path d="M236.5 79h0"></path>
-<rect x="208" y="68" width="28.5" height="22" rx="10" ry="10"></rect>
-<text x="222.25" y="83">,</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M208 79h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M236.5 79h0"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="208" y="68" width="28.5" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="222.25" y="83">,</text>
 </g>
-<path d="M236.5 79h10"></path>
-<path d="M246.5 79h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M236.5 79h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M246.5 79h10"></path>
 <g class="non-terminal ">
-<path d="M256.5 79h0"></path>
-<path d="M319 79h0"></path>
-<rect x="256.5" y="68" width="62.5" height="22"></rect>
-<a xlink:href="#value"><text x="287.75" y="83">value</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M256.5 79h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M319 79h0"></path>
+<rect stroke="#3a5a9a" fill="#e3ecfb" stroke-width="1.6" x="256.5" y="68" width="62.5" height="22"></rect>
+<a xlink:href="#value"><text fill="#142a5a" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="287.75" y="83">value</text>
 </a>
 </g>
 </g>
-<path d="M319 79h10"></path>
-<path d="M208 79a10 10 0 0 0 -10 10v0a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M319 79h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M208 79a10 10 0 0 0 -10 10v0a10 10 0 0 0 10 10"></path>
 <g>
-<path d="M208 99h111"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M208 99h111"></path>
 </g>
-<path d="M319 99a10 10 0 0 0 10 -10v0a10 10 0 0 0 -10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M319 99a10 10 0 0 0 10 -10v0a10 10 0 0 0 -10 -10"></path>
 </g>
-<path d="M329 79h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M329 79h20"></path>
 </g>
 </g>
-<path d="M349 79a10 10 0 0 0 10 -10v-19a10 10 0 0 1 10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M349 79a10 10 0 0 0 10 -10v-19a10 10 0 0 1 10 -10"></path>
 </g>
-<path d="M369 40h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M369 40h20"></path>
 </g>
-<path d="M 389 40 h 20 m -10 -10 v 20 m 10 -20 v 20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M 389 40 h 20 m -10 -10 v 20 m 10 -20 v 20"></path>
 </g>
 <style>
 svg.railroad-diagram { background: transparent; }

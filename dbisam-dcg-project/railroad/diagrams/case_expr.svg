@@ -1,38 +1,38 @@
 <svg class="railroad-diagram" width="336" height="62" viewBox="0 0 336 62" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g transform="translate(.5 .5)">
 <g>
-<path d="M20 21v20m10 -20v20m-10 -10h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M20 21v20m10 -20v20m-10 -10h20"></path>
 </g>
-<path d="M40 31h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31h10"></path>
 <g>
-<path d="M50 31h0"></path>
-<path d="M286 31h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M50 31h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M286 31h0"></path>
 <g class="terminal ">
-<path d="M50 31h0"></path>
-<path d="M104 31h0"></path>
-<rect x="50" y="20" width="54" height="22" rx="10" ry="10"></rect>
-<text x="77" y="35">CASE</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M50 31h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M104 31h0"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="50" y="20" width="54" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="77" y="35">CASE</text>
 </g>
-<path d="M104 31h10"></path>
-<path d="M114 31h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M104 31h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M114 31h10"></path>
 <g class="non-terminal ">
-<path d="M124 31h0"></path>
-<path d="M220.5 31h0"></path>
-<rect x="124" y="20" width="96.5" height="22"></rect>
-<a xlink:href="#case_body"><text x="172.25" y="35">case&#95;body</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M124 31h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M220.5 31h0"></path>
+<rect stroke="#3a5a9a" fill="#e3ecfb" stroke-width="1.6" x="124" y="20" width="96.5" height="22"></rect>
+<a xlink:href="#case_body"><text fill="#142a5a" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="172.25" y="35">case&#95;body</text>
 </a>
 </g>
-<path d="M220.5 31h10"></path>
-<path d="M230.5 31h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M220.5 31h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M230.5 31h10"></path>
 <g class="terminal ">
-<path d="M240.5 31h0"></path>
-<path d="M286 31h0"></path>
-<rect x="240.5" y="20" width="45.5" height="22" rx="10" ry="10"></rect>
-<text x="263.25" y="35">END</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M240.5 31h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M286 31h0"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="240.5" y="20" width="45.5" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="263.25" y="35">END</text>
 </g>
 </g>
-<path d="M286 31h10"></path>
-<path d="M 296 31 h 20 m -10 -10 v 20 m 10 -20 v 20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M286 31h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M 296 31 h 20 m -10 -10 v 20 m 10 -20 v 20"></path>
 </g>
 <style>
 svg.railroad-diagram { background: transparent; }

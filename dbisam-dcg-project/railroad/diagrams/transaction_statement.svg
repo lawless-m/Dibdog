@@ -1,89 +1,89 @@
 <svg class="railroad-diagram" width="316" height="182" viewBox="0 0 316 182" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <g transform="translate(.5 .5)">
 <g>
-<path d="M20 21v20m10 -20v20m-10 -10h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M20 21v20m10 -20v20m-10 -10h20"></path>
 </g>
 <g>
-<path d="M40 31h0"></path>
-<path d="M276 31h0"></path>
-<path d="M40 31h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M276 31h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31h20"></path>
 <g>
-<path d="M60 31h0"></path>
-<path d="M256 31h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 31h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M256 31h0"></path>
 <g class="terminal ">
-<path d="M60 31h0"></path>
-<path d="M122.5 31h0"></path>
-<rect x="60" y="20" width="62.5" height="22" rx="10" ry="10"></rect>
-<text x="91.25" y="35">START</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 31h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M122.5 31h0"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="60" y="20" width="62.5" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="91.25" y="35">START</text>
 </g>
-<path d="M122.5 31h10"></path>
-<path d="M132.5 31h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M122.5 31h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M132.5 31h10"></path>
 <g class="terminal ">
-<path d="M142.5 31h0"></path>
-<path d="M256 31h0"></path>
-<rect x="142.5" y="20" width="113.5" height="22" rx="10" ry="10"></rect>
-<text x="199.25" y="35">TRANSACTION</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M142.5 31h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M256 31h0"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="142.5" y="20" width="113.5" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="199.25" y="35">TRANSACTION</text>
 </g>
 </g>
-<path d="M256 31h20"></path>
-<path d="M40 31a10 10 0 0 1 10 10v10a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M256 31h20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31a10 10 0 0 1 10 10v10a10 10 0 0 0 10 10"></path>
 <g>
-<path d="M60 61h25.5"></path>
-<path d="M230.5 61h25.5"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 61h25.5"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M230.5 61h25.5"></path>
 <g class="terminal ">
-<path d="M85.5 61h0"></path>
-<path d="M156.5 61h0"></path>
-<rect x="85.5" y="50" width="71" height="22" rx="10" ry="10"></rect>
-<text x="121" y="65">COMMIT</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M85.5 61h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M156.5 61h0"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="85.5" y="50" width="71" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="121" y="65">COMMIT</text>
 </g>
-<path d="M156.5 61h10"></path>
-<path d="M166.5 61h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M156.5 61h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M166.5 61h10"></path>
 <g class="terminal ">
-<path d="M176.5 61h0"></path>
-<path d="M230.5 61h0"></path>
-<rect x="176.5" y="50" width="54" height="22" rx="10" ry="10"></rect>
-<text x="203.5" y="65">WORK</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M176.5 61h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M230.5 61h0"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="176.5" y="50" width="54" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="203.5" y="65">WORK</text>
 </g>
 </g>
-<path d="M256 61a10 10 0 0 0 10 -10v-10a10 10 0 0 1 10 -10"></path>
-<path d="M40 31a10 10 0 0 1 10 10v40a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M256 61a10 10 0 0 0 10 -10v-10a10 10 0 0 1 10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31a10 10 0 0 1 10 10v40a10 10 0 0 0 10 10"></path>
 <g class="terminal ">
-<path d="M60 91h62.5"></path>
-<path d="M193.5 91h62.5"></path>
-<rect x="122.5" y="80" width="71" height="22" rx="10" ry="10"></rect>
-<text x="158" y="95">COMMIT</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 91h62.5"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M193.5 91h62.5"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="122.5" y="80" width="71" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="158" y="95">COMMIT</text>
 </g>
-<path d="M256 91a10 10 0 0 0 10 -10v-40a10 10 0 0 1 10 -10"></path>
-<path d="M40 31a10 10 0 0 1 10 10v70a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M256 91a10 10 0 0 0 10 -10v-40a10 10 0 0 1 10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31a10 10 0 0 1 10 10v70a10 10 0 0 0 10 10"></path>
 <g>
-<path d="M60 121h17"></path>
-<path d="M239 121h17"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 121h17"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M239 121h17"></path>
 <g class="terminal ">
-<path d="M77 121h0"></path>
-<path d="M165 121h0"></path>
-<rect x="77" y="110" width="88" height="22" rx="10" ry="10"></rect>
-<text x="121" y="125">ROLLBACK</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M77 121h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M165 121h0"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="77" y="110" width="88" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="121" y="125">ROLLBACK</text>
 </g>
-<path d="M165 121h10"></path>
-<path d="M175 121h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M165 121h10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M175 121h10"></path>
 <g class="terminal ">
-<path d="M185 121h0"></path>
-<path d="M239 121h0"></path>
-<rect x="185" y="110" width="54" height="22" rx="10" ry="10"></rect>
-<text x="212" y="125">WORK</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M185 121h0"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M239 121h0"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="185" y="110" width="54" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="212" y="125">WORK</text>
 </g>
 </g>
-<path d="M256 121a10 10 0 0 0 10 -10v-70a10 10 0 0 1 10 -10"></path>
-<path d="M40 31a10 10 0 0 1 10 10v100a10 10 0 0 0 10 10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M256 121a10 10 0 0 0 10 -10v-70a10 10 0 0 1 10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M40 31a10 10 0 0 1 10 10v100a10 10 0 0 0 10 10"></path>
 <g class="terminal ">
-<path d="M60 151h54"></path>
-<path d="M202 151h54"></path>
-<rect x="114" y="140" width="88" height="22" rx="10" ry="10"></rect>
-<text x="158" y="155">ROLLBACK</text>
+<path stroke="#444" stroke-width="2" fill="none" d="M60 151h54"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M202 151h54"></path>
+<rect stroke="#3a8a3a" fill="#d7f0d7" stroke-width="1.6" x="114" y="140" width="88" height="22" rx="10" ry="10"></rect>
+<text fill="#143a14" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle" x="158" y="155">ROLLBACK</text>
 </g>
-<path d="M256 151a10 10 0 0 0 10 -10v-100a10 10 0 0 1 10 -10"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M256 151a10 10 0 0 0 10 -10v-100a10 10 0 0 1 10 -10"></path>
 </g>
-<path d="M 276 31 h 20 m -10 -10 v 20 m 10 -20 v 20"></path>
+<path stroke="#444" stroke-width="2" fill="none" d="M 276 31 h 20 m -10 -10 v 20 m 10 -20 v 20"></path>
 </g>
 <style>
 svg.railroad-diagram { background: transparent; }
