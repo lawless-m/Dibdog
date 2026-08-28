@@ -1,0 +1,54 @@
+# Dibdog MCP — DBISAM SQL grammar checker.
+#
+# Install to /etc/systemd/system/dibdog-mcp.service on miami.
+# Follows the convention of the other services on that host: runs as
+# matt, out of ~/Git, Type=exec, logging to the journal.
+#
+# The bind address is loopback on purpose. Public access goes through
+# lighttpd (see 54-dibdog.conf), which terminates TLS.
+
+[Unit]
+Description=Dibdog MCP - DBISAM SQL grammar checker
+After=network.target
+
+[Service]
+Type=exec
+User=matt
+Group=matt
+WorkingDirectory=/home/matt/Git/Dibdog/dbisam-dcg-project/tools/mcp
+Environment="HOME=/home/matt"
+Environment="DIBDOG_MCP_BIND=127.0.0.1:8791"
+Environment="DIBDOG_CHECK_PL=/home/matt/Git/Dibdog/dbisam-dcg-project/tools/mcp/check.pl"
+Environment="DIBDOG_SCRYER=/home/matt/.cargo/bin/scryer-prolog"
+Environment="DIBDOG_MCP_WORKERS=2"
+Environment="DIBDOG_MCP_TOKEN_FILE=/home/matt/.config/dibdog/token"
+ExecStart=/home/matt/Git/Dibdog/dbisam-dcg-project/tools/mcp/target/release/dibdog-mcp
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+# This service parses untrusted text from the internet and spawns Prolog
+# child processes. It needs no privileges, writes nothing, and touches no
+# other service's data, so take all of that away.
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=read-only
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+RestrictNamespaces=true
+LockPersonality=true
+
+# miami has 967MiB of RAM shared with lighttpd and two Erlang VMs. A
+# runaway parse must not take the box down with it. Each check is a
+# short-lived Scryer costing a few MiB, so this is far above normal use
+# and only bites a genuine leak.
+MemoryMax=400M
+TasksMax=64
+
+[Install]
+WantedBy=multi-user.target
