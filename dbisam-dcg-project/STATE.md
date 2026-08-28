@@ -5,15 +5,15 @@ This complements the planning docs (`README`, `FOUNDATIONS`,
 `ARCHITECTURE`) — they describe intent; this describes current
 reality.
 
-Last updated: 2026-05-28.
+Last updated: 2026-08-28.
 
 ---
 
 ## Corpus
 
 ```
-total                  137 entries
-meaningful             119
+total                  139 entries
+meaningful             121
 expected-divergent      18
 pending                  0
 failing                  0
@@ -21,6 +21,11 @@ failing                  0
 
 Every entry the grammar's seen is classified. Pending and failing
 have stayed at zero across the last 30+ slices.
+
+Grammar harness over the whole corpus: 115 `parsed_match`, 4 `parsed`
+(agreed-rejection entries with no `expected.term`), 20 `failed` (the
+negative and agreed-rejection set — expected), 0 `parsed_drift`.
+Round-trip is stable for all 119 accepted entries.
 
 Corpus material comes from four harvest sources, all exhausted:
 
@@ -123,7 +128,7 @@ DBISAM-specific quirks captured in catalogue:
 
 ## Documented divergences
 
-`docs/DIVERGENCES.md` catalogues 11 grammar-vs-engine divergences:
+`docs/DIVERGENCES.md` catalogues 13 grammar-vs-engine divergences:
 
 1. Table existence — schema check (over-accept)
 2. Column belongs to FROM table — schema check (over-accept)
@@ -136,6 +141,11 @@ DBISAM-specific quirks captured in catalogue:
 9. Bare `select` as first identifier in INSERT column list — over-accept (one positional parser quirk)
 10. EXPORT/IMPORT file-name uses identifier syntax (not string literal) — agreed shape; grammar over-restrict on bracketed paths with slashes
 11. Multi-statement parsing — grammar over-reject (engine accepts N statements; grammar wants exactly 1)
+12. Documentation drift — official docs vs observed engine behaviour
+13. Bare Bit/Boolean column as a predicate — over-reject resolved (60d76b4); residual type-aware over-accept
+
+Four of these are decidable from the AST alone and are reported by the
+SQL checker in `tools/mcp/` as warnings: 3, 6, 7 and 8.
 
 Each section explains shape, engine response, grammar response,
 disposition, and rationale. Cross-linked to corpus entries that
@@ -205,10 +215,19 @@ In `tools/`:
 | `pq-translate.sh`            | translate .pq/.m files for mrsflow execution     |
 | `promote-check.pl`           | run the parse+round-trip part of promotion       |
 | `fuzz-roundtrip.pl`          | 68 round-trip AST tests across all grammar features |
+| `fuzz-generative.pl`         | generative round-trip fuzzer                     |
+| `test-diag.pl`               | pinned-position regression test for the furthest-failure diagnostic |
+| `diag-vs-engine.sh`          | report-only: grammar's furthest-failure position beside the engine's, for rejected entries (different conventions, never expected to match) |
+| `mcp/`                       | MCP server exposing the grammar as a SQL checker (see `mcp/README.md`) |
 
 Engine harness at `harness/engine/` (Rust). Grammar harness at
 `harness/grammar/` (Scryer driver). Differential dashboard at
 `harness/differential/run.sh` with classification + delta tracking.
+
+`railroad/` holds the extracted EBNF (73 productions) and one SVG per
+rule, regenerated from the current `grammar/dcg.pl` and gate-proven
+against it: 68/68 curated, 38/38 over-permissiveness negatives, 159/159
+corpus replay.
 
 ---
 
